@@ -1,0 +1,621 @@
+:root{
+    --colorBotones: #E4982C;
+    --colorFondo: #E5E5E2;
+    --colorInputs: #E6E6E6;
+    --colorCards: #FFFFFF;
+    --colorNav: #FFFFFF;
+    --colorLinea: #A19595;
+}
+ 
+body{
+    background-color: var(--colorFondo);
+}
+
+
+
+.index-container{
+    display: flex;
+    justify-content: space-between;
+}
+
+/* ///////////////////////////////////////////////// CONTACT-SECTION ///////////////////////////////////////////////// */
+
+.contacts-section{
+    background-color: var(--colorCards);
+    border-radius: 12px;
+    height: 578px;
+    width: 20%;
+    margin-left: 20px;
+    position: sticky;
+    flex-direction: column;
+    margin-top: 25px;
+    filter: drop-shadow(0px 1px 4px rgba(0, 0, 0, 0.05));
+}
+
+.contacts-header{
+    border-radius: 12px 12px 0 0;
+    border-bottom: 2px solid var(--colorLinea);
+    display: flex;
+    padding-top: 2%;
+    margin-left: 3%;
+    width: 88%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.contacts-section h2{
+    font-weight: bold;
+    font-size: 103%;
+    margin: 11px 0;
+}
+
+
+ul{
+    padding: 0;
+    height: 483px;
+    overflow: hidden;
+    overflow-y: auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+li{
+    display: flex;
+    background: #E8E8E8;
+    height: auto;
+    border-radius: 12px;
+    padding: 2% 0px;
+    margin: 0 0 10px 0px;
+    width: 95%;
+    cursor: pointer;
+}
+
+
+
+.friend-image{
+    position: relative;
+    margin: 0px 0px 0px 8px;
+    cursor: pointer;
+    display: flex;
+    align-items: self-end;
+}
+
+.imageContacto{
+    width: 35px;
+    height: 35px;
+    border-radius: 100%;
+}
+
+.status{
+    width: 8.5px;
+    height: 8.5px;
+    margin: 0px 0px 3px -9px;
+}
+
+
+.contact-state{
+    display: flex;
+    align-items: center;
+}
+
+#dot{
+    width: 15px;
+    height: 15px;
+    position: relative;
+    align-self: flex-end;
+    margin-bottom: 10px;
+    right: 30%;
+    z-index: 1;
+}
+
+.contact-name{
+    margin: 0;
+    display: flex;
+    font-size: 93%;
+    margin-left: -5%;
+    align-items: center;
+}
+
+.contact-info{
+    justify-content: space-between;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin-left: 7%;
+}
+
+.contact-info button{
+    background: inherit;
+    border: none;
+    margin: 4px;
+}
+
+.contact-info button img{
+    width: 20px;
+    height: 20px;
+}
+
+#chat, #videoCall{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100%;
+    padding: 5px;
+}
+
+#chat:hover{
+    background-color: #BCB5B5;
+    cursor: pointer;
+}
+
+#videoCall:hover{
+    background-color: #BCB5B5;
+    cursor: pointer;
+}
+.contact-btns{
+    display: flex;
+    white-space: nowrap;
+    margin-left: 2%;
+    flex-direction: row;
+}
+
+/* ///////////////////////////////////////////////// POST-SECTION ///////////////////////////////////////////////// */
+
+/* ///////////////////////////////////////////////// NEW-POST-SECTION ///////////////////////////////////////////////// */
+.middle-container{
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    margin-top: 25px;
+    align-items: center;
+}
+
+.new-post{
+    background-color: var(--colorCards);
+    border-radius: 12px;
+    width: 100%;
+    /* margin-top: 25px; */
+    filter: drop-shadow(0px 1px 4px rgba(0, 0, 0, 0.05));
+    display: flex;
+    /* padding: 0px 27px 27px 34px; */
+    justify-content: center;
+    height: auto;
+}
+
+.nombre{
+    margin: 0 0 0 6px;
+}
+
+.post-profile-img{
+    display: flex;
+    align-items: center;
+    margin: 5px 0px 5px 0px;
+}
+
+textarea{
+    background-color: var(--colorInputs);
+    border-radius: 12px;
+    border: none;
+
+    padding: 13px 0px 0px 13px;
+    font-size: 18px;
+    resize: vertical;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    height: 46px;
+}
+
+.new-post-content{
+    width: 100%;
+    margin: 5px 30px 0px 30px;
+    display: flex;
+    flex-direction: column;
+}
+
+#addImage{
+    background: url(../icons/uploadImage.png) no-repeat;
+    background-repeat: round;
+    width: 25px;
+    height: 25px;
+}
+
+#addImage:hover{
+    transition: all 0.1s ease-in-out;
+    background-image: url(../icons/image_grey.png);
+}
+
+#addVideo:hover{
+    transition: all 0.1s ease-in-out;
+    background-image: url(../icons/video_grey.png);
+}
+
+#addVideo{
+    background: url(../icons/uploadVideo.png) no-repeat;
+    background-repeat: round;
+    width: 25px;
+    height: 25px;
+}
+
+
+
+.icons{
+    display: flex;
+    align-items: center;
+    margin: 11px 0px 0px 1px;
+}
+
+.icons button{
+    background: none;
+    border: none;
+    margin-left: 15px;
+    cursor: pointer;
+    padding: 0;
+}
+
+.icons img{
+    width: 25px;
+    height: 25px;
+    padding: 0;
+    margin: 0;
+}
+
+.post-btn{
+    background-color: var(--colorBotones);
+    border: none;
+    border-radius: 12px;
+    transition: all ease 500ms;
+    padding: 5px 25px;
+    color: white;
+    font-size: 18px;
+    align-self: flex-end;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.post-btn:hover{
+    transition: all 0.1s ease-in-out;
+    background-color: #E47F00;
+}
+
+
+
+/* ///////////////////////////////////////////////// INDEX-POSTS-SECTION ///////////////////////////////////////////////// */
+
+.index-posts{
+    background-color: var(--colorFondo);
+    border-radius: 12px;
+    width: 100%;
+    height: 100%;
+    margin-top: 28px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* filter: drop-shadow(0px 0px 40px rgba(0, 0, 0, 0.363)); */
+}
+
+.destacada{
+    border: 4px solid var(--colorBotones);
+    filter: drop-shadow(0px 0px 2px var(--colorBotones));
+}
+
+.header-post button{
+    border: no;
+}
+
+.nombreYtiempo{
+    margin: 0 0 0px 6px;
+}
+
+.header-post{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin: 0 0 8px 0;
+}
+
+.postFriend{
+    background-color: var(--colorCards);
+    border-radius: 12px;
+    margin: 16px 0px 40px 0px;
+    display: flex;
+    padding: 20px;
+    flex-direction: column;
+}
+
+.containerPuntos{
+    display: flex;
+    background: inherit;
+    border: none;
+    cursor: pointer;
+    justify-self: end;
+    width: 40px;
+    height: 40px;
+    position: relative;
+    left: 4px;
+    top: -16%
+}
+
+
+#puntosHorizontalesCard{
+    width: 30px;
+    height: 30px;
+    border-radius: 59px;
+    padding: 1px;
+}
+
+#puntosHorizontalesCard:hover{
+
+    background-color: var(--colorInputs);
+}
+
+
+.nombreUserPublicacion{
+    margin: 0;
+}
+
+.tiempoPublicacion{
+    margin: 3px 0 0 0;
+}
+
+.cantLikes{
+    display: flex;
+    flex-direction: row;
+    margin: 0px 14px;
+    height: 25px;
+    margin-bottom: 3%;
+    align-items: center;
+}
+
+#iconCantLikes{
+    width: 4%;
+    margin-right: 1%;
+}
+
+#textCantLikes{
+    font-size: 15px;
+}
+
+.likeShareComment{
+    display: flex;
+    flex-direction: row;
+    border-top: 2px solid var(--colorLinea);
+    padding: 8px 0px;
+    border-bottom: 2px solid var(--colorLinea);
+    margin: 0 5px;
+    justify-content: space-evenly;
+}
+
+#like, #comment, #share{
+    width: 26px;
+    height: 26px;
+    margin: 0 57px;
+    border: none;
+    cursor: pointer;
+}
+
+#comment{
+    background: url(../icons/comment.png) no-repeat;
+    background-repeat: round;
+    width: 24px;
+}
+
+#comment:hover{
+    transition: all 0.2s ease-in-out;
+    background-image: url(../icons/comment_green.png);
+}
+
+#share{
+    background: url(../icons/share.png) no-repeat;
+    background-repeat: round;
+}
+
+#share:hover{
+    transition: all 0.2s ease-in-out;
+    background-image: url(../icons/share_orange.png);
+}
+
+#like{
+    background: url(../icons/like.png) no-repeat;
+    background-repeat: round;
+}
+
+#like:hover{
+    transition: all 0.2s ease-in-out;
+    background-image: url(../icons/like_rojo.png);
+}
+
+.contenidoPost{
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 12px;
+    padding: 0px 21px 21px 18px;
+    background-color: #E6E6E6;
+    margin: 0 0 9px 0;
+}
+
+.galeria{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.imgGaleria{
+    width: 40%;
+    margin: 3px;
+    cursor: pointer;
+}
+
+.cantCommentarios{
+    justify-content: flex-end;
+    display: flex;
+}
+
+.comentario{
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 30px;
+}
+
+.imgComentario{
+    display: flex;
+    position: relative;
+    width: 40px;
+    height: 37px;
+    overflow: hidden;
+    margin: 0px 4px 0 0;
+    border-radius: 100%;
+    cursor: pointer;
+}
+
+.nombreYtextoComentario{
+
+    background-color: var(--colorInputs);
+    border-radius: 12px;
+    padding: 0 0px 4px 16px;
+}
+
+.textoComentario{
+    margin: 4px 0 0px -2px;
+    font-size: 100%;
+    padding-right: 10px;
+    width: auto;
+}
+
+.nombreComentario{
+    margin: 7px 10px 0px -8px;
+    font-size: 90%;
+    font-weight: bold;
+}
+
+.containerEscribirComentario{
+    display: flex;
+    flex-direction: row;
+    margin-top: 6%;
+    margin-bottom: 2%;
+    width: 100%;
+}
+
+
+
+#iconSendComentario{
+    background: url(../images/message.png) no-repeat;
+    background-repeat: round;
+    width: 44px;
+    height: 39px;
+    cursor: pointer;
+}
+
+
+#inputComentario{
+    background-color: var(--colorInputs);
+    border: none;
+    border-radius: 12px;
+    font-size: 90%;
+    padding: 2%;
+    width: 100%;
+}
+
+.imgInputSendComentario{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+}
+
+.cardPersonasRecomendadas{
+    display: flex;
+    flex-direction: row;
+    background-color: var(--colorCards);
+    border-radius: 12px;
+    padding: 2%;
+    filter: drop-shadow(0px 1px 4px rgba(0, 0, 0, 0.05));
+    width: 92%;
+    justify-content: center;
+}
+
+.imgYnombre{
+    display: flex;
+    flex-direction: column;
+    margin: 15px 10px 15px 6px;
+    align-items: center;
+}
+
+.imgPersonaRecomendada{
+    width: 64px;
+    border-radius: 100%;
+    height: 64px;
+    cursor: pointer;
+}
+
+.nombrePersonaRecomendada{
+    font-size: 84%;
+    margin: 8px 0 8px 0;
+}
+
+.seguir{
+    border-radius: 7px;
+    background-color: var(--colorBotones);
+    color: white;
+    font-size: 86%;
+    border: none;
+    padding: 2px;
+    width: 77%;
+    cursor: pointer;
+}
+
+.index-recomendadosYpublicidad{
+    flex-direction: column;
+    position: sticky;
+    width: 21%;
+    top: 0;
+    align-items: center;
+    margin: 25px 20px 0px 0px;
+}
+
+.containerPublicidades{
+    justify-content: center;
+    display: flex;
+    width: 96%;
+    height: auto;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 12px;
+    position: sticky;
+    margin: 21px 0 0 0;
+    background-color: #BEBEBE;
+}
+
+.publicidad{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 88%;
+    padding: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background-color: white;
+    border-radius: 12px;
+}
+
+.imgPublicidad{
+    width: 91%;
+    cursor: pointer;
+}
+
+.morePhotos{
+    position: absolute;
+    left: 54.5%;
+    color: white;
+    /* z-index: 1000; */
+    font-size: 165%;
+    top: 209.5%;
+    cursor: pointer;
+}
+
+.morePhotos:hover{
+   font-weight: 600; 
+}

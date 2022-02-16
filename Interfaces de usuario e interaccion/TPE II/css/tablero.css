@@ -1,0 +1,139 @@
+@import url('https://fonts.googleapis.com/css2?family=Secular+One&display=swap');
+
+.jugador{
+    display: none;
+    font-family: 'Secular One', sans-serif;
+    font-size: 149%;
+    flex-direction: column;
+    align-items: center;
+    width: 29%;
+    text-align: center;
+    
+}
+
+.table{
+    display: flex;
+}
+
+.tablero{
+    display: none;
+    width: 100%;
+}
+
+.turnos{
+    display: none;
+    justify-content: center;
+    margin: 0;
+    margin-right: 6%;
+}
+
+table{
+    width: 100%;
+    padding: 4%;
+    border-radius: 4%;
+    background-color: black;
+}
+
+.ficha_jugador{
+    
+    margin-top: 17%;
+    width: 68%;
+
+}
+
+.btnContinuarReiniciar{
+
+    flex-direction: row;
+    justify-content: center;
+    margin-left: 3%;
+}
+
+
+.continuar, .reiniciar{
+    
+    justify-content: center;
+    justify-content: center;
+    width: 10%;
+    margin-right: 4%;
+}
+
+
+#btnReiniciar, #btnContinuar{
+    font-size: 117%;
+    width: 118%;
+    padding: 9%;
+    margin: 0% 0%;
+    border-radius: 30% 6% 29% 6%;
+    border: 2px solid black;
+    transition: all 0.5s ease-in-out;
+    margin-top: 1%;
+}
+
+#btnReiniciar, #btnContinuar{
+    display: none;
+}
+
+
+
+td{
+    border-radius: 100%;
+}
+
+
+.ficha {
+    padding: 0%;
+    width: 77%;
+    margin: 11%;
+    border-radius: 100%;
+}
+
+.cronometro{
+    display: none;
+    font-size: 170%;
+    justify-content: center;
+    font-family: 'Bebas Neue', cursive;
+}
+
+a{
+    text-decoration: none;
+}
+
+.btnVolveryTurnos{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+}
+
+.change{
+
+    display: none;
+}
+
+.upload{
+    flex-direction: column;
+    text-decoration: none;
+    margin: 20px;
+}
+
+.cambiarFichas{
+    position: absolute;
+    top: 5%;
+    left: 5%;
+}
+
+
+
+#imgFichaJ2{
+    top: 425%;
+    position: absolute;
+    left: 1394%;
+    list-style: none;
+}
+
+
+
+#imgFichaJ1{
+    top: 425%;
+    position: absolute;
+    list-style: none;
+}

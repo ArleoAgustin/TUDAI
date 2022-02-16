@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Paint</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/paint-container.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@600&display=swap" rel="stylesheet">   
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">     
+    <script src="https://kit.fontawesome.com/67e13957ac.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="js/main.js"></script>
+    <script src="js/filters.js"></script>
+</head>
+<body>
+    <header>
+
+        <img src="img/exa.jpg" alt="exa-img" id='exa-img'>
+        <h1 class="title">Ejercicio Entregable – Práctico Nº1</h1>
+
+    </header>
+
+    <article class="index-container">
+
+        <article class="paint-container">
+
+            <canvas id='canvas' width="800" height="500"></canvas>
+            
+            <section class="panel">
+                <ul class="buttons">
+                    
+                    <li class="item" id="pencil">
+                            <i class='fas fa-pencil-alt'></i>
+                        <div class="on-slider" id="sliderPencil">
+                            <input type="range" min="1" max="100" value="50" id="pencilThickness">
+                        </div>
+                    </li>
+                    <li class="item" id="eraser">
+                        <i class='fas fa-eraser'></i>
+                        <div class="on-slider" id="sliderEraser">
+                            <input type="range" min="1" max="100" value="50" id="eraserThickness">
+                        </div>
+                    </li>
+                    
+                    <li class="item" id="select-image"><i class="fas fa-file-image"></i>
+                        <input type="file" name="image" id="myFile" ></li>
+                    
+                    <li class="item" id='brightness'>
+                        <i class="far fa-sun"></i>
+                        <div class="brightness-buttons">
+                            <button disabled class="brightness-button" id="restBrightness">-</button>
+                            <button disabled class="brightness-button" id="plusBrightness">+</button>
+                        </div>      
+                    </li>             
+                    
+                    <div class="file-container">
+                    <li class="item" id="reset"><i class="far fa-file"></i></li>
+                    <li class="item" id="download"><i class="fa fa-download"></i></li>
+                    </div>
+                    
+                </ul>
+                <div class="colorYFiltros">
+                    <section class="color-picker">
+                        <input type="color" id="color-picker" name="head" value="#000000">
+                    </section>
+                    <div class="filtros">
+                        <h4>FILTROS</h4>
+        
+                            <div class="buttonsFilters">
+                                <button disabled value="binarizacion">Binarización</button>
+                                <button disabled value="sepia">Sepia</button>
+                                <button disabled value="saturacion">Saturación</button>
+                                <button disabled value="blur">Blur</button>
+                                <button disabled value="negativo">Negativo</button>
+                            </div>
+                    </div>
+                </div>
+            </section>
+        </article>
+        
+    </article>
+    <div class="avisoFiltros">
+        <p id="aviso">Para poder utilizar los filtros deberá cargar una imagen</p>
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,521 @@
+:root{
+    --colorBotones: #E4982C;
+    --colorFondo: #E5E5E2;
+    --colorInputs: #E6E6E6;
+    --colorCards: #FFFFFF;
+    --colorNav: #FFFFFF;
+    --colorLinea: #A19595;
+}
+
+
+.profile-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.perfil{
+    width: 65%;
+    border-radius: 12px;
+    display: flex;
+    margin-top: 2%;
+    flex-direction: column;
+    justify-content: center;
+    background-color: white;
+    filter: drop-shadow(0px 1px 4px rgba(0, 0, 0, 0.05));
+}
+
+.portada{
+    width: 100%;
+}
+
+.fotoPerfilYnombre{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#imgPortada{
+    width: 100%;
+    cursor: pointer;
+}
+
+#imgPerfil{
+    width: 220px;
+    margin-top: -134px;
+    cursor: pointer;
+}
+
+.nombrePerfil{
+    font-size: 36px;
+    margin: 7px 0;
+}
+
+
+.datos{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 0 0px 20px 0px;
+    font-size: 104%;
+    width: 60%;
+}
+
+
+.ubicacion, .estudios, .ubicacionActual{
+    display: flex;
+    flex-direction: row;
+    margin: 33px 0 0 0px;
+    align-items: center;
+    cursor: pointer;
+}
+
+.iconDatos{
+    width: 28px;
+}
+
+.textoDato{
+    margin: 0 5px;
+}
+
+span{
+    font-weight: bold;
+}
+
+.fotosPublicacionesAmigos{
+    width: 65%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.fotosAmigos{
+    width: 50%;
+}
+
+.cardfotos{
+    width: 79%;
+    background-color: var(--colorCards);
+    flex-direction: column;
+    display: flex;
+    filter: drop-shadow(0px 1px 4px rgba(0, 0, 0, 0.05));
+    border-radius: 12px;
+    margin-top: 11%;
+    padding: 1% 30px 0px 30px;
+}
+
+h4{
+    font-size: 144%;
+    border-bottom: 2px solid var(--colorLinea);
+    padding-bottom: 2%;
+    margin: 30px 0px 15px 0px;
+    font-weight: bold;
+}
+
+h6{
+    display: flex;
+    font-size: 95%;
+    margin: 8px 0 8px 0px;
+    justify-content: end;
+    cursor: pointer;
+}
+
+h6:hover{
+    font-weight: 600;
+}
+
+.contenedorFotos{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 0 24px 0;
+}
+
+.fotos{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 18px 0 18px 0;
+    border-radius: 12px;
+    background-color: var(--colorFondo);
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.foto{
+    width: 167px;
+    border-radius: 7px;
+    margin: 3px;
+    cursor: pointer;
+}
+
+
+.cardAmigos{
+    width: 79%;
+    background-color: var(--colorCards);
+    flex-direction: column;
+    display: flex;
+    border-radius: 12px;
+    position: sticky;
+    margin-bottom: 5%;
+    filter: drop-shadow(0px 1px 4px rgba(0, 0, 0, 0.05));
+    margin-top: 11%;
+    padding: 1% 30px 5% 30px;
+}
+
+.contenedorAmigos{
+    display: flex;
+    width: 100%;
+    padding: 18px 0 18px 0;
+    border-radius: 12px;
+    background-color: var(--colorFondo);
+    flex-wrap: wrap;
+}
+
+.amigos{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 0 1px 0px 20px;
+}
+
+.amigo{
+    margin: 20px 13px 0px 0px;
+    width: 29%;
+}
+
+.nombreFotoAmigo{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 15px;
+}
+
+.nombreFotoAmigo:hover{
+    font-weight: 400;
+    cursor: pointer;
+}
+
+.fotoAmigo{
+    width: 100px;
+    border-radius: 8px;
+    height: 95px;
+}
+
+h5{
+    font-size: 15px;
+    margin: 12px 0 0 0;
+}
+
+
+.container-publicaciones{
+    width: 56%;
+}
+
+.new-post{
+    background-color: var(--colorCards);
+    border-radius: 12px;
+    width: 100%;
+    margin-top: 9.8%;
+    filter: drop-shadow(0px 1px 4px rgba(0, 0, 0, 0.05));
+    display: flex;
+    /* padding: 0px 27px 27px 34px; */
+    justify-content: center;
+    height: auto;
+}
+
+.new-post-content{
+    width: 100%;
+    margin: 0px 20px 0px 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.post-profile-img{
+    display: flex;
+    align-items: center;
+    margin: 5px 0px 5px 0px;
+}
+
+textarea{
+    background-color: var(--colorInputs);
+    border-radius: 12px;
+    border: none;
+
+    padding: 13px 0px 0px 13px;
+    font-size: 18px;
+    resize: vertical;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    height: 29px;
+}
+
+#addImage{
+    background: url(../icons/uploadImage.png) no-repeat;
+    background-repeat: round;
+    width: 25px;
+    height: 25px;
+}
+
+#addImage:hover{
+    transition: all 0.1s ease-in-out;
+    background-image: url(../icons/image_grey.png);
+    cursor: pointer;
+}
+
+#addVideo:hover{
+    transition: all 0.1s ease-in-out;
+    background-image: url(../icons/video_grey.png);
+}
+
+#addVideo{
+    background: url(../icons/uploadVideo.png) no-repeat;
+    background-repeat: round;
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+}
+
+
+
+.icons button{
+    background: none;
+    border: none;
+    margin-left: 15px;
+    padding: 0;
+}
+
+.icons img{
+    width: 25px;
+    height: 25px;
+    padding: 0;
+    margin: 0;
+}
+
+.icons{
+    display: flex;
+    align-items: center;
+    margin: 11px 0px 0px 1px;
+}
+
+.post-btn{
+    background-color: var(--colorBotones);
+    border: none;
+    border-radius: 12px;
+    transition: all ease 500ms;
+    padding: 5px 25px;
+    color: white;
+    font-size: 18px;
+    align-self: flex-end;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.post-btn:hover{
+    transition: 10ms all linear;
+    background-color: #E47F00;
+}
+
+.publicaciones{
+    background-color: var(--colorCards);
+    margin: 30px 0 10px 0;
+    padding: 3%;
+    border-radius: 12px;
+    width: 94%;
+}
+
+.textoPublicacion{
+    font-weight: 500;
+    font-size: 18px;
+    font-weight: bold;
+    margin: 0;
+    border-bottom: none;
+    padding-bottom: 0;
+    line-height: 21px;
+
+}
+
+.postUser{
+    background-color: var(--colorCards);
+    border-radius: 12px;
+    width: 98%;
+    margin: 13px 0 22px 0;
+    display: flex;
+    padding: 0px 5px;
+    padding-bottom: 4%;
+    filter: drop-shadow(0px 1px 4px rgba(0, 0, 0, 0.05));
+    flex-direction: column;
+}
+
+.header-post{
+    display: flex;
+    justify-content: space-between;
+    margin: 0 0px 0px 20px;
+    width: 100%;
+}
+
+.post-profile-img{
+    display: flex;
+    align-items: center;
+    margin: 5px 0px 5px 0px;
+}
+
+.profile-img-container {
+    display: flex;
+    position: relative;
+    width: 50px;
+    height: 50px;
+    overflow: hidden;
+    margin: 10px 10px 10px 0;
+    border-radius: 100%;
+    cursor: pointer;
+}
+
+.header-post button{
+    border: no;
+}
+
+
+.nombreUserPublicacion{
+    margin: 0;
+}
+
+.tiempoPublicacion{
+    margin: 3px 0 0 0;
+}
+
+.containerPuntos{
+    display: flex;
+    background: inherit;
+    border: none;
+    cursor: pointer;
+    justify-self: end;
+    width: 40px;
+    height: 40px;
+    margin: 4px 0px;
+    position: relative;
+    left: -36px;
+}
+
+#puntosHorizontalesCard{
+    width: 30px;
+    height: 30px;
+    border-radius: 59px;
+    padding: 1px;
+}
+
+#puntosHorizontalesCard:hover{
+
+    background-color: var(--colorInputs);
+}
+
+.contenidoPost{
+    flex-direction: column;
+    display: flex;
+    width: 80%;
+    border-radius: 12px;
+    padding: 0px 27px 27px 34px;
+    background-color: #E6E6E6;
+    margin: 0px 0px 14px 20px;
+}
+
+.cantLikes{
+    display: flex;
+    flex-direction: row;
+    margin: 0px 26px;
+    height: 25px;
+    margin-bottom: 3%;
+    align-items: center;
+}
+
+#iconCantLikes{
+    width: 5%;
+    margin-right: 1%;
+}
+
+#textCantLikes{
+    font-size: 15px;
+}
+
+.likeShareComment{
+    display: flex;
+    flex-direction: row;
+    border-top: 2px solid var(--colorLinea);
+    padding: 8px 0px;
+    border-bottom: 2px solid var(--colorLinea);
+    margin: 0 22px;
+    justify-content: space-evenly;
+}
+
+#like, #comment, #share{
+    width: 24px;
+    height: 25px;
+    margin: 0 57px;
+    border: none;
+    cursor: pointer;
+}
+
+#comment{
+    background: url(../icons/comment.png) no-repeat;
+    background-repeat: round;
+
+}
+
+#comment:hover{
+    transition: all 0.2s ease-in-out;
+    background-image: url(../icons/comment_green.png);
+}
+
+#share{
+    background: url(../icons/share.png) no-repeat;
+    background-repeat: round;
+}
+
+#share:hover{
+    transition: all 0.2s ease-in-out;
+    background-image: url(../icons/share_orange.png);
+}
+
+#like{
+    background: url(../icons/like.png) no-repeat;
+    background-repeat: round;
+
+}
+
+#like:hover{
+    transition: all 0.2s ease-in-out;
+    background-image: url(../icons/like_rojo.png);
+}
+
+.contenedorImage{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.imagenPublicacion{
+    width: 365px;
+    cursor: pointer;
+}
+
+
+.editPerfil{
+    position: fixed;
+    left: 95%;
+    top: 57%;
+    border-radius: 100%;
+    padding: 7px;
+    cursor: pointer;
+}
+
+.editPerfil:hover{
+    background-color: var(--colorInputs);
+}
+
+#pencil{
+    width: 22px;
+    height: 21px;
+}

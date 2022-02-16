@@ -1,0 +1,74 @@
+@keyframes animatedBackground {
+    from {
+      background-position: 0 0;
+    }
+    to {
+      background-position: -10000px 0;
+    }
+  }
+  
+  @keyframes stay{
+      0%{background-position: 0px;}
+      100%{background-position: -1385.9px;}
+  }
+  
+  @keyframes run{
+      0%{background-position: 0px;}
+      100%{background-position: -1846px;}
+  }
+  
+  @keyframes jump{
+      0%{background-position: 0px;}
+      100%{background-position: -313px;}
+  }
+  
+  @keyframes up{
+    0%{
+      transform : scale(1.5), translate(0,0);
+    }
+    50%{
+      transform : scale(1.5) translate(0,-150%);
+    }
+    100%{
+      transform :scale(1.5), translate(0,0);
+    }
+  }
+
+  @keyframes abajo {
+    0%{background-position: 0;
+     }
+    100%{background-position: 0;}
+  }
+    
+
+@keyframes movingEnemies {
+
+  0%{background-position: 0px;}
+  100%{background-position: -448px;}
+
+  
+}
+
+@keyframes rotateCoins {
+
+  0%{background-position: 0px;}
+  100%{background-position: -303px;}
+
+  
+}
+
+@keyframes movingCoins{
+
+  0%{
+    transform : translate(0,0);
+  }
+  50%{
+    
+    transform : scale(0.5) translate(0,-300%);
+  }
+
+  100%{
+    transform : translate(0,0);
+  }
+  
+}  

@@ -1,0 +1,89 @@
+.stopLayers{
+    animation-play-state: paused;
+}
+
+.playGame{
+
+    animation-play-state:running
+}
+
+.layer-container{
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.gameContainer{
+    width: 70%;
+    height: 100%;
+    margin-top: 26px;
+}
+
+.layer{
+    min-height: 610px;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-repeat: repeat-x;
+    background-position-y: 90%;
+    animation-name: scroll;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    transition: none;
+}
+
+
+@keyframes scroll {
+    0%{background-position-x: 0;}
+    100%{background-position-x: -928px;}
+}
+
+.layer-9{
+    background-image: url("../assets/fondo/Layer_9.png");
+    animation-duration: 3s ;
+}
+.layer-8{
+    background-image: url("../assets/fondo/Layer_8.png");
+    animation-duration: 5s ;
+}
+.layer-7-ligth{
+    background-image: url("../assets/fondo/Layer_7_ligth.png");
+    animation-duration: 7s ;
+}
+.layer-7{
+    background-image: url("../assets/fondo/Layer_7.png");
+    animation-duration: 8s ;
+}
+.layer-6{
+    background-image: url("../assets/fondo/Layer_6.png");
+    animation-duration: 9s ;
+}
+.layer-5{
+    background-image: url("../assets/fondo/Layer_5.png");
+    animation-duration: 10s ;
+}
+.layer-4-ligth{
+    background-image: url("../assets/fondo/Layer_4_ligth.png");
+    animation-duration: 11s ;
+}
+.layer-4{
+    background-image: url("../assets/fondo/Layer_4.png");
+    animation-duration: 12s ;
+}
+.layer-3{
+    background-image: url("../assets/fondo/Layer_3.png");
+    animation-duration: 13s ;
+}
+.layer-2{
+    background-image: url("../assets/fondo/Layer_2.png");
+    animation-duration: 14s ;
+}
+.layer-1{
+    background-image: url("../assets/fondo/Layer_1.png");
+    animation-duration: 15s ;
+}

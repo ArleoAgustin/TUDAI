@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VeteWeb - Chats</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/nav.css">
+    <link rel="stylesheet" href="css/chats.css">
+    <link rel="stylesheet" href="https://fonts.google.com/icons?selected=Material%20Icons%20Outlined%3Atune%3A">
+</head>
+<body>
+    <div class="loader">
+    </div>
+
+    <nav>
+        <div class="left-container">
+            <a href="index.html"><img src="./icons/logo.png" alt="logo" class="logo"></a>
+            <div class="searcher-container">
+                <input type="text" id="searcher" name="searcher" placeholder="Buscar en Veteweb">
+                <button><img class="iconSearch" src="./icons/search.png" alt="search" id="search"></button>
+            </div>
+        </div>
+
+        <div class="right-container">
+            <div class="nav-profile">
+                <a href="profile.html">
+                <div class="profile-img">
+                        <img class="profile-img" src="./images/img-perfil-publicar.png" alt="perfil">
+                    </div>
+                    <h3>Hernan Medina</h3>
+                </a>
+            </div>
+        
+            <a class="icn-search" href="search.html"><img src="./icons/search.png" alt="profile"></a>
+            <a class="home" href="index.html"><img class="icon" src="./icons/home.png" alt="home"></a>
+            <a class="icn-profile" href="profile.html"><img src="./icons/user.png" alt="profile"></a>
+            <a class="mensajes" id="actualPage" href="chats.html"><img class="icon" src="./icons/mensajes.png" alt="message"></a>
+            <a class="notifications"><img class="icon" src="./icons/notificaciones.png" alt="notifications"></a>
+            <div class="notifications-container">
+                <ul>
+                    <li>                        
+                        <div class="profile-notifications">
+                            <div class="profile-img-container-notifications">
+                                <img src="./images/imageUser.png" alt="perfil" class="crop">
+                            </div>
+                            <p><a class="link-profile">Aldana Suarez</a>Le gusto tu publicación</p>
+                        </div>
+                        <div class="deleteNotification">
+                            <img class="imgNoti" src="icons/delete_notification.png" alt="">
+                        </div>
+                    </li>
+                    <li>                        
+                        <div class="profile-notifications">
+                            <div class="profile-img-container">
+                                <img src="./images/imageUser.png" alt="perfil" class="crop">
+                            </div>
+                            <p><a class="link-profile">Aldana Suarez</a>Le gusto tu publicación</p>
+                        </div>
+                        <div class="deleteNotification">
+                            <img class="imgNoti" src="icons/delete_notification.png" alt="">
+                        </div>
+                    </li>
+                    <li>                        
+                        <div class="profile-notifications">
+                            <div class="profile-img-container">
+                                <img src="./images/imageUser.png" alt="perfil" class="crop">
+                            </div>
+                            <p><a class="link-profile">Aldana Suarez</a>Le gusto tu publicación</p>
+                        </div>
+                        <div class="deleteNotification">
+                            <img class="imgNoti" src="icons/delete_notification.png" alt="">
+                        </div>
+                    </li>
+                    <li>                        
+                        <div class="profile-notifications">
+                            <div class="profile-img-container">
+                                <img src="./images/imageUser.png" alt="perfil" class="crop">
+                            </div>
+                            <p><a class="link-profile">Aldana Suarez</a>Le gusto tu publicación</p>
+                        </div>
+                        <div class="deleteNotification">
+                            <img class="imgNoti" src="icons/delete_notification.png" alt="">
+                        </div>
+                    </li>
+                    <li>                        
+                        <div class="profile-notifications">
+                            <div class="profile-img-container">
+                                <img src="./images/imageUser.png" alt="perfil" class="crop">
+                            </div>
+                            <p><a class="link-profile">Aldana Suarez</a>Le gusto tu publicación</p>
+                        </div>
+                        <div class="deleteNotification">
+                            <img class="imgNoti" src="icons/delete_notification.png" alt="">
+                        </div>
+                    </li>
+                    <li>                        
+                        <div class="profile-notifications">
+                            <div class="profile-img-container">
+                                <img src="./images/imageUser.png" alt="perfil" class="crop">
+                            </div>
+                            <p><a class="link-profile">Aldana Suarez</a>Le gusto tu publicación</p>
+                        </div>
+                        <div class="deleteNotification">
+                            <img class="imgNoti" src="icons/delete_notification.png" alt="">
+                        </div>
+                    </li>
+                    <li>                        
+                        <div class="profile-notifications">
+                            <div class="profile-img-container">
+                                <img src="./images/imageUser.png" alt="perfil" class="crop">
+                            </div>
+                            <p><a class="link-profile">Aldana Suarez</a>Le gusto tu publicación</p>
+                        </div>
+                        <div class="deleteNotification">
+                            <img class="imgNoti" src="icons/delete_notification.png" alt="">
+                        </div>
+                    </li>
+                    <li>                        
+                        <div class="profile-notifications">
+                            <div class="profile-img-container">
+                                <img src="./images/imageUser.png" alt="perfil" class="crop">
+                            </div>
+                            <p><a class="link-profile">Aldana Suarez</a>Le gusto tu publicación</p>
+                        </div>
+                        <div class="deleteNotification">
+                            <img class="imgNoti" src="icons/delete_notification.png" alt="">
+                        </div>
+                    </li>
+                    <li>                        
+                        <div class="profile-notifications">
+                            <div class="profile-img-container">
+                                <img src="./images/imageUser.png" alt="perfil" class="crop">
+                            </div>
+                            <p><a class="link-profile">Aldana Suarez</a>Le gusto tu publicación</p>
+                        </div>
+                        <div class="deleteNotification">
+                            <img class="imgNoti" src="icons/delete_notification.png" alt="">
+                        </div>
+                    </li>
+                    <li>                        
+                        <div class="profile-notifications">
+                            <div class="profile-img-container">
+                                <img src="./images/imageUser.png" alt="perfil" class="crop">
+                            </div>
+                            <p><a class="link-profile">Aldana Suarez</a>Le gusto tu publicación</p>
+                        </div>
+                        <div class="deleteNotification">
+                            <img class="imgNoti" src="icons/delete_notification.png" alt="">
+                        </div>
+                    </li>
+                    <li>                        
+                        <div class="profile-notifications">
+                            <div class="profile-img-container">
+                                <img src="./images/imageUser.png" alt="perfil" class="crop">
+                            </div>
+                            <p><a class="link-profile">Aldana Suarez</a>Le gusto tu publicación</p>
+                        </div>
+                        <div class="deleteNotification">
+                            <img class="imgNoti" src="icons/delete_notification.png" alt="">
+                        </div>
+                    </li>
+                    <li>                        
+                        <div class="profile-notifications">
+                            <div class="profile-img-container">
+                                <img src="./images/imageUser.png" alt="perfil" class="crop">
+                            </div>
+                            <p><a class="link-profile">Aldana Suarez</a>Le gusto tu publicación</p>
+                        </div>
+                        <div class="deleteNotification">
+                            <img class="imgNoti" src="icons/delete_notification.png" alt="">
+                        </div>
+                    </li>
+                    <li>                        
+                        <div class="profile-notifications">
+                            <div class="profile-img-container">
+                                <img src="./images/imageUser.png" alt="perfil" class="crop">
+                            </div>
+                            <p><a class="link-profile">Aldana Suarez</a>Le gusto tu publicación</p>
+                        </div>
+                        <div class="deleteNotification">
+                            <img class="imgNoti" src="icons/delete_notification.png" alt="">
+                        </div>
+                    </li>
+                    <li>                        
+                        <div class="profile-notifications">
+                            <div class="profile-img-container">
+                                <img src="./images/imageUser.png" alt="perfil" class="crop">
+                            </div>
+                            <p><a class="link-profile">Aldana Suarez</a>Le gusto tu publicación</p>
+                        </div>
+                        <div class="deleteNotification">
+                            <img class="imgNoti" src="icons/delete_notification.png" alt="">
+                        </div>
+                    </li>
+                    <li>                        
+                        <div class="profile-notifications">
+                            <div class="profile-img-container">
+                                <img src="./images/imageUser.png" alt="perfil" class="crop">
+                            </div>
+                            <p><a class="link-profile">Aldana Suarez</a>Le gusto tu publicación</p>
+                        </div>
+                        <div class="deleteNotification">
+                            <img class="imgNoti" src="icons/delete_notification.png" alt="">
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <a class="logout" href="login.html"><img class="icon" src="./icons/signOut.png" alt="logout" id="logout"></a>
+        </div>
+    </nav>
+    
+    <article class="chats-container">
+
+            <section class="contacts-section">
+        
+                <div class="contacts-header">
+                    <h2>Chats</h2>
+
+                    <div class="newChat">
+                        <img class="searchMobile" class="iconSearch-chat" src="./icons/search.png" alt="search" id="search">
+                        <img id="addMessage" src="icons/nuevo_mensaje.png" alt="">
+                    </div>
+                </div>
+                <div class="searchFriend">
+                    <input type="text" id="searcher-chat" name="searcher" placeholder="Buscar chat">
+                    <button><img class="iconSearch-chat" src="./icons/search.png" alt="search" id="search"></button>
+                </div>
+                <ul class="user-chats">
+                    <li id="chatActual">
+                        <div class="contact-state">
+                            <div class="friend-image">
+                                <img class="imageContacto" src="./images/friend0.png" alt="profile">
+                                <img class="status" src="icons/status.png" alt="">
+                            </div>
+                        </div>
+
+                        <div class="contact-info">
+                            <h4 class="contact-name">Maria Elena Medina</h4>
+                            <p>Nos juntamos hoy?</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="contact-state">
+                            <div class="friend-image">
+                                <img class="imageContacto" src="./images/friend1.jpg" alt="profile">
+                                <img class="status" src="icons/status.png" alt="">
+                            </div>
+                        </div>
+                        
+                        <div class="contact-info">
+                            <h4 class="contact-name">Leopoldo Ortiz</h4>
+                            <p>Un beso sobrino!</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="contact-state">
+                            <div class="friend-image">
+                                <img class="imageContacto" src="./images/friend2.jpg" alt="profile">
+                            </div>
+                        </div>
+                        
+                        <div class="contact-info">
+                            <h4 class="contact-name">Mariano Cabrera</h4>
+                            <p>Okok</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="contact-state">
+                            <div class="friend-image">
+                                <img class="imageContacto"  src="./images/friend3.jpg" alt="profile">
+
+                            </div>
+                        </div>
+                        
+                        <div class="contact-info">
+                            <h4 class="contact-name">Soledad Valenzuela</h4>
+                            <p>Joyaa</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="contact-state">
+                            <div class="friend-image">
+                                <img class="imageContacto" src="./images/friend4.jfif" alt="profile">
+                                <img class="status" src="icons/status.png" alt="">
+                            </div>
+                        </div>
+                        
+                        <div class="contact-info">
+                            <h4 class="contact-name">Iara Gomez</h4>
+                            <p>Jajajjajajaj que buen meme</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="contact-state">
+                            <div class="friend-image">
+                                <img class="imageContacto" src="./images/friend5.jpg" alt="profile">
+                                <img class="status" src="icons/status.png" alt="">
+                            </div>
+                        </div>
+                        
+                        <div class="contact-info">
+                            <h4 class="contact-name">Julieta Venegas</h4>
+                            <div class="contact-btns">
+                                <p>Joya, a las 8am me queda perfecto.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="contact-state">
+                            <div class="friend-image">
+                                <img class="imageContacto" src="./images/friend6.png" alt="profile">
+                                <img class="status" src="icons/status.png" alt="">
+                            </div>
+                        </div>
+                        
+                        <div class="contact-info">
+                            <h4 class="contact-name">Matias Ponce</h4>
+                            <p>Dale</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="contact-state">
+                            <div class="friend-image">
+                                <img class="imageContacto" src="./images/friend7.jpg" alt="profile">
+                            </div>
+                        </div>
+                        
+                        <div class="contact-info">
+                            <h4 class="contact-name">Sofia Juarez</h4>
+                            <p>besoo</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="contact-state">
+                            <div class="friend-image">
+                                <img class="imageContacto" src="./images/friend8.jpg" alt="profile">
+                                <img class="status" src="icons/status.png" alt="">
+                            </div>
+                        </div>
+                        
+                        <div class="contact-info">
+                            <h4 class="contact-name">Juan Chavez</h4>
+                            <p>Para el lunes sin falta.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="contact-state">
+                            <div class="friend-image">
+                                <img class="imageContacto" src="./images/friend9.jfif" alt="profile">
+                            </div>
+                        </div>
+                        
+                        <div class="contact-info">
+                            <h4 class="contact-name">Marina Arrieta</h4>
+                            <p>Dalee, manda saludos a la familia!</p>
+                        </div>
+                    </li>
+                </ul>
+            </section>
+
+            <section class="chat">
+                <div class="chat-header">
+                    <div class="chat-profile">
+                        <div class="profile-img-container">
+                            <img src="./images/friend0.png" alt="perfil">
+                        </div>
+                        <h3>Maria Elenea Medina</h3>
+                    </div>
+                    <a class="camera" ><img src="./icons/video-contactos.png" alt="videocall" id="cam"></a>
+                </div>
+                <div class="chat-container">
+                    <div class="message-received">
+                        <div class="chat-img-container">
+                            <img src="./images/friend0.png" alt="perfil">
+                        </div>
+                        <p>Todo bien?</p>
+                    </div>
+                    <div class="message-sent">
+                        <p class="textoMensaje">Todo bien por suerte!</p>
+                        <img src="./images/visto.png" alt="send">
+                    </div>
+                    <div class="message-sent">
+                        <p class="textoMensaje">Vos?</p>
+                        <img src="./images/visto.png" alt="send">
+                    </div>
+                    <div class="message-received">
+                        <div class="chat-img-container">
+                            <img src="./images/friend0.png" alt="perfil">
+                        </div>
+                        <p class="textoMensaje">Bien bien</p>
+                    </div>
+                    <div class="message-received">
+                        <div class="chat-img-container">
+                            <img src="./images/friend0.png" alt="perfil">
+                        </div>
+                        <p class="textoMensaje">Nos juntamos hoy?</p>
+                    </div>
+                    
+                    <div class="send-container">
+                        <input type="text" id="send" name="message" placeholder="Escribe un mensaje...">
+                        <button><img src="./images/message.png" alt=""></button>
+                    </div>
+                </div>
+            </section>
+    </article>
+    <script src="./js/loader.js"></script>
+</body>
+</html>

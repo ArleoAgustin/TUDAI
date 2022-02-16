@@ -1,0 +1,139 @@
+@import "keyFrames.css";
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+  .game {
+    animation-play-state: paused;
+    }
+
+  h2{
+        /* font-size: 116%; */
+        position: relative;
+        /* width: 57%; */
+        text-align: center;
+        display: none;
+        margin-top: 5%;
+        color: white;
+        font-size: 125%;
+        font-family: 'Press Start 2P', cursive;
+  }
+
+  .divCoins{
+    left: 91%;
+    position: relative;
+    display: flex;
+    width: 6%;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 1%;
+    align-items: center;
+  }
+
+ .coinImage{
+  width: 60%;
+  }
+
+
+ .coins{
+    color: white;
+    font-size: 113%;
+    margin-top: 10px;
+    font-family: 'Press Start 2P', cursive;
+  }
+
+  .time{
+    margin-top: 7%;
+    display: flex;
+    margin-left: 12px;
+    color: white;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 20px;
+    z-index: 1;
+  }
+
+  .game{
+    position: relative;
+    z-index: -10;
+    border: 10px solid rgb(160, 160, 160);
+    border-top: 10px solid rgb(190, 190, 190);
+    border-bottom: 20px solid rgb(100, 100, 100);
+    border-radius: 20px;
+  }
+
+  .player{
+    transform: scale(1.4);
+    background-size: cover;
+    position: absolute;
+    bottom: 30px;
+    left: 200px;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    width: 90px;
+    height: 94px;
+    background: url(../assets/Wizard/Idle.png) repeat-x left;
+    animation: stay 1s steps(6) infinite;
+    transition: none;
+  }
+
+  .idle{
+    transform: scale(1.4);
+    background-size: cover;
+    position: absolute;
+    bottom: 30px;
+    left: 200px;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    width: 75px;
+    height: 94px;
+    background: url(../assets/Wizard/Idle.png) repeat-x left;
+    animation: stay 1s steps(6) infinite;
+  }
+
+.running{
+
+     background: url("../assets/Wizard/Run.png") repeat-x left;
+     animation: run 0.8s steps(8) infinite; 
+}
+ 
+.jump{
+    background: url("../assets/Wizard/Jump.png") no-repeat;
+    animation: jump steps(1), up 1.2s 1;  
+}
+
+
+.enemigo{
+
+  width: 45px;
+  height: 50px;
+  position: absolute;
+  bottom: 40px;
+  left: 592px;
+  z-index: 1;
+  transform: scale(2,2);
+  background: url(../assets/gothic/Ghost-Files/PNG/ghost-idle.png) no-repeat;
+  animation: movingEnemies 0.5s steps(7) infinite;
+}
+
+
+.coin{
+  display: flex;
+  width: 47px;
+  height: 47px;
+  position: absolute;
+  bottom: 65px;
+  left: 592px;
+  z-index: 1;
+  background: url(../assets/coins.png) no-repeat;
+  background-size: 294px;
+  animation: rotateCoins 0.65s steps(6) infinite;
+}
+
+
+.agarroMoneda{
+
+
+  animation: rotateCoins 0.65s steps(6) infinite, movingCoins 0.65s;
+  /* animation: rotateCoins 0.65s steps(6) infinite; */
+}
+

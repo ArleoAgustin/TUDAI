@@ -1,0 +1,242 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700&display=swap');
+
+:root{
+    --colorBotones: #E4982C;
+    --colorFondo: #E5E5E2;
+    --colorInputs: #E6E6E6;
+    --colorCards: #FFFFFF;
+    --colorNav: #FFFFFF;
+    --colorLinea: #A19595;
+}
+
+.containerBusqueda{
+    display: flex;
+    justify-content: space-between;
+}
+
+nav{
+    display: flex;
+}
+
+.containerFiltro{
+
+    background-color: rgba(255, 255, 255, 0.56);
+    font-size: 138%;
+    padding: 2% 1% 8.3% 0%;
+    height: 15%;
+    width: 22%;
+    position: sticky;
+
+}
+
+.headerFiltro{
+    border-bottom: 2px solid;
+    margin-left: 5%;
+}
+
+.textFiltrar{
+    margin: 0 0 8px 0;
+    font-weight: bold;
+}
+
+.contFiltro{
+    margin-left: 7%;
+}
+
+.containerTipoFiltro{
+    margin: 0 12px 13px 0px;
+}
+
+.filtro1{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+h4{
+    margin: 28px 0 12px 0;
+}
+
+.btnTipoFiltro{
+    margin-left: 10px;
+}
+
+#btnSeleccionado{
+    background-color: #E47F00;
+    border-bottom: 2px solid black;
+}
+
+button{
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    color: white;
+    font-size: 15px;
+    border-bottom: 1px solid;
+    padding: 6px;
+    background-color: var(--colorBotones);
+}
+
+button:hover{
+    transition: all 0.1s ease-in-out;
+    background-color: #E47F00;
+    border-bottom: 2px solid black;
+}
+
+
+.ubicacion{
+    font-size: 15px;
+    border-radius: 8px;
+    background-color: #ffffff;
+    border: 1px solid;
+    cursor: pointer;
+    padding: 6px;
+}
+
+#SelectEspecialidad, #selectUbicacion{
+    font-size: 15px;
+    border-radius: 8px;
+    background-color: #ffffff;
+    border: 1px solid;
+    cursor: pointer;
+    padding: 6px;
+}
+
+.containerAplicarFiltros{
+    display: flex;
+    justify-content: center;
+}
+
+#btnAplicarFiltros{
+    background-color: var(--colorBotones);
+    border: none;
+    border-radius: 9px;
+    transition: all ease 500ms;
+    padding: 8px 17px;
+    width: 100%;
+    color: white;
+    margin: 70px 0 0 0;
+    font-size: 18px;
+    align-self: flex-end;
+    cursor: pointer;
+}
+
+#btnAplicarFiltros:hover{
+    transition: all 0.1s ease-in-out;
+    background-color: #E47F00;
+    
+}
+
+.containerUbicacion{
+    margin: 0 19px 0 0px;
+}
+
+.containerResultados{
+    font-size: 138%;
+    margin-right: 17%;
+    border-radius: 12px;
+    display: flex;
+    width: 42%;
+    margin-top: 2%;
+    background-color: rgba(255, 255, 255, 0.56);
+    filter: drop-shadow(0px 1px 4px rgba(0, 0, 0, 0.05));
+    flex-direction: column;
+    align-items: center;
+}
+
+.tituloResultado{
+    text-align: center;
+    font-size: 130%;
+}
+
+.AllResultados{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 87%;
+    align-items: center;
+}
+
+.resultado{
+    background-color: #cfcccceb;
+    filter: drop-shadow(0px 1px 4px rgba(0, 0, 0, 0.05));
+    display: flex;
+    border-radius: 12px;
+    justify-content: space-between;
+    width: 84%;
+    margin: 0 0 26px 0;
+}
+
+.datosResultados{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 7px 0px;
+    width: 100%;
+    align-items: center;
+}
+
+.imgNombreDescripcion{
+    display: flex;
+    width: inherit;
+    flex-direction: row;
+    align-items: center;
+}
+
+.imgResultado{
+    width: 60px;
+    margin-left: 4%;
+    height: 60px;
+    margin-bottom: 10px;
+    border-radius: 100%;
+}
+
+.NombreYdescripcionResultado{
+    width: 70%;
+    margin: 0px 0px 0px 12px;
+}
+
+.nombreResultado{
+    margin: 0;
+    font-weight: 500;
+}
+
+.descripcionResultado{
+    margin: 9px 0px 0px 13px;
+}
+
+.ubicacionResultado{
+    margin: 9px 0px 0px 13px;
+}
+
+#addUser{
+    width: 27px;
+    height: 27px;
+}
+
+.contImageUser{
+    display: flex;
+    margin: 0 39px 8px 0px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 71%;
+    padding: 7px;
+    cursor: pointer;
+}
+
+.contImageUser:hover{
+    background-color: var(--colorLinea);
+}
+
+#inputNombre{
+    border-radius: 8px;
+    background-color: white;
+    font-size: 14px;
+    border: 1px solid;
+    height: 32px;
+    padding-left: 4px;
+    margin-bottom: 0;
+    width: 100%;
+    outline: none;
+}

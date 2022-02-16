@@ -1,0 +1,246 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700&display=swap');
+
+:root{
+    --colorBotones: #E4982C;
+    --colorFondo: #E5E5E2;
+    --colorInputs: #E6E6E6;
+    --colorCards: #FFFFFF;
+    --colorNav: #FFFFFF;
+    --colorLinea: #A19595;
+}
+
+body{
+    background-image: url("../images/Background3.png");
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Roboto', sans-serif;
+    font-weight: normal;
+}
+
+
+
+h1{
+    color: white;
+    width: 100%;
+    font-weight: bold;
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 34px;
+    
+}
+
+.animation{
+    animation: rebotar 3s 1;
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes rebotar{
+    0%{
+        transform: translateY(-400px);
+    }
+
+    10%,35%,60%,80%, 93%, 100%{
+        transform: translateY(0px);
+        /* transform: scale(1.1, 1.1); */
+    }
+
+    25%{
+        transform:  translateY(-60px);
+    }
+
+    50%{
+        transform:  translateY(-40px);
+        
+    }
+    70%{
+        transform:  translateY(-20px);
+    }
+
+    87%{
+        transform: translateY(-10px);
+    }
+    97%{
+        transform: translateY(-3px);
+    }
+    
+}
+
+
+
+h3{
+    font-size: 21px;
+    width: 100%;
+    margin: 0;
+    color: white;
+}
+
+article{
+    width: 100%;
+    display: flex;
+    opacity: 1;
+    /* align-items: center; */
+    height: 100vh;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.textoBienvenida{
+    display: flex;
+    flex-direction: column;
+    width: 35%;
+}
+
+
+.container{
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    padding: 10px 40px;
+    border-radius: 12px;
+    width: 24%;
+}
+
+.logo-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#logo{
+    width: 25%;
+}
+
+#logo-escrito{
+    margin-top: 20px;
+    width: 60%;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+    margin-top: 10px;
+    border-radius: 12px;
+}
+
+form a{
+    font-weight: bold;
+    color: #E47F00;
+    text-decoration: none;
+    align-self: flex-end;
+}
+
+form button{
+    font-weight: bold;
+    color: white;
+    background-color: #D89727;
+    width: 200px;
+    height: auto;
+    border: none;
+    border-radius: 12px;
+    font-size: 24px;
+    padding: 10px;
+    align-self: center;
+    margin-top: 24px;
+    margin-bottom: 24px;
+}
+
+form p{
+    margin: 0;
+    align-self: center;
+    font-weight: bold;
+}
+
+input{
+    margin-bottom: 4px;
+    border: none;
+    border-radius: 12px;
+    background-color: #E6E6E6;
+    font-size: 18px;
+    height: 50px;
+    padding-left: 10px;
+    width: 100%;
+    outline: none;
+    margin-top: 10px;
+}
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: rgb(0, 0, 0);
+    opacity: 1; /* Firefox */
+  }
+#date{
+    margin-top: 10px;
+}
+
+ul{
+    background-color: rgb(134, 134, 255);
+    border-radius: 12px;
+    width: auto;
+    align-self: center;
+    padding: 20px;
+}
+
+label{
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    font-size: 18px;
+    margin-top: 20px;
+}
+
+li{
+    background-color: rgb(206, 206, 255);
+    list-style: decimal;
+    margin: 10px;
+    color: rgb(15, 15, 15);
+    padding: 10px;
+    border-radius: 12px;
+    width: auto;
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items:center;
+}
+
+#login{
+    color: white;
+    background-color: var(--colorBotones);
+    width: 170px;
+    height: auto;
+    border: none;
+    text-align: center;
+    border-radius: 12px;
+    font-size: 24px;
+    padding: 10px;
+    align-self: center;
+    margin-top: 24px;
+    margin-bottom: 24px;
+}
+
+#login:hover{
+    transition: all 0.1s ease-in-out;
+    background-color: #E47F00;
+}
+
+
+#error{
+    display: none;
+    font-weight: 500;
+    color: red;
+    margin: 0px 9px;
+    font-size: 16px;
+}
+
+.labelInput{
+    margin-bottom: 25px;
+}
+
+#olvidasteContraseña{
+    margin-left: 142px;
+}
+
+#email{
+    
+}
