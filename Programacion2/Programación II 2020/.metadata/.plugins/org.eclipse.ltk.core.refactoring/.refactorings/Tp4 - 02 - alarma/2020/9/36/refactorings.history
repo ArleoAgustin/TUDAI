@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Rename field &apos;vidrioRoto&apos; in &apos;Sensor&apos; to &apos;activado&apos;&#x0D;&#x0A;- Original project: &apos;Tp4 - 02 - alarma&apos;&#x0D;&#x0A;- Original element: &apos;Sensor.vidrioRoto&apos;&#x0D;&#x0A;- Renamed element: &apos;Sensor.activado&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" delegate="false" deprecate="false" description="Rename field &apos;vidrioRoto&apos;" flags="589826" getter="false" id="org.eclipse.jdt.ui.rename.field" input="/src&lt;{Sensor.java[Sensor^vidrioRoto" name="activado" references="true" setter="false" stamp="1599424894178" textual="false" version="1.0"/>
-</session>

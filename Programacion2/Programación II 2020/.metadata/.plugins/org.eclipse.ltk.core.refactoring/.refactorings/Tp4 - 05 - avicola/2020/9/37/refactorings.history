@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Rename compilation unit &apos;productoRefrigerado.java&apos; to &apos;productoFresco.java&apos;&#x0D;&#x0A;- Original project: &apos;Tp4 - 05 - avicola&apos;&#x0D;&#x0A;- Original element: &apos;productoRefrigerado.java&apos;&#x0D;&#x0A;- Renamed element: &apos;productoFresco.java&apos;" description="Rename compilation unit &apos;productoRefrigerado.java&apos;" flags="2" id="org.eclipse.jdt.ui.rename.compilationunit" input="/src&lt;{productoRefrigerado.java" name="productoFresco.java" references="false" stamp="1599487694582" version="1.0"/>
-</session>
