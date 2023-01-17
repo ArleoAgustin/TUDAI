@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css2?family=Satisfy&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap');
+
+body {
+
+    background-image: url(./assets/img/fondo_viandas.jpg);
+    background-color: black;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    font-family: 'Fjalla One', sans-serif;
+
+}
+
+header {
+
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    margin-bottom: 3%;
+
+}
+
+.encabezado {
+
+    background-color: transparent;
+    justify-content: center;
+    height: auto;
+
+}
+
+/* LOGO DE LA PAGINA (SE HABILITA EN RESPONSIVE) */
+
+.logoEncabezado {
+
+    display: none;
+
+}
+
+.titulo {
+
+    justify-content: center;
+    color: white;
+    font-size: 100px;
+    padding: 5px;
+    border-bottom: 5px solid yellowgreen;
+    font-family: 'Satisfy', cursive;
+    width: 550px;
+    margin: 0;
+    height: auto;
+    text-align: center;
+
+}
+
+
+
+/* BARRA DE NAVEGACION DE TODAS LAS PAGINAS */
+
+nav {
+
+    position: inherit;
+    margin: 0;
+    justify-content: center;
+    width: 100%;
+    display: flex;
+    margin-bottom: 5%;
+}
+
+.menu {
+
+    align-items: center;
+    display: flex;
+    background-color: transparent;
+    font-size: 50px;
+    width: auto;
+    border: none;
+}
+
+#btn-menu{
+
+    display: none;
+
+}
+
+.item {
+
+    margin: 0px 10px;
+    padding: 10px 20px;
+    border-bottom: 5px solid #d1852e;
+    width: auto;
+    font-size: 38px;
+    font-family: 'Fjalla One', sans-serif;
+    background-color: transparent;
+    list-style: none;
+    text-decoration: none;
+    color: white;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.itemPrincipal {
+
+    margin: 0px 10px;
+    padding: 10px 20px;
+    border-bottom: 5px solid yellowgreen;
+    color: white;
+    font-size: 45px;
+    background-color: transparent;
+
+}
+
+.item:hover {
+
+    background-color: #ffa33b;
+    border-radius: 50px;
+    color: rgb(0, 0, 0);
+    transition: all 500ms ease;
+
+}
+
+
+
+footer {
+
+    align-items: flex-end;
+    background-color: transparent;
+    border-top: none;
+    color: white;
+    text-align: center;
+    margin-top: 6%;
+}

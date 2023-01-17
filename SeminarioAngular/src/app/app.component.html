@@ -1,0 +1,24 @@
+
+    <header>
+
+      <h1 class="titulo">{{title}}</h1>
+ 
+    </header>
+
+      <nav>
+        <div class="menu">
+            <a [routerLink]="['/home']" class="item">Home</a>
+            <a [routerLink]="['/viandas']" class="item">Viandas</a>
+            <a [routerLink]="['/promotions']" class="item">Promociones </a>
+            <a [routerLink]="['/contact']"  class="item">Contacto</a>
+            <a [routerLink]="['/about']"  class="item">Sobre Mi Viandita</a>
+        </div>
+    </nav>
+
+
+<div class="container">
+  <router-outlet></router-outlet>
+</div>
+<footer>
+  <a> © Mi Viandita 2022. Todos los derechos reservados.</a>
+</footer>

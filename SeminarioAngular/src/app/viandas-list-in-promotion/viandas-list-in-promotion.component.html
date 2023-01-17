@@ -1,0 +1,16 @@
+<section class="tabla">
+
+    <table>
+        <thead>
+            <tr>
+                <th>Vianda</th> <th>Precio normal</th><th>Precio con promo</th>
+            </tr>
+            <tbody>
+                <tr *ngFor="let vianda of viandasOffer">
+                    <td>{{vianda.food}}</td>
+                    <td>{{vianda.price | currency}}</td>
+                    <td>{{vianda.priceOffer | currency}}</td>
+                </tr>
+        
+            </tbody>
+    </table>

@@ -1,0 +1,39 @@
+.descripcion {
+
+    color: white;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-around;
+    align-items: center;
+    height: 418px;
+    display: flex;
+
+}
+
+/* IMAGEN "MI VIANDITA" */
+
+.contenedor-imagen {
+
+    width: 20%;
+
+}
+
+.logo {
+
+    width: 100%;
+    transition: all 500ms;
+
+}
+
+/* PARRAFO DESCRIPTIVO */
+
+.informacion {
+
+    display: flex;
+    align-items: center;
+    font-size: 35px;
+    width: 70%;
+    background-color: transparent;
+    border: none;
+
+}

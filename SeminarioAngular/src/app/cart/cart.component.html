@@ -1,0 +1,29 @@
+<h3>Resumen del pedido</h3>
+<div class="cart" *ngIf="isEmpty(); else cartEmpty">
+    <table class="table" >
+        <thead>
+            <tr>
+                <th>Pedido</th>
+                <th>Cantidad</th>
+                <th>Total</th>
+            </tr>
+        
+        </thead>
+        <tbody>
+            <tr *ngFor="let vianda of viandasInCart">
+                <td>{{vianda.food}}</td>
+                <td>{{vianda.quantity}}</td>
+                <td *ngIf="!vianda.offer">{{vianda.quantity * vianda.price  | currency}} </td>
+                <td *ngIf="vianda.offer">{{vianda.quantity * vianda.priceOffer  | currency}} </td>
+                <td><button (click)="removeVianda(vianda)"></button></td>
+            </tr>
+        </tbody>
+    </table>
+    <div class="total">
+        <h4 >Total del pedido: <span>{{uptadateTotal() | currency}}</span></h4>
+    </div>
+</div>
+
+<ng-template #cartEmpty>
+    <h4>El carrito está vacío</h4>
+</ng-template>
