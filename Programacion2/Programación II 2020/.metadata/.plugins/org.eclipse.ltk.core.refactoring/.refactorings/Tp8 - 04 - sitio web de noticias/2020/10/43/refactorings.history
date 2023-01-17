@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;Classifications&apos; to &apos;Section&apos;&#x0D;&#x0A;- Original project: &apos;Tp8 - o4  sitio web de noticias&apos;&#x0D;&#x0A;- Original element: &apos;Classifications&apos;&#x0D;&#x0A;- Renamed element: &apos;Section&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;Classifications&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;{Classifications.java[Classifications" matchStrategy="1" name="Section" qualified="false" references="true" similarDeclarations="false" stamp="1603312739956" textual="false" version="1.0"/>
+</session>

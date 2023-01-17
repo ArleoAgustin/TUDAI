@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename method &apos;EstadisticaTexto.deleteChar()&apos; to &apos;remaplaceGrammarChar&apos;&#x0D;&#x0A;- Original project: &apos;Tp7 - 02 - vocabulario&apos;&#x0D;&#x0A;- Original element: &apos;EstadisticaTexto.deleteChar()&apos;&#x0D;&#x0A;- Renamed element: &apos;EstadisticaTexto.remaplaceGrammarChar()&apos;&#x0D;&#x0A;- Update references to refactored element" delegate="false" deprecate="false" description="Rename method &apos;deleteChar&apos;" flags="589826" id="org.eclipse.jdt.ui.rename.method" input="/src&lt;{EstadisticaTexto.java[EstadisticaTexto~deleteChar" name="remaplaceGrammarChar" references="true" stamp="1602161724896" version="1.0"/>
+</session>
