@@ -1,0 +1,41 @@
+package tp3.ej3;
+
+public class Cualidad {
+	
+	private int velocidad, fuerza, edad;
+
+	public Cualidad(int velocidad, int fuerza, int edad) {
+		super();
+		this.velocidad = velocidad;
+		this.fuerza = fuerza;
+		this.edad = edad;
+	}
+
+	public int getVelocidad() {
+		return velocidad;
+	}
+
+	public void setVelocidad(int velocidad) {
+		this.velocidad = velocidad;
+	}
+
+	public int getFuerza() {
+		return fuerza;
+	}
+
+	public void setFuerza(int fuerza) {
+		this.fuerza = fuerza;
+	}
+
+	public int getEdad() {
+		return edad;
+	}
+
+	public void setEdad(int edad) {
+		this.edad = edad;
+	}
+	
+	
+	
+	
+}

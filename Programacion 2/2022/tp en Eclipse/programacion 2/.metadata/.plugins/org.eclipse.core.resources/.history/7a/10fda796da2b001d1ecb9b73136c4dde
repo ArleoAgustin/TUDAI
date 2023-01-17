@@ -1,0 +1,36 @@
+package ej3;
+
+public class EmpleadoXhorasExtas extends Empleado {
+	
+	private int cantHorasTrabajadas;
+	private final int sueldoXHora = 1000; 
+	private double extra;
+	
+	public EmpleadoXhorasExtas(double salario, int cantHorasTrabajadas) {
+		super(salario);
+		this.cantHorasTrabajadas = cantHorasTrabajadas;
+		
+	}
+	
+	public double calcualExtra(){
+		
+		return this.cantHorasTrabajadas * this.sueldoXHora;
+		
+	}
+
+	public int getCantHorasTrabajadas() {
+		return cantHorasTrabajadas;
+	}
+
+	public void setCantHorasTrabajadas(int cantHorasTrabajadas) {
+		this.cantHorasTrabajadas = cantHorasTrabajadas;
+	}
+
+	public int getSueldoXHora() {
+		return sueldoXHora;
+	}
+	
+	
+
+	
+}

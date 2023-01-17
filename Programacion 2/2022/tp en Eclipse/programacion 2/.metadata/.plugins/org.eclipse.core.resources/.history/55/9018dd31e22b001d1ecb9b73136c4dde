@@ -1,0 +1,26 @@
+package main;
+import tp3.ej1.Compania;
+import tp3.ej1.Empleado;
+import tp3.ej1.Encuesta;
+import tp3.ej1.Encuestado;
+import tp3.ej1.Pregunta;
+import tp3.ej3.Cualidad;
+import tp3.ej3.Juego;
+import tp3.ej3.Personaje;
+import tp3.ej4.Agenda;
+import tp3.ej4.Celular;
+import tp3.ej4.Contacto;
+import tp4.ej3.*;
+
+public class Main {
+
+	public static void main(String[] args) {
+		
+		//iniciarTp3Ej1();
+		//iniciarTp3Ej3();
+		//iniciarTp3Ej4();
+		iniciarTp4Ej3();
+}
+
+
+}

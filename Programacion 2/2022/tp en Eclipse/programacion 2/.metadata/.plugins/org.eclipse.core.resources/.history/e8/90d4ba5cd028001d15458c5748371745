@@ -1,0 +1,39 @@
+package Main;
+
+import java.time.LocalDate;
+
+import EJ1.Persona;
+import EJ3.PuntoGeometrico;
+
+public class Main {
+
+	public static void main(String[] args) {
+		
+	//Ejercicio1
+	/*
+		Persona p = new Persona("Agustin", "Arleo", 22, LocalDate.of(2000, 1, 5), 41969678, 55, 1.72, "Masculino");
+		
+		System.out.println(p.toString());
+		System.out.println("");
+		System.out.println(p.esCoherente()); */
+		
+	
+		
+	//Ejercicio 2
+	/*
+	Electrodomestico e = new Electrodomestico("pava");
+	
+	System.out.println(e.toString());
+	System.out.println(e.bajoConsumo());
+	System.out.println(e.balance());
+	System.out.println(e.esAltaGama());
+	*/
+		
+	//Ejercicio 3
+		/*
+		PuntoGeometrico p1 = new PuntoGeometrico(22, 10);
+		PuntoGeometrico p2 = new PuntoGeometrico(54, 35);
+		System.out.println(p1.distanciaEuclidea(p2));*/
+	}
+}
+	

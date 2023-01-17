@@ -1,0 +1,40 @@
+package tp3.ej1;
+
+import java.util.ArrayList;
+
+public class Empleado {
+	
+	private String nombre;
+	private ArrayList<Encuesta> encuestasRealizadas =  new ArrayList<Encuesta>();
+	
+	
+	public Empleado(String nombre) {	
+		this.nombre = nombre;
+	}
+	
+
+	public String getNombre() {
+		return nombre;
+	}
+
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+	
+	public void addEncuestas(Encuesta e) {
+		
+		this.encuestasRealizadas.add(e);
+	}
+	
+	public int cantEncuestasRealizadas() {
+		
+		return this.encuestasRealizadas.size();
+	}
+
+
+	public ArrayList<Encuesta> getEncuestasRealizadas() {
+		return encuestasRealizadas;
+	}
+
+	
+}

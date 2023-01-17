@@ -1,0 +1,37 @@
+package tp3.ej3;
+
+import java.util.Iterator;
+
+public class Juego {
+	
+	private Personaje p1, p2;
+	
+	public Juego(Personaje p1, Personaje p2) {
+		
+		this.p1 = p1;
+		this.p2 = p2;
+	}
+	
+	public void jugar() {
+		
+		this.enfrentarJugadores();
+	}
+	
+	public void enfrentarJugadores(Cualidad c) {
+		
+		int v1 = 0;
+		int v2 = 0;
+		for(Cualidad cua: p1.getCualidades())
+			if()cua.
+	
+	}
+	
+	public Personaje ganador() {
+		
+		
+		
+	}
+	
+	
+	
+}

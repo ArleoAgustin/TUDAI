@@ -1,0 +1,19 @@
+package ej3;
+
+public class EmpleadoXComision extends Empleado {
+
+	private int ventas;
+	private double comisionXVenta = 0.1;
+	private double precioProducto;
+	
+	public EmpleadoXComision(double salario, int ventas) {
+		super(salario);
+		this.precioProducto = 500;
+	}
+	
+	public double calcularPorcentaje() {
+		
+		return (this.ventas * this.precioProducto) * this.comisionXVenta;
+	}
+
+}

@@ -1,0 +1,7 @@
+package TPE2022;
+
+import java.util.Comparator;
+
+public class OrdenAscendente implements Comparator<T> {
+
+}

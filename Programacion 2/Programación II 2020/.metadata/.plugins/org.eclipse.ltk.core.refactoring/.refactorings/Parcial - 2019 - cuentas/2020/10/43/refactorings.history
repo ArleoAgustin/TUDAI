@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;exprecion&apos; to &apos;Exprecion&apos;&#x0D;&#x0A;- Original project: &apos;Parcial - 2019 - cuentas&apos;&#x0D;&#x0A;- Original element: &apos;exprecion&apos;&#x0D;&#x0A;- Renamed element: &apos;Exprecion&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;exprecion&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;{exprecion.java[exprecion" matchStrategy="1" name="Exprecion" qualified="false" references="true" similarDeclarations="false" stamp="1603593598529" textual="false" version="1.0"/>
+</session>

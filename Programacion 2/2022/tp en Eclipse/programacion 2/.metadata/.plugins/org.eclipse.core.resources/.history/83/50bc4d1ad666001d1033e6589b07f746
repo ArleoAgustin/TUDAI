@@ -1,0 +1,371 @@
+package TPE2022;
+
+import java.util.Comparator;
+import java.util.Iterator;
+
+public class Lista<T> implements Iterable<T>{
+	
+	private Nodo<T> nodoRaiz;
+	private Comparator<T> criterioDeOrden;	
+	private final int primerPosicion = 0;
+	
+	
+//constructor	
+	
+	public Lista(Comparator<T> comp) {
+		
+		this.nodoRaiz = null;
+		this.criterioDeOrden = comp; 
+	}
+	
+
+//constructor que recibe una lista por parametro
+	
+	public Lista(Lista<T> l) {									//ver si hace falta
+			
+		this.nodoRaiz = l.getRaiz();
+	}
+	
+	
+//obtiene el nodo raiz
+	
+	private Nodo<T> getRaiz(){
+		return this.nodoRaiz;
+	}
+	
+	
+
+	
+	public Comparator<T> getCriterioDeOrden() {
+		return criterioDeOrden;
+	}
+
+
+
+	public void setCriterioDeOrden(Comparator<T> criterioDeOrden) {
+		this.criterioDeOrden = criterioDeOrden;
+	}
+
+	
+//verifica si la lista esta vacia
+	
+	public boolean estaVacia() {return this.nodoRaiz == null;}
+	
+	
+	
+	public void add(T nuevo) {
+		
+		Nodo<T> n = new Nodo<T>(nuevo);
+		
+		if(this.nodoRaiz == null){
+			this.nodoRaiz = n;
+		}
+		else{
+			Nodo<T> ant = null;
+			Nodo<T> temp = this.nodoRaiz;
+			if( criterioDeOrden.compare(temp.getContenido(), n) > 0){
+				
+			}
+			while (temp!=null && criterioDeOrden.compare(temp.getContenido(),  n) < 0){
+				ant = temp;
+				temp = temp.getAlQueApunta();
+			}
+			if(temp == null){
+				ant.setAlQueApunta(n);
+			}
+			else{
+				n.setAlQueApunta(temp);
+				if(temp == this.nodoRaiz){
+					this.nodoRaiz = n;
+				}
+				else {
+					ant.setAlQueApunta(n);
+				}
+			}
+			
+		}
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	/*
+	public void add(T content){
+       
+		
+            Nodo<T> aux = this.nodoRaiz;
+            Nodo<T> aux2 = nodoRaiz;
+            Nodo<T> a= new Nodo<T>(content);
+
+            
+            while(aux2!=null) {
+            	if(criterioDeOrden.compare(content, aux2.getContenido())> 0) {
+            		
+            		
+            		a.setAlQueApunta(aux2.getAlQueApunta());
+            		aux2.setAlQueApunta(a);
+            	}
+            	else if(criterioDeOrden.compare(content, aux2.getContenido())< 0) {
+            		
+            		if( criterioDeOrden.compare( a.getContenido(), nodoRaiz.getContenido()) < 0) {
+            			
+            			System.out.println("nodo raiz " +nodoRaiz.getContenido());
+            			nodoRaiz = a;
+            			nodoRaiz.setAlQueApunta(aux2);
+            		}else {
+            			System.out.println("nodo raiz " +nodoRaiz.getContenido());
+            			
+            			a.setAlQueApunta(aux);
+            			System.out.println("Hola");
+            		}
+            	}
+            		
+       
+
+            	aux = aux2;
+            	aux2 = aux2.getAlQueApunta();
+            }
+        
+            if (nodoRaiz == null){
+        	
+        	this.nodoRaiz = new Nodo<T>(content);
+        }
+        
+    }
+	
+	*/
+	
+	
+	/*
+	public void add(T nuevo){
+		if(nodoRaiz !=null){
+			Nodo<T> aux=this.nodoRaiz;
+			Nodo<T> aux2=aux.getAlQueApunta();
+			if (criterioDeOrden.compare(nuevo, aux.getContenido()) < 0){
+				Nodo<T> a=new Nodo<T>(nuevo);
+				a.setAlQueApunta(aux2);
+				nodoRaiz = a;
+			}else{
+			while((aux2!=null) && ((criterioDeOrden.compare(nuevo, aux2.getContenido())) > 0)){
+				aux=aux2;
+				aux2=aux2.getAlQueApunta();
+			}
+			Nodo<T> a= new Nodo<T>(nuevo);
+			aux.setAlQueApunta(a);
+			a.setAlQueApunta(aux2);}
+		}else{
+			this.nodoRaiz=new Nodo<T>(nuevo);
+		}
+	}
+	
+	
+	*/
+	
+/*
+//Agrega un nodo a la lista
+	
+	public void add(T n) {							//hay q hacer que se aniada ordenado
+			
+		if(nodoRaiz != null) {
+		
+			Nodo<T> nuevo = nodoRaiz;
+			
+			while(nuevo.getAlQueApunta()!= null) {
+				
+				nuevo = nuevo.getAlQueApunta();
+			
+			}
+			nuevo.setAlQueApunta(new Nodo<T>(n));
+				
+		}
+		else {
+			this.nodoRaiz = new Nodo<T>(n);
+		}
+		
+		this.ordenar();									// no sirve
+	}
+*/
+	
+//retorna el tamanio de la lista	
+	
+	public int size() {
+	
+		int cont = 0;
+		Nodo<T> x = this.nodoRaiz;
+		while(x != null) {
+			x = x.getAlQueApunta();
+			cont++;
+		}
+		return cont;
+	}
+	
+	
+	
+//remueve un elemento dada una posicion
+	
+	public void eliminarPorPosicion(int pos) {
+		
+		Nodo<T> actual = nodoRaiz;
+		Nodo<T> anterior = nodoRaiz;
+		int contador = 0;
+		
+		if(nodoRaiz != null) {
+			
+			if(pos >= primerPosicion ) {
+				try {
+				while(contador != pos && actual != null) {
+					
+					anterior = actual;
+					actual = actual.getAlQueApunta();
+					contador++;
+				}
+				anterior.setAlQueApunta(actual.getAlQueApunta());
+				
+			} 
+			catch(Exception e) {
+				System.out.println(e);
+			}
+				
+			if(pos == primerPosicion) {
+				nodoRaiz = nodoRaiz.getAlQueApunta();
+				
+			}
+		}
+		}
+	}
+	
+
+	
+//Reduce el size	
+
+	public void eliminarOcurrencias(T o) {
+		
+		int cont = 0;
+		Nodo<T> actual = nodoRaiz;
+		
+		while(actual != null) {
+
+
+			if(actual.getContenido().equals(o)) {
+				
+				this.eliminarPorPosicion(cont);
+				cont--;
+			}
+
+			actual = actual.getAlQueApunta();
+			cont++;
+			
+		}
+
+	}
+	
+	
+
+//devuelve la posicion de un elemento
+	
+	public int posicionElemento(T o) {
+		
+		int contador = 0;
+		Nodo<T> aux = nodoRaiz;
+		
+		while(o != aux.getContenido() && aux.getAlQueApunta() != null) {
+			aux = aux.getAlQueApunta();
+			contador++;
+		}
+		if(o.equals(aux.getContenido()))
+			return contador;
+	
+		return -1;
+	}
+
+	
+
+//se obtiene un elemento dada una posicion
+	
+	public T get(int pos) {
+		
+		int contador = 0;
+		Nodo<T> aux = nodoRaiz;
+		
+			while(aux != null) {
+				
+				if(contador == pos) 
+					return aux.getContenido();
+
+				aux = aux.getAlQueApunta();
+				
+				contador++;
+			}
+
+		 return null;
+	}
+	
+	
+	
+//-------------------------- ordenable -------------------------------//
+	
+	
+//ordenar lista
+	
+	public void ordenar() {
+		
+		Nodo<T> aux = nodoRaiz;
+		
+		while(aux != null) {
+			Nodo<T> aux2 = nodoRaiz;
+			
+			 while ((aux2.getAlQueApunta() != null)) {
+	                if((criterioDeOrden.compare(aux2.getContenido(), aux2.getAlQueApunta().getContenido())) > 0){
+	                    
+	                	T cont = aux2.getContenido();
+	                    aux2.setContenido(aux2.getAlQueApunta().getContenido());
+	                    aux2.getAlQueApunta().setContenido(cont);
+	                }
+	                aux2 = aux2.getAlQueApunta();
+	            }
+	            aux = aux.getAlQueApunta();
+	        }
+	}
+	
+	
+	
+//--------------------------- iterable --------------------------------//
+	
+	
+	@Override
+	public Iterator<T> iterator() {
+		
+		return new IteradorLista();
+	}
+	
+
+
+	private class IteradorLista implements Iterator<T>{
+		
+		int pos ;
+		
+		public IteradorLista() {
+			pos = 0;
+		}
+		
+		@Override
+		public boolean hasNext() {
+			
+			return pos < size();
+			
+		}
+
+		@Override
+		public T next() {
+			pos++;
+			return get(pos-1);
+		}
+		
+	}
+
+}

@@ -1,0 +1,20 @@
+1667882310358	Rename package 'tp9.ej2'
+1667882329751	Rename package 'tp9202.ej1'
+1667882427046	Rename type 'Territorio'
+1667887386022	Delete element
+1667887394698	Move compilation units
+1667887401472	Delete element
+1667887420184	Move compilation unit
+1667887446949	Move compilation unit
+1667887483361	Rename type 'Condicion'
+1667948361619	Delete elements
+1667967628609	Encapsulate field 'nroTracking'
+1667968319490	Encapsulate field 'peso'
+1668022974297	Move compilation unit
+1668032814057	Encapsulate field 'nombre'
+1668054973874	Delete element
+1668058362899	Encapsulate field 'idioma'
+1668058409046	Encapsulate field 'titulo'
+1668058520187	Encapsulate field 'palabras'
+1668058528793	Encapsulate field 'loComponen'
+1668315868624	Delete element

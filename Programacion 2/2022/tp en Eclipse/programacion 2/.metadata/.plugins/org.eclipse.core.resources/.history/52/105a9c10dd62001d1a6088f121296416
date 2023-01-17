@@ -1,0 +1,171 @@
+package ej1;
+
+import java.util.Iterator;
+
+import ej1.comparador.Comparador;
+
+public class Lista implements Iterable<Nodo>{
+	
+	private Nodo nodoRaiz;
+	
+	private final int primerPosicion = 0;
+	
+	public Lista() {
+		
+		this.nodoRaiz = null;
+		
+	}
+	
+//verifica si la lista esta vacia
+	
+	public boolean estaVacia() {return this.nodoRaiz == null;}
+	
+//Agrega un nodo a la lista
+	
+	public void add(Object n) {
+			
+		if(nodoRaiz != null) {
+			
+			if (n.getClass().equals( nodoRaiz.getContenido().getClass())) {
+				
+				Nodo nuevo = nodoRaiz;
+				
+				while(nuevo.getAlQueApunta()!= null) {
+					
+					nuevo = nuevo.getAlQueApunta();
+				
+				}
+				nuevo.setAlQueApunta(new Nodo(n));
+				
+			}
+	
+		}
+		else {
+			this.nodoRaiz = new Nodo(n);
+			
+			
+		}
+	}
+
+//retorna el tamanio de la lista	
+	
+	public int size() {
+	
+		int cont = 0;
+		Nodo x = this.nodoRaiz;
+		while(x != null) {
+			x = x.getAlQueApunta();
+			cont++;
+		}
+		return cont;
+	}
+	
+	
+//mostrarElementos
+	
+	public void mostrarElementos() {
+		
+		Nodo n = nodoRaiz;
+		
+		while(n!= null) {
+			System.out.print("["+n.getContenido()+"]->");
+			n = n.getAlQueApunta();
+		}
+		if(nodoRaiz == null)
+			System.out.println("[]");
+	}
+	
+	
+	public void removeByPos(int pos) {
+		
+		Nodo actual = nodoRaiz;
+		Nodo anterior = nodoRaiz;
+		int contador = 0;
+		
+		if(nodoRaiz != null) {
+			
+			if(pos >= primerPosicion ) {
+				try {
+				while(contador != pos && actual != null) {
+					
+					anterior = actual;
+					actual = actual.getAlQueApunta();
+					contador++;
+				}
+				anterior.setAlQueApunta(actual.getAlQueApunta());
+				
+			} 
+			catch(Exception e) {
+				System.out.println(e);
+			}
+				
+			if(pos == primerPosicion) {
+				nodoRaiz = nodoRaiz.getAlQueApunta();
+				
+			}
+		}
+		}
+	}
+	
+
+//Reduce el size
+	
+
+	public void removeElement(Object o) {
+		
+		int cont = 0;
+		Nodo actual = nodoRaiz;
+		
+		while(actual != null) {
+
+			actual = actual.getAlQueApunta();
+			cont++;
+
+			if(actual.getContenido().equals(o)) {
+				actual = actual.getAlQueApunta();
+				this.removeByPos(cont);
+				
+			}
+
+
+		}
+
+	}
+	
+	public int posElemento(Object o) {
+		
+		int contador = 0;
+		Nodo aux = nodoRaiz;
+		
+		while(o != aux.getContenido() && aux.getAlQueApunta() != null) {
+			aux = aux.getAlQueApunta();
+			contador++;
+		}
+		if(o.equals(aux.getContenido()))
+			return contador;
+	
+		return -1;
+	}
+	
+//ordena los nodos	
+	
+	public void ordenar(Comparador c) {
+		
+		Nodo anterior = nodoRaiz;
+		Nodo siguiente = nodoRaiz;
+		
+		while(siguiente.getAlQueApunta()!=null) {
+			anterior = siguiente;
+			siguiente = siguiente.getAlQueApunta();
+			if(c.compare(anterior, siguiente) > 0) {
+				anterior = siguiente;
+			}
+		}
+	}
+
+	@Override
+	public Iterator<Nodo> iterator() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+}

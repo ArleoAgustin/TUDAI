@@ -1,0 +1,22 @@
+package TPE2022.Comparadores;
+
+import java.util.Comparator;
+
+public class ComparadorDescente<T> implements Comparator<T> {
+
+	private Comparator<T> comp;
+	
+	
+	public ComparadorDescente(Comparator<T> comp) {
+		super();
+		this.comp = comp;
+	}
+
+
+	@Override
+	public int compare(T o1, T o2) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+}

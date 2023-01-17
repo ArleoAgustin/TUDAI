@@ -1,0 +1,31 @@
+package tp4.ej5;
+
+public class Entrenador extends Persona {
+	
+	private String paisQuePertenece;
+
+	public Entrenador(String nombre, String apellido, String estado, int nroPasaporte,) {
+		
+		super(nombre, apellido, estado, nroPasaporte);
+		this.paisQuePertenece = paisQuePertenece;
+	}
+	
+	
+
+	public Entrenador(String nombre, String apellido, String estado, int nroPasaporte) {
+		super(nombre, apellido, estado, nroPasaporte);
+	}
+
+
+
+	public String getPaisQuePertenece() {
+		return paisQuePertenece;
+	}
+
+
+	public void setPaisQuePertenece(String paisQuePertenece) {
+		this.paisQuePertenece = paisQuePertenece;
+	}
+	
+	
+}

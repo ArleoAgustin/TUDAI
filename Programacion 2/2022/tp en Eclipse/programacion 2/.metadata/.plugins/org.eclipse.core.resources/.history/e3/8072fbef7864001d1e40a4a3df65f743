@@ -1,0 +1,16 @@
+package TPE2022.Comparadores;
+
+import java.util.Comparator;
+
+public class ComparadorPorDefecto<T> implements Comparator<T> {
+
+	@Override
+	public int compare(T o1, T o2) {
+		
+		Object aux1 = (Object) o1;
+		Object aux2 = (Object) o2;
+		
+		return aux1.compareTo(aux2);
+	}
+
+}

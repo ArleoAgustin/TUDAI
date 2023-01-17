@@ -1,0 +1,35 @@
+package tp3.ej3;
+
+public class Cualidad {
+	
+	private String nombreCualidad;
+	private int cualidad;
+
+	public Cualidad(String n, int cualidad) {
+		
+		this.nombreCualidad = n;
+		this.cualidad = cualidad;
+	}
+
+	
+	public String getNombreCualidad() {
+		return nombreCualidad;
+	}
+
+	public void setNombreCualidad(String nombreCualidad) {
+		this.nombreCualidad = nombreCualidad;
+	}
+
+	public int getCualidad() {
+		return cualidad;
+	}
+
+	public void setCualidad(int cualidad) {
+		this.cualidad = cualidad;
+	}
+	
+	
+	
+	
+	
+}

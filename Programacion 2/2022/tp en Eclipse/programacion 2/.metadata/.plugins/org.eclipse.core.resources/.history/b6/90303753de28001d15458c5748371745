@@ -1,0 +1,52 @@
+package tp3.ej1;
+
+import java.util.ArrayList;
+
+public class Encuesta {
+	
+	private ArrayList<Pregunta> preguntas = new ArrayList<Pregunta>();
+	private ArrayList<Encuestado> personasEncuestadas = new ArrayList<Encuestado>();
+	private Encuestado personaEncuestada;
+	private Empleado encuestador;
+	
+	public Encuesta(Encuestado personaEncuestada, Empleado encuestador) {
+	
+		if(!this.llenoDosVeces()) {
+			this.personaEncuestada = personaEncuestada;
+			this.encuestador = encuestador;
+			this.encuestador.addEncuestas(this);
+			this.personasEncuestadas.add(personaEncuestada);
+		}
+	}
+
+	public Encuestado getPersonaEncuestada() {
+		return personaEncuestada;
+	}
+
+	public void setPersonaEncuestada(Encuestado personaEncuestada) {
+		this.personaEncuestada = personaEncuestada;
+	}
+
+	public Empleado getEncuestador() {
+		return encuestador;
+	}
+
+	public void setEncuestador(Empleado encuestador) {
+		this.encuestador = encuestador;
+	}
+	 
+	public void addPregunta(Pregunta p) {
+		
+		this.preguntas.add(p);
+	}
+	
+	
+	public boolean llenoDosVeces() {
+		
+		for(Encuestado p: this.personasEncuestadas){
+			return p.getDni() == this.personaEncuestada.getDni();	
+		}
+		return false;
+	}
+	
+}

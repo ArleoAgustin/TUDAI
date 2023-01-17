@@ -1,0 +1,31 @@
+1668407143564	Delete element
+1668462595990	Encapsulate field 'criterioDeOrden'
+1668465561111	Encapsulate field 'aux'
+1668467672587	Rename type 'OrdenarCompuesto'
+1668467690470	Rename type 'OrdenarDeMenorAMayor'
+1668467717803	Rename type 'ComparadorApellido'
+1668489022856	Delete element
+1668545603424	Delete element
+1668545686038	Rename type 'ComparadorMenorMayor'
+1668547960657	Rename type 'ComparadorCompuesto'
+1668548282183	Rename type 'OrdenarPorApellido'
+1668548674864	Move compilation unit
+1668549726805	Delete element
+1668550324914	Delete element
+1668550372209	Delete element
+1668633763981	Rename compilation unit 'ComparadorDescente.java'
+1668659313265	Infer generic type arguments
+1668659666659	Rename local variable 'compString'
+1668659683060	Rename local variable 'compInteger'
+1668659721991	Rename local variable 'compDni'
+1668659742240	Rename local variable 'compNombre'
+1668659784090	Rename local variable 'compApellido'
+1668743732617	Rename local variable 'ant'
+1668743745716	Rename local variable 'temp'
+1668749733354	Move compilation unit
+1668801681456	Copy compilation unit
+1668801694072	Copy compilation unit
+1668801698598	Copy compilation unit
+1668801760031	Copy compilation units
+1668801832375	Copy compilation unit
+1668801837102	Copy compilation units

@@ -1,0 +1,31 @@
+package TPE2022;
+
+public class Nodo<E> {
+	
+	private  E contenido;
+	private Nodo<E> alQueApunta;
+	
+	public Nodo(E contenido) {
+		
+		this.contenido = contenido;
+		this.alQueApunta = null;
+	}
+
+	public Object getContenido() {
+		return contenido;
+	}
+
+	public void setContenido(Object contenido) {
+		this.contenido = contenido;
+	}
+
+	public Nodo getAlQueApunta() {
+		return alQueApunta;
+	}
+
+	public void setAlQueApunta(Nodo alQueApunta) {
+		this.alQueApunta = alQueApunta;
+	}
+	
+	
+}

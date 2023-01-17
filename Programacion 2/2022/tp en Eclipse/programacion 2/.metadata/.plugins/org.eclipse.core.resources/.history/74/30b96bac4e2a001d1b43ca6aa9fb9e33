@@ -1,0 +1,30 @@
+package tp3.ej4;
+
+public class Celular {
+	
+	private Agenda agenda;
+	
+	public Celular(Agenda a) {
+		
+		this.agenda = a;
+		
+	}
+	
+	public void mostrarDatosDeContactos() {
+		
+		for(Contacto c: this.agenda.getContactos())
+			
+			System.out.println("Todos los contactos: " + "\n"+
+					c.getNombre() + " " + c.getApellido() + "\n"+
+					"edad: " + c.getEdad() + "\n" +
+					"telefono: " + c.getNroTelefono() + "\n" +
+					"Ciudad: " + c.getCiudad()); 
+					
+			
+	}
+	
+	
+	
+	
+	
+}

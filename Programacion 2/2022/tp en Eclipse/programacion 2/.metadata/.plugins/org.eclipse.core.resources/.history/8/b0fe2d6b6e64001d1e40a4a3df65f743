@@ -1,0 +1,63 @@
+package TPE2022.ej2;
+
+import TPE2022.Lista;
+
+public class Alumno {
+	
+	private String nombre, apellido;
+	private int edad, dni;
+	
+	private Lista<String> intereses = new Lista<>();
+
+	public Alumno(String nombre, String apellido, int edad, int dni) {
+		super();
+		this.nombre = nombre;
+		this.apellido = apellido;
+		this.edad = edad;
+		this.dni = dni;
+		this.intereses = new Lista<>();
+	}
+
+	public String getNombre() {
+		return nombre;
+	}
+
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+
+	public String getApellido() {
+		return apellido;
+	}
+
+	public void setApellido(String apellido) {
+		this.apellido = apellido;
+	}
+
+	public int getEdad() {
+		return edad;
+	}
+
+	public void setEdad(int edad) {
+		this.edad = edad;
+	}
+
+	public int getDni() {
+		return dni;
+	}
+
+	public void setDni(int dni) {
+		this.dni = dni;
+	}
+
+	public Lista<String> getIntereses() {
+		
+		return new Lista<>(intereses);
+	}
+
+	public void setIntereses(String i) {
+		this.intereses.add(i);
+	}
+	
+	
+}

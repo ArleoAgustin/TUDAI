@@ -1,0 +1,46 @@
+package ej1;
+
+public class Main {
+
+	public static void main(String[] args) {
+		
+		Lista l1 = new Lista();
+	
+		l1.add(1);
+		l1.add("A");
+
+		
+		l1.add(2);
+		l1.add(3);
+		l1.add(4);
+		l1.add(1);
+		l1.add(6);
+
+		//l1.mostrarElementos();
+//		l1.removePos(4);
+/*		System.out.println("");
+		l1.mostrarElementos();
+		l1.removePos(1);
+	 	System.out.println("");
+		l1.mostrarElementos();
+		l1.removePos(2);
+		System.out.println("");
+		l1.mostrarElementos();
+		l1.removePos(5);
+	/*	
+		l1.removePos(2);
+		l1.removePos(3);
+		l1.removePos(4);*/
+		
+		System.out.println("");
+		l1.mostrarElementos();
+		System.out.println("");
+
+		l1.removeElement(1);
+
+		l1.mostrarElementos();
+		
+
+	}
+
+}

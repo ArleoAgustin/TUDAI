@@ -1,0 +1,7 @@
+package TPE2022.Comparadores;
+
+import java.util.Comparator;
+
+public class ComparadorDNI implements Comparator<Alumno> {
+
+}

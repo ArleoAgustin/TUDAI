@@ -1,0 +1,165 @@
+
+
+
+import tp3.ej4.Agenda;
+import tp3.ej4.Celular;
+import tp3.ej1.Compania;
+import tp3.ej1.Empleado;
+import tp3.ej1.Encuesta;
+import tp3.ej1.Encuestado;
+import tp3.ej1.Pregunta;
+import tp3.ej3.Cualidad;
+import tp3.ej3.Juego;
+import tp3.ej3.Personaje;
+import tp3.ej4.Contacto;
+
+public class Main {
+
+	public static void main(String[] args) {
+		
+		//iniciarTp3Ej1();
+		//iniciarTp3Ej3();
+		iniciarTp3Ej4();
+}
+
+//Ejercicio 1 tp 3
+	
+	public static void iniciarTp3Ej1() {
+			
+			Compania comp = new Compania();
+			
+			Empleado emp1 = new Empleado("Agustin");
+			Empleado emp2 = new Empleado("Gonzalo");
+			Empleado emp3 = new Empleado("Lucas");
+			Empleado emp4 = new Empleado("Bautista");
+		
+			Encuestado en1 = new Encuestado(45);
+			Encuestado en2 = new Encuestado(44);
+			Encuestado en3 = new Encuestado(49);
+			Encuestado en4 = new Encuestado(47);
+			Encuestado en5 = new Encuestado(48);
+		
+			Encuesta e1 = new Encuesta(emp1);
+			Encuesta e2 = new Encuesta(emp2);
+			Encuesta e3 = new Encuesta(emp3);
+			Encuesta e4 = new Encuesta(emp1);
+			
+			Pregunta p1 = new Pregunta("1");
+			Pregunta p2 = new Pregunta("2");
+			Pregunta p3 = new Pregunta("3");
+			Pregunta p4 = new Pregunta("4");
+			Pregunta p5 = new Pregunta("5");
+		
+		
+			e1.addPregunta(p1);
+			e1.addPregunta(p2);
+			e1.addPregunta(p3);
+			e1.addPregunta(p4);
+			e1.addPregunta(p5);
+			
+			e2.addPregunta(p1);
+			e2.addPregunta(p2);
+			e2.addPregunta(p3);
+			e2.addPregunta(p4);
+			e2.addPregunta(p5);
+			
+			e3.addPregunta(p1);
+			e3.addPregunta(p2);
+			e3.addPregunta(p3);
+			e3.addPregunta(p4);
+			e3.addPregunta(p5);
+			
+			e4.addPregunta(p1);
+			e4.addPregunta(p2);
+			e4.addPregunta(p3);
+			e4.addPregunta(p4);
+			e4.addPregunta(p5);
+		
+			
+			en1.llenarEncuesta(e3);
+			en2.llenarEncuesta(e3);
+			en3.llenarEncuesta(e3);
+			en1.llenarEncuesta(e2);
+			en2.llenarEncuesta(e2);
+			en1.llenarEncuesta(e2);
+			en1.llenarEncuesta(e4);
+			
+			comp.addEncuesta(e1);
+			comp.addEncuesta(e2);
+			comp.addEncuesta(e3);
+			comp.addEncuesta(e4);
+	
+			
+			System.out.println(comp.getEncuestas());
+		
+		
+			System.out.println(comp.numeroDeEncuestasXEmpleado(emp4));
+		}
+	
+	public static void iniciarTp3Ej3() {
+		
+	//cualidades para personaje 1
+		
+		Cualidad c1 = new Cualidad("vision nocturna", 150);
+		Cualidad c2 = new Cualidad("velocidad", 200);
+		Cualidad c3 = new Cualidad("Fuerza", 410);
+		Cualidad c4 = new Cualidad("Edad", 33);
+	
+	//cualidades para personaje 2
+	
+		Cualidad cc1 = new Cualidad("vision nocturna", 150);
+		Cualidad cc2 = new Cualidad("velocidad", 55);
+		Cualidad cc3 = new Cualidad("Fuerza", 400);
+		Cualidad cc4 = new Cualidad("Edad", 50);
+		
+	//personajes
+		
+		Personaje p1 = new Personaje("Agustin", "Batman");
+		Personaje p2 = new Personaje("Lucas", "Capitan america");
+	
+	//agrego cualidades
+		
+		p1.addCualidad(c1);
+		p1.addCualidad(c2);
+		p1.addCualidad(c3);
+		p1.addCualidad(c4);
+		
+		p2.addCualidad(cc1);
+		p2.addCualidad(cc2);
+		p2.addCualidad(cc3);
+		p2.addCualidad(cc4);
+		
+		Juego j = new Juego(p1, p2);
+		
+		j.jugar(c4);
+	}
+
+	public static void iniciarTp3Ej4() {
+		
+		Contacto c2 =  new Contacto("Gonzalo", "Gaete",249231453, 18);
+		Contacto c1 =  new Contacto("Lucas", "Duana",249231455, 22);
+		Contacto c3 =  new Contacto("Bautista", "Keegan",249231223, 25);
+		Contacto c4 =  new Contacto("Leandro", "Pagano",2492311, 21);
+		Contacto c5 =  new Contacto("Matias", "Ponce", 24923142, 20);
+		Contacto c6 =  new Contacto("Agustin", "Arleo",249231, 22);
+		
+		Contacto c7 =  new Contacto("Lucas", "Duana",249231455, 25);
+		
+		Agenda a = new Agenda();
+		
+		a.addContacto(c1);
+		a.addContacto(c2);
+		a.addContacto(c3);
+		a.addContacto(c4);
+		a.addContacto(c5);
+		a.addContacto(c6);
+		a.addContacto(c7);
+		
+		Celular c = new Celular(a);
+		
+	//	c.mostrarTodosLosContactos();
+		//c.mostrarSoloRepetidos();
+		c.mostrarDatosDelContacto(c7);
+	}
+
+}

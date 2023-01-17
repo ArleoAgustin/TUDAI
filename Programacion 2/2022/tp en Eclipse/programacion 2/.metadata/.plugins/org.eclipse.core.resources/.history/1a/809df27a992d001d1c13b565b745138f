@@ -1,0 +1,14 @@
+package tp4.ej5b;
+
+public class Main {
+
+	public static void main(String[] args) {
+		
+		Empresa e = new Empresa();
+		
+		Persona p = new Persona("Agustin","Arleo","Albanil",22);
+		
+		System.out.println(p);
+	}
+
+}

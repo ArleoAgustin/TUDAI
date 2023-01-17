@@ -1,0 +1,18 @@
+package tp4.ej5b;
+
+public class Main {
+
+	public static void main(String[] args) {
+		
+		Empresa e = new Empresa();
+		
+		Persona p = new Persona("Agustin","Arleo","Albanil",22);
+		
+		Persona p2 = new Empleado("Agustin","Arleo","albanil",22,2409);
+		
+		Persona p3 = new Usuario("Agustin","Arleo","albanil",22, "Agustin_Arleo", "123");
+		
+		System.out.println(p3);
+	}
+
+}

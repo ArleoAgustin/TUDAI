@@ -1,0 +1,14 @@
+package ej3;
+
+public class Empleado {
+	
+	double salario;
+	
+	public Empleado(double salario) {
+		this.salario = salario;
+	}
+	
+	
+	
+	
+}

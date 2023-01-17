@@ -1,0 +1,5 @@
+package tp4.ej5b;
+
+public class Empleado extends Persona {
+
+}

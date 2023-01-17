@@ -1,0 +1,39 @@
+package tp3.ej1;
+
+import java.util.ArrayList;
+
+public class Encuesta {
+	
+	private ArrayList<Pregunta> preguntas = new ArrayList<Pregunta>();
+	private Encuestado personaEncuestada;
+	private Empleado encuestador;
+	
+	public Encuesta(Encuestado personaEncuestada, Empleado encuestador) {
+	
+		this.personaEncuestada = personaEncuestada;
+		this.encuestador = encuestador;
+		this.encuestador.addEncuestas(this);
+	}
+
+	public Encuestado getPersonaEncuestada() {
+		return personaEncuestada;
+	}
+
+	public void setPersonaEncuestada(Encuestado personaEncuestada) {
+		this.personaEncuestada = personaEncuestada;
+	}
+
+	public Empleado getEncuestador() {
+		return encuestador;
+	}
+
+	public void setEncuestador(Empleado encuestador) {
+		this.encuestador = encuestador;
+	}
+	 
+	public void addPregunta(Pregunta p) {
+		
+		this.preguntas.add(p);
+	}
+	
+}

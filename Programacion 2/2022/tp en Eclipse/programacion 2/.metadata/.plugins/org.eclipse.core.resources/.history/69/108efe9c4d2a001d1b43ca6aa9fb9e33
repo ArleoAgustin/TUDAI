@@ -1,0 +1,20 @@
+package tp3.ej4;
+
+public class Celular {
+	
+	private Agenda agenda;
+	
+	public Celular(Agenda a) {
+		
+		this.agenda = a;
+		
+	}
+	
+	public void mostrarContactos() {
+		
+		for(Agenda a: this.agenda)
+			
+	}
+	
+	
+}

@@ -1,0 +1,7 @@
+1604363825587	Rename type 'EstrategiaDeJuegoAmbicioso'
+1604363842541	Rename type 'EstrategiaDeJuegoObstinado'
+1604363856983	Rename type 'EstrategiaDeJuegoTimbeo'
+1604367773204	Rename method 'decidirAtributoAlAzar'
+1604368459993	Rename method 'lePuedoGanar'
+1604439015957	Rename method 'getAtributoPorNombre'
+1604439034508	Rename method 'getNombreDeAtributos'

@@ -1,0 +1,9 @@
+1664232946260	Rename type 'Empleado'
+1664242865932	Encapsulate field 'temasConocidos'
+1664243118011	Encapsulate field 'temasEspecificos'
+1664253763198	Delete element
+1664254683803	Encapsulate field 'estaAlquilado'
+1664255216654	Encapsulate field 'nombre'
+1664255409861	Encapsulate field 'nombre'
+1664256525690	Encapsulate field 'clientes'
+1664256532686	Encapsulate field 'productosAlquilados'

@@ -1,0 +1,34 @@
+package ej2;
+
+public class Sensor {
+	
+	private String nombreSensor;
+	private boolean detectoMovimiento;
+	
+	public Sensor(String nombre) {
+		super();
+		this.nombreSensor = nombre;
+	}
+	
+
+	public boolean hayMovimiento() {
+		
+		if(this.detectoMovimiento)
+			return true;
+	
+	return false;
+	}
+
+
+	public String getNombreSensor() {
+		return nombreSensor;
+	}
+
+
+	public void setNombreSensor(String nombreSensor) {
+		this.nombreSensor = nombreSensor;
+	}
+	
+
+	
+}

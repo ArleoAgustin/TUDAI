@@ -1,0 +1,8 @@
+package TPE2022.Comparadores;
+
+import java.util.Comparator;
+
+public abstract class Comparador<T> implements Comparator<T>{
+
+	public abstract int compare();
+}

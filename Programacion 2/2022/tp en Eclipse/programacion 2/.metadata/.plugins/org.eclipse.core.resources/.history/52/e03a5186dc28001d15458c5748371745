@@ -1,0 +1,24 @@
+package tp3.ej1;
+
+public class Encuestado {
+	
+	ArrayList<Encuesta> encuestasRealizadas
+	
+	private int dni;
+	
+	public Encuestado(int dni) {
+
+		this.dni = dni;
+	}
+
+	public int getDni() {
+		return dni;
+	}
+
+	public void setDni(int dni) {
+		this.dni = dni;
+	}
+	
+	
+	
+}

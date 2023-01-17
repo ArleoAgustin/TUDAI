@@ -1,0 +1,19 @@
+package TPE2022.Comparadores;
+
+import java.util.Comparator;
+
+public class ComparadorNot implements Comparator<Object> {
+
+    private Comparator<Object> comp;
+    
+    public ComparadorNot(Comparator<Object>c){
+        this.comp=c;
+    }
+
+    @Override
+    public int compare(Object o1, Object o2) {
+     
+        return comp.compare(o1,o2) * -1;
+	}
+
+}

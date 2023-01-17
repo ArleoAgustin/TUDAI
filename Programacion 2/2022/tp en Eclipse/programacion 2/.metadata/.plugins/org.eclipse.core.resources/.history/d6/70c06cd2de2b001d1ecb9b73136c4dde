@@ -1,0 +1,26 @@
+package ej3;
+
+import java.util.ArrayList;
+
+public class Empresa {
+	
+	private ArrayList<Empleado> empleados = new ArrayList<Empleado>();
+	
+	public Empresa() {
+		
+	}
+	
+	public void addEmpleado(Empleado e) {
+		this.addEmpleado(e);
+	}
+	
+	public double sueldoPorEmpleado(Empleado e) {
+		
+		for(Empleado emp: this.empleados) {
+			
+			if(emp.equals(e))
+				return emp.getSalario();
+		}
+		return 0;
+	}
+}

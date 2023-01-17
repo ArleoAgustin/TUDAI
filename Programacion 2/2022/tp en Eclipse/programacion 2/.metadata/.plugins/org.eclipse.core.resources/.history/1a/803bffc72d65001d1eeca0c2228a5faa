@@ -1,0 +1,15 @@
+package TPE2022.Comparadores;
+
+import java.util.Comparator;
+
+import TPE2022.ej2.Alumno;
+
+public class OrdenarPorApellido implements Comparator<Alumno>{
+
+	@Override
+	public int compare(Alumno o1, Alumno o2) {
+		
+		return o1.getApellido().compareTo(o2.getApellido());
+	}
+
+}

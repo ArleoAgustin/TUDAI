@@ -1,0 +1,11 @@
+package TPE2022.ej3;
+
+public class Grupo extends Elemento {
+
+	@Override
+	public int getCantAlumnos() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+}

@@ -1,0 +1,31 @@
+
+
+import java.time.LocalDate;
+import java.time.temporal.ChronoUnit;
+
+import EJ5.Turno;
+import EJ5.Cliente;
+import EJ5.Peluqueria;
+import EJ5.Peluquero;
+
+public class Main {
+
+	public static void main(String[] args) {
+	
+		
+		LocalDate ahora = LocalDate.now();
+		LocalDate antes = LocalDate.of(2021, 12, 15);
+
+	
+		int diferencia = (int) ChronoUnit.MONTHS.between(antes, ahora);
+		System.out.println(diferencia);
+	
+		Peluqueria peluqueria = new Peluqueria();
+		Peluquero p1 = new Peluquero("Gonzalo");
+		Cliente c1 = new Cliente("Lucas");
+		Turno t1= new Turno(LocalDate.of(2022, 9, 15),p1,c1);
+		
+	
+	}
+
+}

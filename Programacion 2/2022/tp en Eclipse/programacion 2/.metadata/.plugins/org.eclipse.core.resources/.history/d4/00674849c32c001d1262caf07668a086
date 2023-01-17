@@ -1,0 +1,19 @@
+package tp4.ej5;
+
+import java.time.LocalDate;
+
+public class Main {
+
+	public static void main(String[] args) {
+		
+		Avicola a = new Avicola();
+		
+		Producto p1 = new ProductoFresco(LocalDate.of(2022, 9, 4), 1555,"nashe", LocalDate.of(2022, 9, 1),
+				"Los pinos");
+		
+		System.out.println(p1.toString());
+		
+		a.imprimirDAtosProductos(p1);
+	}
+
+}

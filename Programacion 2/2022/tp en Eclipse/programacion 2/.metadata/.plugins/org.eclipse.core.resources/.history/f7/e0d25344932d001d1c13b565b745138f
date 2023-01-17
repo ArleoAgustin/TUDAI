@@ -1,0 +1,22 @@
+package tp4.ej5b;
+
+import java.util.ArrayList;
+
+public class Empresa {
+	
+	private ArrayList<Persona> empleados = new ArrayList<Persona>();
+
+	public Empresa() {
+
+	}
+
+	public ArrayList<Persona> getEmpleados() {
+		return empleados;
+	}
+
+	public void addEmpleado(Persona e) {
+		this.empleados.add(e);
+	}
+	
+	
+}
