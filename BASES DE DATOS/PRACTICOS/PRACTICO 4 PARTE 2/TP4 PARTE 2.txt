@@ -1,0 +1,184 @@
+--1 Listar todas las películas que poseen entregas de películas de idioma inglés durante el año 2006. (P)
+select *
+from unc_esq_peliculas.pelicula
+where idioma ='Inglés' AND codigo_pelicula in (
+                                                select codigo_pelicula
+                                                from unc_esq_peliculas.renglon_entrega
+                                                where nro_entrega in (
+                                                                     select nro_entrega
+                                                                     from unc_esq_peliculas.entrega
+                                                                     where extract(year from fecha_entrega) = 2006));
+-- 2 Indicar la cantidad de películas que han sido entregadas en 2006 por un distribuidor nacional. Trate de resolverlo utilizando ensambles.(P)
+
+-- con JOIN
+select count(distinct p.codigo_pelicula)
+from unc_esq_peliculas.pelicula p join unc_esq_peliculas.renglon_entrega r on (p.codigo_pelicula = r.codigo_pelicula)
+                                  join unc_esq_peliculas.entrega e on (r.nro_entrega = e.nro_entrega)
+                                  join unc_esq_peliculas.distribuidor d on (e.id_distribuidor = d.id_distribuidor)
+where extract(year from e.fecha_entrega) = 2006 and (d.tipo = 'N');
+
+
+--- con IN
+select count(*)
+from unc_esq_peliculas.pelicula
+where codigo_pelicula IN (
+                        select codigo_pelicula
+                        from unc_esq_peliculas.renglon_entrega
+                        where nro_entrega in (
+                                                select nro_entrega
+                                                from unc_esq_peliculas.entrega
+                                                where (extract (year from fecha_entrega) = 2006) and id_distribuidor in (
+                                                                                                                     select id_distribuidor
+                                                                                                                     from unc_esq_peliculas.distribuidor
+                                                                                                                     where tipo = 'N')))
+
+
+
+
+--3 Indicar los departamentos que no posean empleados cuya diferencia de sueldo máximo y mínimo (asociado a la tarea que realiza) no supere el 40% del sueldo máximo. (P)
+-- Viviana
+SELECT *
+FROM unc_esq_peliculas.departamento
+WHERE (id_distribuidor, id_departamento) NOT IN (SELECT id_distribuidor, id_departamento
+                                                 FROM unc_esq_peliculas.empleado e, unc_esq_peliculas.tarea t
+                                                 WHERE e.id_tarea = t.id_tarea
+                                                 AND  (sueldo_maximo - sueldo_minimo) <= sueldo_maximo*0.4);
+
+--Juan
+select id_departamento, nombre
+from unc_esq_peliculas.departamento
+where id_departamento in (select id_departamento
+                          from unc_esq_peliculas.empleado e
+                          where e.id_tarea in (select id_tarea
+                                               from unc_esq_peliculas.tarea
+                                               where (sueldo_maximo - sueldo_minimo) > (sueldo_maximo*0.4)))
+
+--4 Liste las películas que nunca han sido entregadas por un distribuidor nacional.(P)
+select count(*)
+from unc_esq_peliculas.pelicula
+where codigo_pelicula IN (
+                        select codigo_pelicula
+                        from unc_esq_peliculas.renglon_entrega
+                        where nro_entrega in (
+                                                select nro_entrega
+                                                from unc_esq_peliculas.entrega
+                                                where  id_distribuidor in (
+                                                                         select id_distribuidor
+                                                                         from unc_esq_peliculas.distribuidor
+                                                                         where tipo = 'I')))
+
+-- JOIN
+select count(distinct p.codigo_pelicula)
+from unc_esq_peliculas.pelicula p
+    join unc_esq_peliculas.renglon_entrega r on (r.codigo_pelicula = p.codigo_pelicula)
+    join unc_esq_peliculas.entrega e on (r.nro_entrega = e.nro_entrega)
+    join unc_esq_peliculas.distribuidor d on (e.id_distribuidor = d.id_distribuidor)
+where d.tipo = 'I'
+
+-----
+--5	Determinar los jefes que poseen personal a cargo y cuyos departamentos (los del jefe)  se encuentren en la Argentina.
+select id_jefe, nombre
+from unc_esq_peliculas.empleado e1
+where id_jefe in (select jefe_departamento
+                  from unc_esq_peliculas.departamento
+                  where id_ciudad in (select id_ciudad
+                                      from unc_esq_peliculas.ciudad
+                                      where id_pais in( select id_pais
+                                                        from unc_esq_peliculas.pais
+                                                        where nombre_pais = 'ARGENTINA')));
+
+--1.6.	Liste el apellido y nombre de los empleados que pertenecen a aquellos
+--departamentos de Argentina y donde el jefe de departamento posee una comisión de más del 10% de la que posee su empleado a cargo.
+
+SELECT e.nombre, e.apellido
+FROM unc_esq_peliculas.empleado e
+WHERE e.id_jefe IN (
+                     SELECT e2.id_jefe
+                     FROM unc_esq_peliculas.empleado e2
+                     WHERE e2.porc_comision > 10 AND e2.id_empleado IN (
+                                                                         SELECT e3.id_empleado
+                                                                         FROM unc_esq_peliculas.empleado e3
+                                                                         WHERE e3.id_jefe IN (
+                                                                                                SELECT d.jefe_departamento
+                                                                                                FROM unc_esq_peliculas.departamento d
+                                                                                                WHERE d.id_ciudad IN (
+                                                                                                            SELECT c.id_ciudad
+                                                                                                            FROM unc_esq_peliculas.ciudad c
+                                                                                                            WHERE c.id_pais IN (
+                                                                                                                    SELECT p.id_pais
+                                                                                                                    FROM unc_esq_peliculas.pais p
+                                                                                                                    WHERE (nombre_pais = 'ARGENTINA'))))));
+
+
+--1.7.	Indicar la cantidad de películas entregadas a partir del 2010, por género.
+select count(*), genero
+from unc_esq_peliculas.pelicula p
+where codigo_pelicula in (
+                            select codigo_pelicula
+                            from unc_esq_peliculas.renglon_entrega r
+                            where nro_entrega in (
+                                                    select nro_entrega
+                                                    from unc_esq_peliculas.entrega e
+                                                    where extract(year from fecha_entrega) > 2010))
+group by genero
+
+--1.8.	Realizar un resumen de entregas por día, indicando el video club al cual se le realizó la entrega y la cantidad entregada. Ordenar el resultado por fecha.
+
+SELECT  fecha_entrega, cantidad, razon_social
+FROM unc_esq_peliculas.entrega e, unc_esq_peliculas.renglon_entrega r, unc_esq_peliculas.video v
+WHERE e.nro_entrega = r.nro_entrega AND e.id_video = v.id_video
+ORDER BY fecha_entrega;
+
+--1.9.	Listar, para cada ciudad, el nombre de la ciudad y la cantidad de empleados mayores de edad
+-- que desempeñan tareas en departamentos de la misma y que posean al menos 30 empleados.
+
+select c.nombre_ciudad, count (e.id_empleado)
+from unc_esq_peliculas.ciudad c join unc_esq_peliculas.departamento d on (c.id_ciudad = d.id_ciudad)
+                                join unc_esq_peliculas.empleado e on (d.id_departamento = e.id_departamento) and (e.id_distribuidor = d.id_distribuidor)
+where date_part('year',age(e.fecha_nacimiento)) > 18
+group by c.nombre_ciudad
+having count (e.id_empleado) > 30
+
+-- 2.1.	Muestre, para cada institución, su nombre y la cantidad de voluntarios que realizan aportes.
+-- Ordene el resultado por nombre de institución.
+
+select i.nombre_institucion, count(v.nro_voluntario) -- con count(*) da igual
+from unc_esq_voluntario.institucion i
+    join unc_esq_voluntario.voluntario v on (i.id_institucion = v.id_institucion)
+where v.horas_aportadas is not null
+group by i.nombre_institucion
+order by i.nombre_institucion
+
+-- 2.2.	Determine la cantidad de coordinadores en cada país, agrupados por nombre de país y nombre de continente.
+-- Etiquete la primer columna como 'Número de coordinadores'
+
+select count(*) as cantidad_coordinadores, c.nombre_continente as Nombre_continente, p.nombre_pais as Nombre_pais
+from unc_esq_voluntario.voluntario v
+    join unc_esq_voluntario.institucion i on (v.id_institucion = i.id_institucion)
+    join unc_esq_voluntario.direccion d on (i.id_direccion = d.id_direccion)
+    join unc_esq_voluntario.pais p on (d.id_pais = p.id_pais)
+    join unc_esq_voluntario.continente c on (p.id_continente = c.id_continente)
+where v.id_coordinador is not null
+group by (c.nombre_continente, p.nombre_pais)
+
+-- 2.3.	Escriba una consulta para mostrar el apellido, nombre y fecha de nacimiento de cualquier voluntario que trabaje en la misma institución que el Sr. Zlotkey.
+-- Excluya del resultado a Zlotkey.
+
+select v.apellido, v.nombre, v.fecha_nacimiento
+from unc_esq_voluntario.voluntario v
+    join unc_esq_voluntario.institucion i on (v.id_institucion = i.id_institucion)
+where i.id_institucion = (
+                                select v2.id_institucion
+                                from unc_esq_voluntario.voluntario v2
+                                where v2.apellido like 'Zlotkey') and v.apellido not like 'Zlotkey'
+
+-- 2.4.	Cree una consulta para mostrar los números de voluntarios y los apellidos de todos los voluntarios cuya cantidad de horas aportadas sea mayor que la media de las horas aportadas.
+-- Ordene los resultados por horas aportadas en orden ascendente.
+
+select v.nro_voluntario, v.apellido, v.horas_aportadas
+from unc_esq_voluntario.voluntario v
+where v.horas_aportadas > (
+                            select avg(v2.horas_aportadas)
+                            from unc_esq_voluntario.voluntario v2)
+order by v.horas_aportadas
+

@@ -1,0 +1,61 @@
+body {
+    background-color: black;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.encabezado {
+    background-color: rgb(65, 100, 86);
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.botones{
+    display: flex;
+    margin: 0px;
+}
+.boton{
+    color: azure;
+    margin:  0px 20px 0px 20px;
+    padding: 20;
+    list-style: none;
+}
+ul :hover{
+    background-color: rgb(39, 39, 133);
+}
+
+.logo{
+    color: azure;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-left: 10px;
+}
+
+/*HASTA ACA LLEGA EL ENCABEZADO*/
+
+/*A PARTIR DE ACA EMPIEZA EL CUERPO DE LA PAGINA*/
+.container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+}
+
+.izquierda {
+    background-color: rgb(4, 114, 62);
+    margin: 5px;
+    padding: 10px;
+
+    
+}
+
+.centro{
+    background-color: navajowhite;
+    margin: 5px;
+    padding: 10px;
+}
+
+.derecha {
+    background-color: mediumvioletred;
+    margin: 5px;
+    padding: 10px;
+}

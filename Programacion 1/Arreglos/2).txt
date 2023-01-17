@@ -1,0 +1,68 @@
+/*	Hacer un programa que dado un arreglo de enteros de tamaño 10 que se encuentra
+	precargado, obtenga la cantidad de números pares que tiene y la imprima. */
+
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+public class practicos {
+
+	public static int MAX = 10;
+	public static int MAXVALOR = 10;
+	public static int MINVALOR = 0;
+	
+	public static void main(String[] args) {
+		int [] arrint = new int[MAX];
+		int cant_pares;
+		
+		cargar_arreglo(arrint);
+		cant_pares = nros_pares(arrint);
+		System.out.println();
+		mostrar_arreglo_int(arrint);
+		System.out.println();
+		System.out.println("Cantidad de numeros pares: " + cant_pares);
+	
+	}
+	
+	
+	
+// ----------------------------------------PROCEDIMIENTOS Y FUNCIONES------------------------------------------------------------//
+	
+	public static void cargar_arreglo(int [] arr){
+		
+		BufferedReader entrada = new BufferedReader(new InputStreamReader(System.in));
+	
+		try{
+	
+				for (int pos = 0; pos < MAX; pos++){
+					System.out.println("Ingrese un entero: ");
+					arr[pos] = Integer.valueOf(entrada.readLine());
+				}
+			}
+	
+		catch(Exception exc){
+			System.out.println(exc);
+		}
+	}
+
+	//obtener cant de numeros pares
+	public static int nros_pares (int [] arr ) {
+		int frontera, par;
+		frontera = MINVALOR;
+		par = MINVALOR;
+		while (frontera < MAXVALOR) {
+			if ((arr[frontera] % 2) == 0) {
+				par = par +1;
+			}
+			frontera = frontera +1;
+		}
+		return (par);
+	}
+	
+	
+	
+	public static void mostrar_arreglo_int(int [] arr){
+		for (int pos = 0; pos < MAX; pos++){
+			System.out.println("Arreglo["+pos+"] =>: " + arr[pos]);
+		}
+	}
+
+}

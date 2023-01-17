@@ -1,0 +1,14 @@
+<DERExt>
+ <Entity subtype="0" y="41" x="-220" isAssociative="0" width="55" name="CLIENTE">
+  <Simple null="0" cant3="2" optionSQL="1" type="integer" cant2="0" pk="1" parent="" mult="0" name="nro_cliente" sk="0" cant1="20"/>
+  <Simple null="0" cant3="2" optionSQL="1" type="integer" cant2="0" pk="0" parent="" mult="0" name="nombre" sk="0" cant1="20"/>
+  <Simple null="0" cant3="2" optionSQL="1" type="integer" cant2="0" pk="0" parent="" mult="0" name="apellido" sk="0" cant1="20"/>
+  <Simple null="0" cant3="2" optionSQL="1" type="integer" cant2="0" pk="0" parent="" mult="0" name="fecha_nac" sk="0" cant1="20"/>
+  <Compound null="0" optionSQL="1" amount="2" pk="0" parent="" mult="0" name="direccion" sk="0">
+   <Simple null="0" cant3="2" optionSQL="1" type="integer" cant2="0" pk="0" parent="direccion" mult="0" name="calle" sk="0" cant1="20"/>
+   <Simple null="0" cant3="2" optionSQL="1" type="integer" cant2="0" pk="0" parent="direccion" mult="0" name="altura" sk="0" cant1="20"/>
+  </Compound>
+  <Simple null="0" cant3="2" optionSQL="1" type="integer" cant2="0" pk="0" parent="" mult="1" name="telefono" sk="0" cant1="20"/>
+  <Simple null="1" cant3="2" optionSQL="1" type="integer" cant2="0" pk="0" parent="" mult="1" name="celular" sk="0" cant1="20"/>
+ </Entity>
+</DERExt>

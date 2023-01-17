@@ -1,0 +1,44 @@
+import java.util.Random;
+public class Practica {
+	
+	public static final int MAXFILA = 4;
+	public static final int MAXCOLUMNA = 5;
+	public static final int MAXVALOR = 10;
+	public static final int MINVALOR = 1;
+	
+	public static void main(String[] args) {
+                       
+		double [][] matdouble;                                           
+		matdouble = new double[MAXFILA][MAXCOLUMNA]; 
+
+		cargar_matriz_aleatorio_double(matdouble);
+		imprimir_matriz_double(matdouble);
+	}
+
+
+//CARGAR MATRIZ
+
+
+
+	public static void cargar_matriz_aleatorio_double(double [][] mat){
+		Random r = new Random();
+		for (int fila = 0; fila < MAXFILA; fila++){
+			for (int columna = 0; columna < MAXCOLUMNA; columna++){
+				mat[fila][columna]=((MAXVALOR-MINVALOR-1)*r.nextDouble() + MINVALOR*1.0);  
+			}
+		}
+	}
+
+
+//IMPRIMIR MATRIZ
+
+	public static void imprimir_matriz_double(double [][] mat){
+		for (int fila = 0; fila < MAXFILA; fila++){
+			System.out.print("|");
+			for (int columna = 0; columna < MAXCOLUMNA; columna++){
+				System.out.print(mat[fila][columna]+"|");
+			}
+			System.out.println("");
+		}
+	}
+}

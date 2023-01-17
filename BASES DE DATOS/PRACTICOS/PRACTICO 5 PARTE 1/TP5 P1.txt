@@ -1,0 +1,44 @@
+1) 
+a) Cascade.
+ii) No se puede, porque al ser RESTRICT, una palabrá está siendo referenciada en la tabla CONTIENE.
+iii) Set Null no, porque no puede ser NULL una PK en este caso. Set Default: si lo permite sí.
+
+2)
+a)
+	1) delete from proyecto where id_proyecto = 3; -----------------------> Realiza la acción completa porque no está siendo referenciada ni en AUSPICIO ni en PROYECTO
+	2) update proyecto set id_proyecto = 7 where id_proyecto = 3; --------> Ídem 1) y es por esto que sólo se modifica la columna con id_proyecto = 3 de PROYECTO.
+	3) delete from proyecto where id_proyecto = 1; -----------------------> Está siendo referenciada en TRABAJA_EN y es RESTRICT. No se puede eliminar de PROYECTO.
+	4) delete from empleado where tipo_empleado = ‘A’ and nro_empleado = 2; Se puede. Borra de EMPLEADO el A-2 y en AUSPICIO realiza un set NULL en toda esa tupla.
+	5) update trabaja_en set id_proyecto  = 3 where id_proyecto  =1; Modifica la tupla tanto en TRABAJA_EN como en PROYECTO?
+	6) update proyecto set id_proyecto = 5 where id_proyecto = 2; --> No se puede por el restrict.
+
+b)
+  update auspicio set id_proyecto= 66, nro_empleado = 10 
+  where id_proyecto = 22 
+      and tipo_empleado = 'A' 
+      and nro_empleado = 5; 
+
+Respuesta: No se puede porque es Restrict. Si estuviese la tupla (como dice el enunciado), debería existir el id_proyecto = 22 en AUSPICIO y por ende en PROYECTO. Pero como es Restrict no puede modificarse.
+
+c)
+Esto mirando AUSPICIO_EMPLEADO:
+
+insert into Auspicio values (1, Dell , B, null); ---------> Aceptada-> Simple y parcial
+insert into Auspicio values (2, Oracle, null, null); -----> Aceptada--> Simple, parcial y full
+insert into Auspicio values (3, Google, A, 3); -----------> Rechazada -> Ninguno
+insert into Auspicio values (1, HP, null, 3); ------------> Rechazada -> Simple
+
+
+3)
+a) Sí. Son dos relaciones diferentes.
+b) No.
+
+4)
+a) F. Porque es compuesta y necesita la otra PK.
+b) F. Porque la referencia tiene que crearse en la tabla referenciante (AUTO) y solo necesita id_equipo.
+c) F. Porque la pk de Etapa es solamente Netapa, no id_equipo
+d) F. No hay relación entre ETAPA y AUSPICIA.
+e) V.
+f) V.
+
+

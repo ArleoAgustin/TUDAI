@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/js2.js"></script>
+    <title></title>
+</head>
+<body>
+
+    <head>
+
+        <h1>Titulo</h1>
+
+    </head>
+
+    <nav>
+
+        <div class="menu">
+
+            <a href="" class="item">Pag ant.</a>
+            <a href="" class="item">Home</a>
+            <a href="" class="item">Pag sig.</a>
+
+
+        </div>
+
+    </nav>
+
+    <button class="cant_parrafos">Cant de parrafos</button>
+    <button class="cant_items">cant de intems</button>  
+    <button class="cant_noticias">Cant de divs noticias</button>
+    
+    <p class="resultado1"></p>
+    <p class="resultado2"></p>
+    <p class="resultado3"></p>
+
+    <article>
+
+        <section class="noticias">
+
+            <p class="parrafo">
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Id ullam doloremque iure ex,
+                ipsa ratione excepturi modi aliquam asperiores molestiae, placeat quod quia perferendis eos.
+            </p>
+            
+        </section>
+
+        <section class="noticias">
+
+            <p class="parrafo">
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Id ullam doloremque iure ex,
+                ipsa ratione excepturi modi aliquam asperiores molestiae, placeat quod quia perferendis eos.
+            </p>
+            
+        </section>
+
+
+        <section class="noticias">
+
+            <p class="parrafo">
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Id ullam doloremque iure ex,
+                ipsa ratione excepturi modi aliquam asperiores molestiae, placeat quod quia perferendis eos.
+            </p>
+            
+        </section>
+
+        <section class="noticias">
+
+            <p class="parrafo">
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Id ullam doloremque iure ex,
+                ipsa ratione excepturi modi aliquam asperiores molestiae, placeat quod quia perferendis eos.
+            </p>
+            
+        </section>
+
+
+
+        <section>
+
+            <ul>
+
+                <li id="lista" >OPCION 1</li>
+                <li id="lista" >OPCION 2</li>
+                <li id="lista" >OPCION 3</li>
+            
+            </ul>
+
+
+        </section>
+
+
+
+
+    </article>
+
+</body>
+</html>
+
+
+*************************************************************************************
+
+document.addEventListener('DOMContentLoaded', cargarPagina);
+"use strict"
+function cargarPagina () {
+
+
+
+       document.querySelector(".cant_parrafos").addEventListener("click", function () {
+
+        let imagenes = document.querySelectorAll(".parrafo");
+        let contador = 0;
+
+        for(var i = 0; i < imagenes.length; i++) {
+                contador++;
+        }
+
+        document.querySelector(".resultado1").innerHTML = "LA CANTIDAD DE PARRAFOS ES: " + contador;
+
+        console.log(contador);
+
+       })
+
+
+       document.querySelector(".cant_items").addEventListener("click", function () {
+
+        let imagenes = document.querySelectorAll("#lista");
+        let contador = 0;
+
+        for(var i = 0; i < imagenes.length; i++) {
+                contador++;
+        }
+
+        document.querySelector(".resultado2").innerHTML = "LA LISTA TIENE " + contador + " ITEMS"
+
+        console.log(contador);
+
+       })
+
+
+       document.querySelector(".cant_noticias").addEventListener("click", function () {
+
+        let imagenes = document.querySelectorAll(".noticias");
+        let contador = 0;
+
+        for(var i = 0; i < imagenes.length; i++) {
+                contador++;
+        }
+
+        document.querySelector(".resultado3").innerHTML = "LAS SECTIONS DE NOTICIAS SON " + contador;
+
+        console.log(contador);
+
+       })
+        
+        
+}
+
+
+
+********************************************************************************************************
+
+
+body {
+
+    background-color:  black;
+    color: white;
+    font-family: sans-serif
+
+}
+
+
+
+h1{
+    text-align: center;
+}
+
+
+
+nav {
+    margin-top: 5%;
+    display: flex;
+    justify-content: center;
+}
+
+.menu {
+    background-color: black;
+    height: 70px;
+    font-size: 40px;
+}
+
+.item {
+    list-style: none;
+    margin: 0px 20px;
+    padding: 10px 50px;
+    border-bottom: 5px solid #16c25d;
+    color: white;
+    text-decoration: none;
+    font-size: 45px;
+}
+
+
+
+article {
+
+    display: flex;
+    flex-direction: column;
+    width: 73%;
+    margin-left: 15%;
+
+}
+
+
+.parrafo {
+
+    padding: 5%;
+
+
+}

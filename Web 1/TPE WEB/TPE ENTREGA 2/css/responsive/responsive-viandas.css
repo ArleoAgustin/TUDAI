@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap');
+
+/* RESPONSIVE DE SECCION "VIANDAS" */
+
+/* DISPOSITIVOS CON RESOLUCION MAXIMA DE 1180px */
+
+@media only screen and (max-width: 1180px) {
+
+    .subtitulo {
+        width: 100%;
+        font-size: 4vw;
+    }
+    
+    .contenedorVianda {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+    }
+    
+    .fotoComida {
+        height: 30%;
+        width: 25%;
+        margin: 15px;
+    }
+
+    .precio {
+        width: 20%;
+        font-size: 6vw;
+    }
+
+    .descripcionViandas {
+        text-align: left;
+    }
+
+}
+
+/* DISPOSITIVOS CON RESOLUCION MAXIMA DE 972px */
+
+@media only screen and (max-width: 972px) {
+
+    .contenedorVianda {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        border: 8px solid green;
+        border-radius: 15px;
+        margin: 10px;
+    }
+
+    .descripcionViandas {
+        display: flex;
+        text-align: center;
+        font-size: 4vw;
+        margin: 0px;
+    }
+
+    .subtitulo { 
+        text-align: center;
+        font-family: 'Bree Serif', serif;
+        font-size: 6vw;
+    }
+    
+}
+
+/* DISPOSITIVOS CON RESOLUCION MAXIMA DE 800px */
+
+@media only screen and (max-width: 800px) {
+
+    .descripcionViandas {
+        font-weight: bold;
+        color: black;
+    }
+
+    .subtitulo {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        background-color: yellowgreen;
+        border: 5px solid rgb(112, 150, 35);
+        border-bottom: 5px solid rgb(70, 94, 24);
+        border-right: 5px solid rgb(70, 94, 24);
+        font-size: 6vw;
+        border-radius: 10px;
+        color: black;
+        padding: 15px;
+    }
+
+    .fotoComida {
+        height: 30%;
+        width: 45%;
+        margin: 15px;
+    }
+
+    .agregarAtabla {
+        display: flex;
+        justify-content: flex-start;
+    }
+
+    
+    .botones {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .textoInput {
+        margin: 10px;
+    }
+
+    button {
+        width: 20%;
+    }
+
+    #producto {
+        font-size: 6vw;
+        width: 100%;
+    }
+
+    #precio {
+        font-size: 6vw;
+        width: 100%;
+    }
+
+}
+
+/* DISPOSITIVOS CON RESOLUCION MAXIMA DE 500px */
+
+@media only screen and (max-width: 500px) {
+
+    .descripcionViandas {
+        font-weight: bold;
+        font-size: 6VW;
+    }
+    
+}

@@ -1,0 +1,31 @@
+/* Escribir un programa que mientras que el usuario ingrese un número entero
+entre 1 y 10 inclusive, lleve la suma de los números ingresados y la cantidad
+de sumas que realizó. Finalmente, cuando sale del ciclo muestre por
+pantalla el resultado del promedio de todo lo ingresado. */
+
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+public class Puntodos {
+	public static void main(String[] args) {
+		int valor, contador, sumas;
+		sumas =0;
+
+		BufferedReader entrada = new BufferedReader(new InputStreamReader(System.in));
+		
+		try {
+			System.out.println("Ingrese un valor entre 1 y 10, para salir cargue otro valor");
+			valor = Integer.valueOf(entrada.readLine());
+			contador = valor;
+			while ((valor >= 1) && (valor <= 10)) {
+				System.out.println("Ingrese un valor entre 1  y 10, para salir cargue otro valor");
+				valor = Integer.valueOf(entrada.readLine());
+				contador = contador + valor;
+				sumas = sumas +1;
+			}
+			System.out.println("El promedio de los valores ingresados es: " + (contador / sumas));
+		}	
+		catch(Exception exc) {
+			System.out.println(exc);
+		}
+	}
+}	

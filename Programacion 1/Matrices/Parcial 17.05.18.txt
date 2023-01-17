@@ -1,0 +1,194 @@
+/* 	Se tiene una matriz MAT de enteros de tamaño 5x20 donde en cada fila
+ * se tiene secuencias de numeros distintos de cero separadas por uno o 
+ * mas ceros. Realizar un programa que para todas las filas inviera el contenido
+ * de las secuencias que tienen tamaño N, y comienzan y terminan con al menos 
+ * un 1, siendo N un valor entero cargado desde teclado entre 0 y la cantidad
+ * de columnas.
+ */
+
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+public class Practica {
+	public static final int MAXFILA = 5;
+	public static final int MAXCOLUMNA = 10;
+
+	public static void main(String[] args) {                
+		int [][] matint = {{0,0,5,0,1,5,7,3,1,0},
+						   {0,0,0,0,1,5,7,3,1,0},
+						   {0,1,0,1,8,4,1,0,0,0},
+						   {0,0,0,0,1,5,7,1,0,0},
+						   {0,5,7,0,1,5,7,0,1,0}};
+
+		
+		System.out.println();
+		imprimir_matriz_int(matint);
+		System.out.println();
+		recorrer_filas(matint);
+		System.out.println();
+		imprimir_matriz_int(matint);
+	}
+
+	
+	
+	
+	public static void recorrer_filas (int [][] matint) {
+		
+		int fila = 0;
+		int valor = cargar_entero();
+		
+		while (fila < MAXFILA && valor < MAXCOLUMNA -1) {
+			
+			invertir_secuencia(matint[fila], valor);
+			
+			fila++;
+		}
+		
+	}
+	
+	
+	
+//ORDENAR ULTIMA SECUENCIA
+	
+	public static void invertir_secuencia (int [] arrint, int valor) {
+		
+		int inicio, fin;
+		inicio = 0;
+		fin = -1;
+		boolean valida;
+			
+			while(inicio < MAXCOLUMNA-1) {
+				inicio = inicio_secuencia (arrint, fin+1);
+				if (inicio < MAXCOLUMNA) {
+					fin= fin_secuencia (arrint, inicio);
+				
+			
+			
+			valida = es_valida(arrint, inicio, fin, valor);
+			if (valida == true) {
+				System.out.println("Inicio: " + inicio+ " fin: " + fin);
+				invertir_secuencia (arrint, inicio, fin);
+			}
+			}
+		}
+	}
+	
+	
+//FUNCION QUE DETERMINA SI ES VALIDA PARA INVERTIR LA SECUENCIA
+	
+	public static boolean es_valida (int [] arrint, int inicio, int fin, int valor) {
+		
+		boolean valida = false;
+		int pos = inicio;
+		int tamanio = 0;
+		
+		while (pos <= fin) {
+			tamanio++;
+			pos++;
+		}
+		
+		if ((arrint[inicio] == 1 && arrint[fin] == 1) && (tamanio == valor)) {
+			
+			valida = true;
+		}
+		
+		return(valida);
+	}
+	
+	
+	
+	
+//INVERTIR SECUENCIAS
+	
+	public static void invertir_secuencia (int [] arrint, int inicio, int fin) {
+		
+		int valor;
+		
+		while (inicio < fin) {
+			
+			valor = arrint[inicio];
+			arrint[inicio] = arrint[fin];
+			arrint[fin] = valor;
+			inicio++;
+			fin--;
+			
+		}
+	}
+	
+	
+	
+	
+	
+//FIN DE SECUENCIA
+	
+	public static int fin_secuencia (int [] arrint, int inicio) {
+		
+		int pos = inicio;
+		
+		while ((arrint[pos] != 0) && (pos < MAXCOLUMNA-1)) {
+			
+			pos++;
+		}
+		
+		return(pos -1);
+	}
+	
+	
+	
+	
+//INICIO DE SECUENCIA	
+	
+	public static int inicio_secuencia (int [] arrint, int fin) {
+		
+		int pos = fin;
+		
+		while ((pos < MAXCOLUMNA-1) && (arrint[pos] == 0)) {
+			
+			pos++;
+			
+		}
+		
+		return(pos);
+	
+	}
+	
+	
+	
+	
+//FUNCION CARGAR VALOR
+	
+	public static int cargar_entero () {
+							
+			int valor = 0;
+							
+			BufferedReader entrada = new BufferedReader(new InputStreamReader(System.in));
+							
+			try {
+				System.out.println ("Ingrese un valor entero: ");
+				valor = Integer.valueOf(entrada.readLine());
+			}
+			catch(Exception exc) {
+			System.out.println (exc);
+								
+			}
+		return (valor);
+		}
+	
+		
+		
+	
+
+//IMPRIMIR MATRIZ
+
+
+	public static void imprimir_matriz_int(int [][] mat){
+		for (int fila = 0; fila < MAXFILA; fila++){
+			System.out.print("|");
+			for (int columna = 0; columna < MAXCOLUMNA; columna++){
+				System.out.print(mat[fila][columna]+"|");
+			}
+		System.out.println("");
+		}
+	}
+
+	
+}

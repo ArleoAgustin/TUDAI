@@ -1,0 +1,45 @@
+/* Escribir un programa que mientras que el usuario ingrese un número entero
+	natural, llame a un método que calcule la sumatoria entre 1 y dicho
+	numero y se lo retorne como resultado. Finalmente, muestre por pantalla el
+	resultado obtenido. */
+
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+public class entrega {
+	public static final int MIN = 1;
+	public static void main(String[] args) {
+
+		imprimir_sumatoria_entre_1_y_valor();
+	}
+	
+	
+//FUNCION CARGAR VALOR
+	public static int cargar_valor () {
+		int valor = 0;
+		BufferedReader entrada = new BufferedReader(new InputStreamReader(System.in));
+		
+		try {
+			System.out.println ("Inrese un valor entero natural, para salir ingrese '-1': ");
+			valor = Integer.valueOf(entrada.readLine());
+	
+		}
+		catch(Exception exc) {
+			System.out.println (exc);
+		}
+		return (valor);
+	}
+	
+	public static void imprimir_sumatoria_entre_1_y_valor () {
+		int SUMATORIA = 0;
+		int valor = cargar_valor();
+		while (valor != -1) {
+			for (int min= MIN; min <= valor; min++) {
+				SUMATORIA = SUMATORIA + min;
+			}
+			System.out.println ("La sumatoria desde 1 hasta " + valor + " = " + SUMATORIA );
+			SUMATORIA = 0;
+			valor = cargar_valor();
+		}
+	}
+		
+} 

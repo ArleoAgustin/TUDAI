@@ -1,0 +1,170 @@
+/* 	Hacer un programa que dada la matriz de secuencias de enteros definida
+	y precargada, permita obtener a través de métodos la posición de inicio y
+	la posición de fin de la secuencia ubicada a partir de una posición entera
+	y una fila, ambas ingresadas por el usuario. Finalmente, si existen imprima
+	por pantalla ambas posiciones obtenidas.
+ */
+
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.util.Random;
+public class Practica {
+	public static final int MAXFILA = 5;
+	public static final int MAXCOLUMNA = 10;
+	public static final int MAXVALOR = 10;
+	public static final int MINVALOR = 1;
+	public static final double probabilidad_numero = 0.4;
+
+	public static void main(String[] args) {                
+		int [][] matint;                                  
+		matint = new int[MAXFILA][MAXCOLUMNA];
+                  
+		cargar_matriz_aleatorio_secuencias_int(matint);
+		System.out.println();
+		imprimir_matriz_int(matint);
+		System.out.println();
+		imprimir_inicio_fin (matint);
+	}
+
+
+//PROCEDIMIENTO IMPRIMIR INICIO Y FIN DE SECUENCIA
+	
+	public static void imprimir_inicio_fin (int [] [] matint) {
+		
+		System.out.println("INGRESE UNA FILA: ");
+		int fila = cargar_entero();
+		System.out.println("INGRESE UNA POSICION: ");
+		int pos = cargar_entero();
+		int inicio = pos;
+		int fin = pos;
+		
+		
+		if ((fila < MAXFILA) && (pos < MAXCOLUMNA)) {
+			
+			if (matint[fila][pos] != 0) {
+				inicio = obtener_inicio_secuencia(matint[fila], pos);
+				fin = obtener_fin_secuencia(matint[fila], inicio);
+				System.out.println("LA SECUENCIA INICIA EN LA FILA " + fila+ " DESDE LA COLUMNA "+ inicio+ " HASTA " + fin );
+			
+			}
+			else {
+				System.out.println("EN LA POSICION INGRESADA NO EXISTE UNA SECUENCIA");
+			}
+		}
+		else {
+			System.out.println("LA POSICION INGRESADA NO ES VALIDA");
+		}
+		
+		
+	}
+	
+
+
+
+
+// INICIO DE SECUENCIA	
+		
+	public static int obtener_inicio_secuencia (int [] arr, int pos) {
+		
+		int front = pos;
+		
+		while (arr[front] != 0) {
+			front--;
+		}
+		
+		return (front +1);
+	}
+		
+		
+		
+		
+		
+// FIN DE SECUENCIA	
+		
+	public static int obtener_fin_secuencia (int [] arr, int inicio) {
+		
+		int front = inicio;
+			
+		while (arr [front] != 0) {
+			front++;
+		}
+			
+		return (front -1);
+	} 
+	
+	
+	
+	
+	
+	//FUNCION CARGAR VALOR
+	
+		public static int cargar_entero () {
+							
+			int valor = 0;
+							
+			BufferedReader entrada = new BufferedReader(new InputStreamReader(System.in));
+							
+			try {
+				System.out.println ("Ingrese un valor entero: ");
+				valor = Integer.valueOf(entrada.readLine());
+			}
+			catch(Exception exc) {
+			System.out.println (exc);
+								
+			}
+		return (valor);
+		}
+	
+		
+		
+		
+
+
+
+//CARGA DE SECUENCIAS EN MATRICES LLAMANDO A "CARGA ALEATORIA DE ARREGLOS"
+
+	public static void cargar_matriz_aleatorio_secuencias_int(int [][] matint){
+		for (int fila = 0; fila < MAXFILA; fila++){
+			cargar_arreglo_aleatorio_secuencias_int(matint[fila]);
+		}
+		System.out.println("");
+	}
+
+
+
+
+
+//CARGA DE SECUENCIAS EN ARREGLOS
+
+	public static void cargar_arreglo_aleatorio_secuencias_int(int [] arrint){
+				
+		Random r = new Random();
+		arrint[0] = 0;
+		arrint[MAXCOLUMNA-1] = 0;
+		for (int pos = 1; pos < MAXCOLUMNA-1; pos++){
+			if (r.nextDouble()>probabilidad_numero){
+				arrint[pos]=(r.nextInt(MAXVALOR-MINVALOR+1) + MINVALOR);
+			}
+			else {
+				arrint[pos]=0;
+			}
+		}
+	}
+
+
+
+//IMPRIMIR MATRIZ
+
+
+	public static void imprimir_matriz_int(int [][] mat){
+		for (int fila = 0; fila < MAXFILA; fila++){
+			System.out.print("|");
+			for (int columna = 0; columna < MAXCOLUMNA; columna++){
+				System.out.print(mat[fila][columna]+"|");
+			}
+		System.out.println("");
+		}
+	}
+
+	
+}

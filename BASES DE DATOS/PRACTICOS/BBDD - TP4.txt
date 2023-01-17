@@ -1,0 +1,320 @@
+//////////////////////////////////////////////////////////////PARTE II//////////////////////////////////////////////////////////////
+
+-- 1.1
+SELECT id_institucion, nombre_institucion 
+FROM unc_esq_voluntario.institucion  
+WHERE LOWER(nombre_institucion) LIKE '%fundacion%';
+
+SELECT id_departamento, id_distribuidor, nombre 
+FROM unc_esq_peliculas.departamento;
+
+-- 1.2
+SELECT nombre, apellido, telefono FROM unc_esq_peliculas.empleado 
+WHERE id_tarea = '7231' ORDER BY nombre, apellido;
+
+-- 1.3
+SELECT apellido, id_empleado FROM unc_esq_peliculas.empleado 
+WHERE porc_comision <> 0;
+SELECT apellido, id_empleado FROM unc_esq_peliculas.empleado 
+WHERE (porc_comision) IS NULL;
+
+-- 1.4
+SELECT apellido, id_empleado 
+FROM unc_esq_peliculas.empleado 
+WHERE id_jefe IS NULL;
+
+-- 1.5
+SELECT nombre, id_distribuidor 
+FROM unc_esq_peliculas.distribuidor WHERE telefono IS NULL;
+
+-- 1.6
+SELECT nombre, apellido, e_mail FROM unc_esq_peliculas.empleado 
+WHERE e_mail IS NOT NULL AND sueldo > 1000;
+
+-- 1.7
+SELECT DISTInCT id_tarea FROM unc_esq_peliculas.empleado;
+
+-- 1.8
+SELECT nombre, apellido, e_mail 
+FROM unc_esq_voluntario.voluntario 
+WHERE LOWER(telefono) LIKE '+51%';
+
+-- 1.9
+SELECT nombre|| ' , ' || apellido AS "Nombre completo", extract(DAY from fecha_nacimiento)|| ' , ' || extract(DAY from fecha_nacimiento) AS "Cumple"
+FROM unc_esq_voluntario.voluntario 
+ORDER BY extract(DAY from fecha_nacimiento), extract(DAY from fecha_nacimiento);
+
+-- 1.10
+SELECT MAX(horas_aportadas), MIN(horas_aportadas),  AVg(horas_aportadas) 
+FROM voluntario 
+WHERE EXTRACT(YEAR FROM fecha_nacimiento) > '1990';
+
+-- 1.11
+SELECT idioma, COUNT(idioma) AS cantidad 
+FROM pelicula GROUP BY idioma;
+
+-- 1.12
+SELECT departamento.nombre, COUNT(empleado.id_departamento) AS cantidad 
+FROM departamento, empleado 
+GROUP BY departamento.nombre, cantidad 
+HAVING departamento.id_departamento = empleado.id_departamento;
+
+-- 1.13
+SELECT d.nombre, COUNT(e.id_departamento) AS cantidad 
+FROM departamento AS d 
+INNER JOIN empleado AS e ON e.id_departamento = d.id_departamento
+GROUP BY d.nombre 
+ORDER BY d.nombre
+
+-- 1.14
+SELECT p.codigo_pelicula 
+FROM pelicula AS p, renglon_entrega AS r 
+WHERE r.codigo_pelicula = p.codigo_pelicula 
+AND r.codigo_pelicula >= '3' AND r.codigo_pelicula <= '5'
+ORDER BY p.codigo_pelicula 
+
+-- 1.15
+SELECT EXTRACT(MONTH FROM v.fecha_nacimiento) AS mes, 
+       COUNT(EXTRACT(MONTH FROM v.fecha_nacimiento))
+FROM voluntario AS v
+GROUP BY mes
+ORDER BY mes
+
+-- 1.16
+SELECT i.nombre_institucion AS nombre, 
+       COUNT(v.id_institucion) AS cantidad
+FROM voluntario AS v INNER JOIN institucion AS i
+ON i.id_institucion = v.id_institucion
+GROUP BY i.nombre_institucion
+ORDER BY cantidad DESC
+LIMIT 2
+
+-- 1.17
+SELECT c.nombre_ciudad AS nombre, 
+       COUNT(d.id_ciudad) AS cantidad
+FROM ciudad AS c INNER JOIN departamento AS d
+ON c.id_ciudad = d.id_ciudad
+GROUP BY c.nombre_ciudad 
+HAVING COUNT(d.id_ciudad) > 1;
+
+
+
+
+//////////////////////////////////////////////////////////////PARTE II//////////////////////////////////////////////////////////////
+
+Ejercicio 1: (2987 resultados)
+SELECT DISTINCT p.codigo_pelicula, p.titulo, p.idioma
+FROM pelicula AS p, renglon_entrega AS r, entrega AS e 
+WHERE p.codigo_pelicula = r.codigo_pelicula AND
+e.nro_entrega = r.nro_entrega AND
+EXTRACT(YEAR FROM e.fecha_entrega) = 2006 AND p.idioma = 'Inglés'
+ORDER BY p.titulo;
+
+Utilizando JOIN: 44 resultados)
+SELECT DISTINCT p.codigo_pelicula, p.titulo, p.idioma
+FROM pelicula AS p JOIN renglon_entrega AS r 
+ON (p.codigo_pelicula = r.codigo_pelicula)
+JOIN entrega AS e ON (r.nro_entrega = e.nro_entrega) 
+WHERE EXTRACT(YEAR FROM e.fecha_entrega) = 2006 AND p.idioma = 'Inglés'
+ORDER BY p.titulo;
+
+Utilizando IN: (2831 resultados)
+-- No es necesario utilizar el distinc :D
+SELECT p.titulo, p.idioma
+FROM pelicula AS p 
+WHERE p.codigo_pelicula IN (
+	SELECT r.codigo_pelicula
+	FROM renglon_entrega AS r
+	WHERE r.nro_entrega IN (
+		SELECT e.nro_entrega
+		FROM entrega AS e
+		WHERE EXTRACT(YEAR FROM e.fecha_entrega) = 2006
+	)
+) AND p.idioma = 'Inglés'
+ORDER BY p.titulo;
+
+Ejercicio 2:
+Utilizando JOIN (ensamble):
+SELECT COUNT (p.codigo_pelicula) AS cantidad
+FROM pelicula AS p 
+JOIN renglon_entrega AS r ON (p.codigo_pelicula = r.codigo_pelicula)
+JOIN entrega AS e ON (e.nro_entrega = r.nro_entrega)
+JOIN distribuidor AS d ON (d.id_distribuidor = e.id_distribuidor)
+JOIN nacional AS n ON (n.id_distribuidor = d.id_distribuidor)
+WHERE EXTRACT(YEAR FROM e.fecha_entrega) = 2006 
+GROUP BY n.id_distribuidor ---------
+
+Ejercicio 3:
+-- 1.3. Indicar los departamentos que no posean empleados cuya diferencia de sueldo
+-- máximo y mínimo (asociado a la tarea que realiza) no supere el 40% del sueldo máximo.(P)
+SELECT d.nombre 
+FROM departamento AS d 
+WHERE d.id_departamento NOT IN(
+	SELECT e.id_departamento
+	FROM empleado AS E 
+	WHERE e.id_tarea IN (
+		SELECT t.id_tarea
+		FROM tarea AS t
+		WHERE (t.sueldo_maximo - t.sueldo_minimo) < ((t.sueldo_maximo/100)*40)
+		
+	)
+);
+
+
+Ejercicio 4:
+--1.4. Liste las películas que nunca han sido entregadas por un distribuidor nacional.(P)
+--Utilizando in
+SELECT p.titulo
+FROM pelicula AS P
+WHERE p.codigo_pelicula NOT IN (
+	SELECT r.codigo_pelicula
+	FROM renglon_entrega AS r
+	WHERE r.nro_entrega IN (
+		SELECT e.nro_entrega
+		FROM entrega AS e
+		WHERE e.id_distribuidor IN (
+			SELECT n.id_distribuidor
+			FROM nacional AS n
+		)
+	)
+);
+--utilizando NOT EXISTS
+SELECT p.titulo
+FROM pelicula AS P
+WHERE NOT EXISTS (
+	SELECT r.codigo_pelicula
+	FROM renglon_entrega AS r
+	WHERE p.codigo_pelicula = r.codigo_pelicula AND r.nro_entrega IN (
+		SELECT e.nro_entrega
+		FROM entrega AS e
+		WHERE e.id_distribuidor IN (
+			SELECT n.id_distribuidor
+			FROM nacional AS n
+		)
+	)
+);
+
+
+--1.5. Determinar los jefes que poseen personal a cargo y cuyos departamentos (los del
+--jefe) se encuentren en la Argentina.
+SELECT d.jefe_departamento 
+FROM departamento AS d
+WHERE EXISTS (
+	SELECT e.id_jefe
+	FROM empleado AS e
+	WHERE d.jefe_departamento = e.id_jefe 
+) AND EXISTS (
+	SELECT c.id_ciudad 
+	FROM ciudad AS c
+	WHERE c.id_pais = 'AR' AND
+	d.id_ciudad = c.id_ciudad 
+);
+
+
+--1.6. Liste el apellido y nombre de los empleados que pertenecen a aquellos
+--departamentos de Argentina y donde el jefe de departamento posee una comisión de más
+--del 10% de la que posee su empleado a cargo.
+SELECT (e1.nombre ||' '||e1.apellido) AS "nombre y apellido"
+FROM empleado AS e1
+WHERE e1.id_jefe IN ( 
+	SELECT d.jefe_departamento 
+	FROM departamento AS d
+	WHERE EXISTS (
+		SELECT c.id_ciudad 
+		FROM ciudad AS c
+		WHERE c.id_pais = 'AR' AND
+		d.id_ciudad = c.id_ciudad 
+	) 
+) AND EXISTS (
+	SELECT 1
+	FROM empleado AS e2
+	WHERE e1.id_jefe = e2.id_empleado AND
+	10 > (e2.porc_comision - e1.porc_comision)
+);
+
+--1.7. Indicar la cantidad de películas entregadas a partir del 2010, por género.
+SELECT p.genero, COUNT(p.codigo_pelicula) AS cant
+FROM pelicula        AS p 
+JOIN renglon_entrega AS r ON (r.codigo_pelicula =  p.codigo_pelicula)
+JOIN entrega         AS e ON (e.nro_entrega = r.nro_entrega)
+WHERE EXTRACT(YEAR FROM (e.fecha_entrega)) > 50
+GROUP BY p.genero;
+
+--1.8. Realizar un resumen de entregas por día, indicando el video club al cual se le
+--realizó la entrega y la cantidad entregada. Ordenar el resultado por fecha.
+SELECT EXTRACT(DAY FROM e.fecha_entrega) AS dia, COUNT(r.cantidad) AS Cant
+FROM pelicula        AS p 
+JOIN renglon_entrega AS r ON (r.codigo_pelicula = p.codigo_pelicula)
+JOIN entrega         AS e ON (e.nro_entrega     = r.nro_entrega)
+JOIN distribuidor    AS d ON (d.id_distribuidor = e.id_distribuidor)
+GROUP BY dia
+ORDER BY dia;
+
+--1.9. Listar, para cada ciudad, el nombre de la ciudad y la cantidad de empleados
+--mayores de edad que desempeñan tareas en departamentos de la misma y que posean al
+--menos 30 empleados.
+SELECT c.nombre_ciudad, COUNT(e.id_empleado) AS cantidad
+FROM departamento AS d 
+JOIN empleado     AS e ON (e.id_departamento = d.id_departamento)
+JOIN ciudad       AS c ON (d.id_ciudad       = c.id_ciudad)
+WHERE (d.id_ciudad       = c.id_ciudad) AND 
+(2020 - EXTRACT(YEAR FROM (e.fecha_nacimiento)) > 50)
+GROUP BY c.nombre_ciudad
+HAVING 30 < COUNT(e.id_empleado)
+ORDER BY cantidad DESC;
+
+
+-- 2.1 Muestre, para cada institución, su nombre y la cantidad de voluntarios que realizan
+-- aportes. Ordene el resultado por nombre de institución.
+SELECT i.nombre_institucion, COUNT(e.horas_aportadas IS NOT NULL) 
+FROM institucion AS i JOIN
+voluntario AS e ON (e.id_institucion = i.id_institucion)
+GROUP BY i.id_institucion
+ORDER BY i.nombre_institucion;
+
+-- 2.2 Determine la cantidad de coordinadores en cada país, agrupados por nombre de
+-- país y nombre de continente. Etiquete la primer columna como &#39;Número de coordinadores&#39;
+SELECT COUNT(DISTINCT v.id_coordinador IS NOT NULL)
+FROM continente  AS c 
+JOIN pais        AS p ON (c.id_continente  = p.id_continente)
+JOIN direccion   AS d ON (p.id_pais        = d.id_pais)
+JOIN institucion AS i ON (i.id_direccion   = d.id_direccion)
+JOIN voluntario  AS v ON (v.id_institucion = i.id_institucion)
+GROUP BY p.nombre_pais , c.nombre_continente 
+
+-- 2.3 Escriba una consulta para mostrar el apellido, nombre y fecha de nacimiento de
+-- cualquier voluntario que trabaje en la misma institución que el Sr. de apellido Zlotkey.
+-- Excluya del resultado a Zlotkey.
+SELECT v1.nombre, v1.apellido
+FROM voluntario  AS v1 
+JOIN institucion AS i ON (v1.id_institucion = i.id_institucion)
+WHERE v1.id_institucion IN (
+	SELECT v2.id_institucion
+	FROM voluntario  AS v2
+	WHERE apellido = 'Zlotkey' 
+) AND apellido <> 'Zlotkey';
+
+-- 2.4 Cree una consulta para mostrar los números de voluntarios y los apellidos de todos
+-- los voluntarios cuya cantidad de horas aportadas sea mayor que la media de las horas
+-- aportadas. Ordene los resultados por horas aportadas en orden ascendente.
+SELECT v1.apellido, v1.horas_aportadas AS hora
+FROM voluntario  AS v1
+WHERE v1.horas_aportadas > (
+	SELECT AVG(v2.horas_aportadas)
+	FROM voluntario  AS v2
+);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

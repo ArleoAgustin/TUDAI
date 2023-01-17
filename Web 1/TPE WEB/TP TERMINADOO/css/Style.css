@@ -1,0 +1,123 @@
+/* Encabezado de todas las paginas */
+
+.encabezado {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.cabecera {
+    display: flex;
+    justify-content: space-between;
+}
+
+.titulo {
+    color: white;
+    font-size: 100px;
+    padding: 5px;
+    margin: 0% 0%;
+    width: 550px;
+    margin-bottom: 30px;
+    border-bottom: 5px solid yellowgreen;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+/* Boton "consultas" de todas las paginas */
+
+.botonConsultas {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    height: 45px;
+    width: 140px;
+    left: 85%;
+    top: 60px;
+    border-radius: 26px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-weight: bolder;
+    background-color: #d1852e;
+    text-decoration: none;
+    color: black;
+    border: 1px solid rgb(155, 155, 155);
+    font-size: 14px;
+}
+
+.imagenConsultas {
+    width: 30px;
+    margin-left: 15px;
+}
+
+.botonConsultas:hover {
+    color: rgba(255, 255, 255, 1);
+    box-shadow: 0 4px 16px rgb(224, 171, 140);
+    transition: all 0.5s ease;
+}
+
+/* Barra de navegacion de todas las paginas */
+
+.menu {
+    background-color: black;
+    height: 80px;
+    font-size: 50px;
+    flex-wrap: wrap;
+}
+
+.item {
+    list-style: none;
+    margin: 0px 10px;
+    padding: 10px 20px;
+    border-bottom: 5px solid #d1852e;
+    color: white;
+    text-decoration: none;
+    font-size: 45px;
+}
+
+.itemPrincipal {
+    list-style: none;
+    margin: 0px 10px;
+    padding: 10px 20px;
+    border-bottom: 5px solid yellowgreen;
+    color: white;
+    text-decoration: none;
+    font-size: 45px;
+}
+
+.item:hover {
+    background-color: #ffa33b;
+    border-radius: 50px;
+    color: rgb(0, 0, 0);
+    transition: all 500ms ease;
+}
+
+/* Pie de todas las paginas */
+/* "ilvero" boton amarillo en el pie de pagina */
+
+.ilvero {
+    display: flex;
+    justify-content: center;
+    height: 60px;
+    border-bottom: 5px solid #d0d334;
+    background-color: #f0f33c;
+    border-radius: 10px;
+    width: 200px;
+    color: rgb(53, 53, 53);
+    text-decoration: none;
+    font-size: 50px;
+}
+
+.ilvero:hover {
+    background-color: #f0f33c;
+    border-radius: 50px;
+    color: black;
+    transition: all 1000ms ease;
+}
+
+footer {
+    margin-top: 10px;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}

@@ -1,0 +1,65 @@
+/* 	Escribir un programa que mientras el usuario ingrese un número entero
+	entre 1 y 10, pida ingresar un caracter, y por cada caracter ingresado imprima:
+	– “letra minúscula” si el caracter es una letra del abecedario en minúscula;
+	– “letra mayúscula” si el caracter es una letra del abecedario en mayúscula;
+	– “dígito” si el caracter corresponde a un carácter número;
+	– “otro” para los restantes casos de caracteres. */
+
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+public class entrega {
+	public static int VALOR = 0;
+	
+	public static void main(String[] args) {
+		
+		imprimir_tipo_de_caracter ();
+		
+	}	
+		
+//FUNCION CARGAR VALORES
+	
+	public static char ingresar_valor_y_caracter() {
+		char caracter = '0';
+	
+		BufferedReader entrada = new BufferedReader(new InputStreamReader(System.in));
+		
+		try {
+			
+			System.out.println ("Ingrese un valor entero entre 1 y 10:");
+			VALOR = Integer.valueOf(entrada.readLine());
+			if ((VALOR >= 1) && (VALOR <= 10)) {
+				System.out.println ("Ingrese un caracter: ");
+				caracter = entrada.readLine().charAt(0);
+
+			}	
+		}
+		catch(Exception exc) {
+			System.out.println (exc);
+		}
+		return (caracter);
+		
+	}
+	
+//PROCEDIMIENTO IMPRIMIR DE QUE TIPO ES EL CARACTER
+
+	public static void imprimir_tipo_de_caracter () {
+		
+		char caracter = ingresar_valor_y_caracter();
+		while ((VALOR >= 1) && (VALOR <= 10)) {
+		if ((caracter >= 'a') && (caracter <= 'z')) {
+			System.out.println ("El caracter ingresado es de tipo letra 'MINUSCULA' : " + caracter);
+		}
+		else if ((caracter >= 'A') && (caracter <= 'Z')) {
+			System.out.println ("El caracter ingresado es de tipo letra 'MAYUSCULA' : " + caracter);
+		}
+		else if ((caracter >= '1') && (caracter <= '9')) {
+			System.out.println ("El caracter ingresado es de tipo 'DIGITO' : " + caracter);
+		}
+		else {
+			System.out.println ("El caracter ingresado es de tipo 'otro' : " + caracter);
+		}
+		VALOR = 0;
+		caracter = ingresar_valor_y_caracter (); 
+		}
+	}
+}

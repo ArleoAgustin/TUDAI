@@ -1,0 +1,13 @@
+public class Puntouno {
+	public static void main(String[] args) {
+		int Edad= 20;
+		double Peso = 60.3;
+		char Nombre = '*';
+		boolean Agustin = true;
+			System.out.println("LA EDAD ES DE:" + Edad);
+			System.out.println("EL PESO ES DE:" + Peso + "KG");
+			System.out.println("EL NOMBRE ES:" + Nombre);
+			System.out.println("ES AGUSTIN?:" + Agustin);
+	
+	}
+}

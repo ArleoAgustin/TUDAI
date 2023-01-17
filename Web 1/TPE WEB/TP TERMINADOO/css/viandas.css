@@ -1,0 +1,65 @@
+body {
+    background-image: url(../Images/fondo_viandas.jpg);
+    background-color: black;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+/*Cuerpo de viandas */
+
+.subtitulo {
+    color: white;
+    width: 221px;
+    font-size: 37px;
+    margin-top: 10px;
+    font-family: 'Times New Roman', Times, serif;
+    transition: all 500ms ease;
+}
+
+.contenedorVianda {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.fotoComida {
+    margin: 50px;
+    width: 300px;
+    height: 200px;
+    margin-right: 20px;
+    border-radius: 100px;
+    border: 3px solid rgb(72, 145, 0);
+    transition: all 500ms ease;
+}
+
+/* Nombre del plato */
+
+.plato {
+    display: flex;
+    flex-direction: column;
+}
+
+.descripcionViandas {
+    color: white;
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px;
+    font-size: 30px;
+    transition: all 500ms ease;
+    text-align: justify;
+}
+
+.precio {
+    font-family: 'Times New Roman', Times, serif;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    padding: 12px;
+    margin: 40px;
+    color: rgb(255, 248, 240);
+    font-size: 82px;
+    border-radius: 100px;
+    background-color: #d1852e;
+    transition: all 500ms ease;
+}

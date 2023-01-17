@@ -1,0 +1,130 @@
+/* Hacer un programa que dado una matriz de enteros de tamaño 5*10 que se encuentra
+	precargada, solicite al usuario un numero entero y elimine la primer ocurrencia de numero
+	en la matriz (un número igual) si existe. Para ello tendrá que buscar la posición y si está,
+	realizar un corrimiento a izquierda y no continuar buscando.
+ */
+
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.util.Random;
+public class Practica {
+	public static final int MAXFILA = 4;
+	public static final int MAXCOLUMNA = 5;
+	public static final int MAXVALOR = 10;
+	public static final int MINVALOR = 1;
+
+	public static void main(String[] args) {                
+		int [][] matint;                                  
+		matint = new int[MAXFILA][MAXCOLUMNA];
+                  
+		cargar_matriz_aleatorio_int(matint);
+		imprimir_matriz_int(matint);
+		System.out.println();
+		posicionar_correr (matint);
+		System.out.println();
+		imprimir_matriz_int(matint);
+	}
+
+	
+	//FUNCION CARGAR VALOR
+	
+		public static int cargar_entero () {
+							
+			int valor = 0;
+							
+			BufferedReader entrada = new BufferedReader(new InputStreamReader(System.in));
+							
+			try {
+				System.out.println ("Ingrese un valor entero: ");
+				valor = Integer.valueOf(entrada.readLine());
+			}
+			catch(Exception exc) {
+			System.out.println (exc);
+								
+			}
+		return (valor);
+		}
+	
+		
+		
+		
+		
+		
+	public static void posicionar_correr (int [][] matint) {
+		
+		int valor = cargar_entero();
+		int fila = 0;
+		int columna = MAXCOLUMNA;
+		
+		while ((fila < MAXFILA) && (columna == MAXCOLUMNA)) {
+	
+			columna = buscar_valor (matint[fila], valor);
+			System.out.println (fila + ", " +columna);
+			if (columna == MAXCOLUMNA) {
+				fila++;
+			}
+		}
+		if ((fila < MAXFILA) && (columna < MAXCOLUMNA)) {
+			
+			eliminar_valor (matint[fila], columna);
+		}
+		else {
+			System.out.println ("El valor ingresado no existe");
+		}
+	}
+	
+	
+	
+	
+	
+	public static int buscar_valor (int [] arrint, int valor) {
+		
+		int pos = 0;
+		
+		while ((pos < MAXCOLUMNA) && (arrint [pos] != valor)) {
+			pos++;
+		}
+		return(pos);
+	}
+	
+	
+	
+	public static void eliminar_valor (int [] arrint, int columna) {
+	
+		int front = columna;
+		
+		while (front < MAXCOLUMNA-1) {
+			arrint[front] = arrint[front +1];
+			front++;
+		}
+			
+	}
+		
+
+	
+
+//CARGAR MATRIZ 
+
+	public static void cargar_matriz_aleatorio_int(int [][] mat){
+		Random r = new Random();
+		for (int fila = 0; fila < MAXFILA; fila++){
+			for (int columna = 0; columna < MAXCOLUMNA; columna++){
+				mat[fila][columna]=(r.nextInt(MAXVALOR+MINVALOR-1) + MINVALOR);
+			}
+		}
+	}
+
+
+//IMPRIMIR MATRIZ
+
+	public static void imprimir_matriz_int(int [][] mat){
+		for (int fila = 0; fila < MAXFILA; fila++){
+			System.out.print("|");
+			for (int columna = 0; columna < MAXCOLUMNA; columna++){
+				System.out.print(mat[fila][columna]+"|");
+			}
+			System.out.println("");
+		}
+	}
+	
+}

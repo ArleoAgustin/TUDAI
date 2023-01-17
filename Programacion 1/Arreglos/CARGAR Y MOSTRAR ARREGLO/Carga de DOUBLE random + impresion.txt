@@ -1,0 +1,19 @@
+import java.util.Random;
+
+
+//carga de arreglo de double con valores de MINVALOR a MAXVALOR
+	public static void cargar_arreglo_aleatorio_double(double [] arr){
+	Random r = new Random();
+	for (int pos = 0; pos < MAX; pos++){
+		arr[pos]=((MAXVALOR-MINVALOR+1)*r.nextDouble() + MINVALOR*1.0);
+	}
+	}
+
+
+
+//impresion de arreglo de double
+	public static void imprimir_arreglo_double(double [] arr){
+	for (int pos = 0; pos < MAX; pos++){
+		System.out.println("nombre_arreglo["+pos+"]=>: "+arr[pos]);
+	}
+	}

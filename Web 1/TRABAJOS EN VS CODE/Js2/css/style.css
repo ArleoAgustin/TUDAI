@@ -1,0 +1,56 @@
+body {
+
+    background-color:  black;
+    color: white;
+    font-family: sans-serif
+
+}
+
+
+
+h1{
+    text-align: center;
+}
+
+
+
+nav {
+    margin-top: 5%;
+    display: flex;
+    justify-content: center;
+}
+
+.menu {
+    background-color: black;
+    height: 70px;
+    font-size: 40px;
+}
+
+.item {
+    list-style: none;
+    margin: 0px 20px;
+    padding: 10px 50px;
+    border-bottom: 5px solid #16c25d;
+    color: white;
+    text-decoration: none;
+    font-size: 45px;
+}
+
+
+
+article {
+
+    display: flex;
+    flex-direction: column;
+    width: 73%;
+    margin-left: 15%;
+
+}
+
+
+.parrafo {
+
+    padding: 5%;
+
+
+}

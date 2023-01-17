@@ -1,0 +1,12 @@
+public class Puntodos {
+	public static void main(String[] args) {
+		int valor1, valor2, valor3;
+		boolean resultado;
+		valor1 = 5;
+		valor2 = 5;
+		valor3 = 8;
+		resultado = (valor1 == valor2) || (valor2 == valor3);
+		System.out.println ("Resultado de (valor1 = valor2) o (valor2 = valor3)" + resultado);
+		System.out.println("Resultado de (valor2 <> valor3) y (valor3 = valor1)" + ((valor2 != valor3) && (valor3 == valor1)) );
+	}
+}	

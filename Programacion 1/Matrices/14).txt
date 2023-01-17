@@ -1,0 +1,217 @@
+/* 	Hacer un programa que dada la matriz de secuencias de caracteres definida y
+	precargada, elimine de cada fila todas las ocurrencias de una secuencia
+	patrón dada por un arreglo de caracteres de tamaño igual al tamaño de
+	columnas de la matriz (solo tiene esa secuencia con separadores al inicio y al
+	final). Al eliminar en cada fila se pierden los valores haciendo los corrimientos.
+ */
+
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.util.Random;
+public class Practica {
+	public static final int MAXFILA = 5;
+	public static final int MAXCOLUMNA = 10;
+	public static final double probabilidad_letra = 0.4;
+
+	public static void main(String[] args) {                
+		char [] arrpatron = {' ',' ','g','w','a','z',' ',' ',' ',' '};
+		char [][] matchar = {{' ','0','1','5','8',' ',' ','1','7',' ' },
+							 {' ','3','1',' ','1','0','8',' ','7',' ' },
+							 {' ',' ','7','4',' ','g','w','a','z',' ' },
+							 {' ','1','1','5','8','4','9','1','7',' '},
+							 {' ',' ',' ','1','1','2',' ',' ',' ',' ' }};
+							 
+                  
+		System.out.println();
+		System.out.println();
+		imprimir_matriz_char(matchar);
+		System.out.println();
+		imprimir_arreglo(arrpatron);
+		reccorer_filas(matchar, arrpatron);
+		System.out.println();
+		imprimir_matriz_char(matchar);
+		
+	}
+
+//PROCEDIMIENTO RECORRER FILAS Y HACER LO QUE PIDE LA CONSINGNA
+	
+	public static void reccorer_filas (char [][] matchar, char [] arrpatron) {
+		
+		int fila = 0;
+		
+		while (fila < MAXFILA) {
+			eliminar_secuencia (matchar[fila], arrpatron);
+			fila++;
+		}
+		
+	}
+	
+//PROCEDIMIENTO QUE ELIMINA LA SECUENCIA QUE ES IGUAL A PATRON
+	
+	public static void eliminar_secuencia (char [] arrchar, char [] arrpatron) {
+		
+		int inicio = 0;
+		int fin = -1;
+		boolean es_igual;
+		
+		while (inicio < MAXCOLUMNA-1) {
+			inicio = obtener_inicio_secuencia (arrchar, fin+1);
+			if (inicio < MAXCOLUMNA -1) {
+				fin = obtener_fin_secuencia(arrchar, inicio);
+				
+				es_igual = son_iguales(arrchar, arrpatron, inicio, fin);
+				if (es_igual == true) {
+					eliminar_secuencia(arrchar, inicio, fin);
+				
+				}
+			}
+		}
+		
+	}
+	
+	
+	
+	
+	
+//CORRIMIENTO ELIMINAR SECUENCIA
+	
+	public static void eliminar_secuencia (char [] arrchar, int inicio, int fin) {
+		
+		int pos = inicio;
+		
+		while (pos <= fin && pos < MAXCOLUMNA -1)  {
+			
+			arrchar[pos] = arrchar[pos -1];
+			pos++;
+			
+		}
+	}
+	
+	
+	
+	
+// VER SI SON IGUALES
+	
+	public static boolean son_iguales (char [] arrchar, char [] arrpatron, int inicio, int fin ) {
+		
+		boolean iguales = false;
+		int inicio_patron = 0;
+		int fin_patron = -1;
+		int pos_patron;
+		int long_patron = 0;
+		int long_secuencia = 0;
+		
+		if (inicio_patron < MAXCOLUMNA -1) {
+			inicio_patron = obtener_inicio_secuencia(arrpatron, fin_patron+1);
+			
+				fin_patron = obtener_fin_secuencia(arrpatron, inicio_patron);
+		}
+		
+		pos_patron = inicio_patron;
+		
+		 while ((arrchar[inicio] == arrpatron[pos_patron]) && (inicio <= fin)) {
+			 long_secuencia++;
+			 inicio++;
+			 pos_patron++;
+	            
+		 }
+		 
+		while (inicio_patron <= fin_patron) {
+			long_patron++;
+			inicio_patron++;
+		}
+		
+		if (long_secuencia == long_patron) {
+			iguales = true;
+		}
+		
+		
+		return(iguales);
+	}
+	
+
+	
+	
+	
+//OBTENER INICIO DE LA SECUENCIA
+	
+	public static int obtener_inicio_secuencia (char [] arrchar, int fin) {
+		
+		int pos = fin;
+		
+		while (arrchar[pos] == ' ' && pos < MAXCOLUMNA-1) {
+			pos++;
+			
+		}
+		
+		return (pos);
+	}
+	
+	
+	
+	
+//OBTENER FIN DE LA SECUENCIA
+	
+	public static int obtener_fin_secuencia (char [] arrchar, int inicio) {
+		
+		int pos = inicio;
+		
+		while (pos < MAXCOLUMNA -1 && arrchar[pos] != ' ') {
+			pos++;
+		}
+		
+		return (pos-1);
+	}
+	
+	
+
+	
+//FUNCION CARGAR VALOR
+	
+	public static int cargar_entero () {
+						
+		int valor = 0;
+						
+		BufferedReader entrada = new BufferedReader(new InputStreamReader(System.in));
+						
+		try {
+			System.out.println ("Ingrese un valor entero: ");
+			valor = Integer.valueOf(entrada.readLine());
+		}
+		catch(Exception exc) {
+		System.out.println (exc);
+							
+		}
+		return (valor);
+	}
+	
+		
+
+
+//IMPRIMIR MATRIZ
+
+	public static void imprimir_matriz_char(char [][] mat){
+
+		for (int fila = 0; fila < MAXFILA; fila++){
+			System.out.print("|");
+			for (int columna = 0; columna < MAXCOLUMNA; columna++){
+				System.out.print(mat[fila][columna]+"|");
+			}
+			System.out.println("");
+		}
+	}
+	
+	
+	
+	
+//IMPRIMIR ARREGLO
+	
+	public static void imprimir_arreglo(char [] arr){
+		
+		for (int pos = 0; pos < MAXCOLUMNA; pos++){
+			System.out.print(arr[pos]+"|");
+		}
+		System.out.print("\n");
+	}
+	
+}

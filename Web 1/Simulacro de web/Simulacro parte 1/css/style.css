@@ -1,0 +1,69 @@
+body {
+
+    font-family: sans-serif
+
+}
+
+
+.contenedor {
+
+    display: flex;
+    flex-direction: column;
+    border: 2px solid rgb(204, 189, 189);
+    margin-top: 25%;
+    box-shadow: 0px 0px 10px 0px rgb(224, 171, 140);
+}
+
+
+h1 {
+    
+    font-size: 160%;
+    margin: 2%;
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+
+
+
+.encabezado {
+
+    justify-content: space-between;
+    padding: 4%;
+    display: flex;
+    flex-direction: row;
+    border-bottom: 2px solid rgb(204, 189, 189);
+
+}
+
+
+.ficha {
+
+    color: aquamarine;
+    font-size: 65%;
+}
+
+.posicion, .ficha {
+
+    text-transform: uppercase;
+}
+
+.icono {
+
+    width: 15%;
+    align-self: center;
+
+}
+
+.jugador {
+
+    width: 100%;
+
+}
+
+
+.posicion {
+
+    border-top: 2px solid rgb(204, 189, 189);
+    text-align: center;
+
+}

@@ -1,0 +1,74 @@
+import java.util.Random;
+public class Practica {
+	public static final int MAXFILA = 4;
+	public static final int MAXCOLUMNA = 4;
+	public static final int MAXVALOR = 10;
+	public static final int MINVALOR = 1;
+
+	public static void main(String[] args) {                
+		int [][] matint;                                  
+		matint = new int[MAXFILA][MAXCOLUMNA];
+                  
+		cargar_matriz_aleatorio_int(matint);
+		imprimir_matriz_int(matint);
+		invertir_todas_las_filas (matint);
+		System.out.println();
+		imprimir_matriz_int(matint);
+	}
+
+	
+	public static void invertir_todas_las_filas (int [][] matint) {
+		
+		int fila = 0;
+
+		while (fila < MAXFILA) {
+	
+			invertir_por_fila (matint[fila]);
+			
+			fila++;
+		}
+	}
+	
+	public static void invertir_por_fila (int [] arrint) {
+		
+		int pos, pos2, valor;
+		pos = 0;
+		pos2 = MAXCOLUMNA-1;
+		while (pos2 > pos) {
+			valor = arrint[pos];
+			arrint[pos]= arrint[pos2];
+			arrint[pos2] = valor;
+			pos++;
+			pos2--;
+
+			
+		}
+		
+	}
+	
+
+//CARGAR MATRIZ 
+
+	public static void cargar_matriz_aleatorio_int(int [][] mat){
+		Random r = new Random();
+		for (int fila = 0; fila < MAXFILA; fila++){
+			for (int columna = 0; columna < MAXCOLUMNA; columna++){
+				mat[fila][columna]=(r.nextInt(MAXVALOR+MINVALOR-1) + MINVALOR);
+			}
+		}
+	}
+
+
+//IMPRIMIR MATRIZ
+
+	public static void imprimir_matriz_int(int [][] mat){
+		for (int fila = 0; fila < MAXFILA; fila++){
+			System.out.print("|");
+			for (int columna = 0; columna < MAXCOLUMNA; columna++){
+				System.out.print(mat[fila][columna]+"|");
+			}
+			System.out.println("");
+		}
+	}
+	
+}

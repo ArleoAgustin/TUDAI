@@ -1,0 +1,73 @@
+/*	Hacer un programa que dado un arreglo de enteros de tamaño 10 que se encuentra
+	precargado, solicite al usuario una posición y realice un corrimiento a izquierda o hacia la
+	menor posición del arreglo. */
+
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+public class practicos {
+
+	public static int MAX = 10;
+	public static int MAXVALOR = 10;
+	public static int MINVALOR = 0;
+	
+	public static void main(String[] args) {
+		int [] arrint = new int[MAX];
+		int posicion;
+		
+		BufferedReader entrada = new BufferedReader(new InputStreamReader(System.in));
+		
+		try{
+			
+				cargar_arreglo(arrint);
+				System.out.println("Ingrese la posicion a partir de la cual quiere hacer el corrimiento a izquierda (entre 0 y 9) ");
+				posicion = Integer.valueOf(entrada.readLine());
+				System.out.println();
+				corrimiento(arrint, posicion);
+				mostrar_arreglo(arrint);
+				System.out.println();
+				System.out.println("POSICION INGRESADA: " + posicion);
+	
+		}
+	
+		catch(Exception exc){
+			System.out.println(exc);
+		}
+	}
+	
+	
+	
+// ----------------------------------------PROCEDIMIENTOS Y FUNCIONES------------------------------------------------------------//
+	
+	public static void cargar_arreglo(int [] arr){
+		BufferedReader entrada = new BufferedReader(new InputStreamReader(System.in));
+	
+		try{
+			
+				for (int pos = 0; pos < MAX; pos++){
+					System.out.println("Ingrese un entero: ");
+					arr[pos] = Integer.valueOf(entrada.readLine());
+				}
+				
+		}
+	
+		catch(Exception exc){
+			System.out.println(exc);
+		}
+	}
+	//corrimiento hacia la menor posicion (izquierda)
+	public static void corrimiento (int [] arrint, int pos) {
+		int front = MINVALOR;
+		while (front < pos) {
+			arrint[front] = arrint[front +1];
+			front = front +1;
+		}
+	}
+	
+
+	public static void mostrar_arreglo(int [] arr){
+		for (int pos = 0; pos < MAX; pos++){
+			System.out.println("Arreglo["+pos+"] =>: " + arr[pos]);
+		}
+	}
+
+}

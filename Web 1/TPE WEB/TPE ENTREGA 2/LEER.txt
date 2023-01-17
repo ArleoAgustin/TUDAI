@@ -1,0 +1,71 @@
+//semantica y revision de html {
+
+html index: listo
+
+html viandas: listo
+
+html promos: listo
+
+html contacto : listo
+
+html consultas: listo
+
+html sobre mi viandita: listo
+
+}
+
+
+//revision de css {
+css general: listo
+
+css idex: listo
+
+css viandas: listo
+
+css promos: listo
+
+css contacto: listo
+
+css consultas: listo
+
+css sobre mi viandita: listo
+
+}
+
+//revision de ccs responsive {
+
+css responsive general: listo
+
+css responsive idex: listo
+
+css responsive viandas: listo
+
+css responsive promos: listo
+
+css responsive contacto: listo
+
+css responsive consultas: listo
+
+css responsive sobre mi viandita: listo
+
+}
+
+js {
+
+· NAV listo.
+· tabla casi todo listo, falta ver que hacemos con el "eliminar ultimo"
+· captcha listo
+}
+
+cosas que hice:
+
+·Agrege semantica.
+·Hacer click en el logo te lleva a "home" (EN RESPONSIVE)
+·Cambie el nombre de los archivos css-responsive.
+·Arregle la tabla de viandas que se salia de pantalla en responsive
+·Puse los js en el head del html.
+·Cambie el style por classlist en js de nav
+·La tabla de viandas esta precargada al cargar la pagina
+·Volvi a hacer el js de la tabla, si no te convece lo cambiamos, lo pense como un arreglo con sub-objetos por cada celda [|{articulo:{precio,producto},precioTotal}|..|..|]
+
+

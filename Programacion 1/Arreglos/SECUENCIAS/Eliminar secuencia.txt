@@ -1,0 +1,11 @@
+// ELIMINAR SECUENCIA
+	
+	public static void eliminar_secuencia (int [] arr, int inicio, int fin) {
+		
+		int pos = inicio;
+		
+		while (pos <= fin) {
+			arr[pos] = arr[pos -1];
+			pos++;
+		}
+	}

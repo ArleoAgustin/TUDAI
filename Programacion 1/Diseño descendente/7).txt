@@ -1,0 +1,60 @@
+/* Escribir un programa que mientras el usuario ingresa un numero de mes
+	(entero) entre 1 y 12 inclusive, muestre por pantalla la cantidad de días del
+	mes ingresado (suponer febrero de 28 días) (¿mostrar por pantalla la
+	cantidad de días del mes debería realizarse con un método? Debería). */
+
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+public class entrega {
+
+	public static void main(String[] args) {
+		
+		imprimir_dias_del_mes();
+
+	}
+	
+
+	
+//FUNCION CARGAR VALOR DE MES
+	public static int cargar_mes () {
+		int mes = 0;
+		
+		BufferedReader entrada = new BufferedReader(new InputStreamReader(System.in));
+		
+		try {
+			System.out.println ("Ingrese un nro de mes (1-12): ");
+			mes = Integer.valueOf(entrada.readLine());
+		}	
+		catch(Exception exc) {
+			System.out.println (exc);
+		}
+		return (mes);
+	}
+	
+	public static int cant_dias_del_mes () {
+		int mes = cargar_mes();
+		int cantidad = 0;
+		if (( mes >= 1) && (mes <= 12)) {
+			if ((mes == 4) || (mes == 6) || (mes == 9) || (mes == 11)) {
+				cantidad = 30;
+			}
+			else if (mes == 2) {
+				cantidad = 28;
+			}
+			else {
+				cantidad = 31;
+			}
+		}
+		return (cantidad);
+	}
+	
+	public static void imprimir_dias_del_mes () {
+		int dias = cant_dias_del_mes();
+		while (dias !=0) {
+			if (dias !=0) {
+				System.out.println ("El mes ingresado tiene " + dias + " dias.");
+			}
+			dias = cant_dias_del_mes();
+		}
+	}
+}

@@ -1,0 +1,73 @@
+body {
+    background-image: url(../Images/fondo_viandas.jpg);
+    background-color: black;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+
+.comida {
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+    height: auto;
+}
+
+.subtitulo{
+    color: white;
+    font-size: 37px;
+    margin-top: 89px;
+    margin-bottom: 0;
+    font-family: 'Times New Roman', Times, serif;
+    transition: all 500ms ease;
+}
+
+.fotocomida{
+    margin: 50px;
+    width: 300px;
+    height: 200px;
+    margin-top: 50px;
+    margin-left: 50px;
+    margin-right: 20px;
+    border-radius: 100px;
+    border: 3px solid rgb(72, 145, 0);
+    transition: all 500ms ease;
+}
+
+.plato{
+    display: flex;
+    flex-direction: column;
+    width: 15%;
+}
+
+.descripcionViandas{
+    color: white;
+    display: flex;
+    flex-direction: column;
+    margin-top: 55px;
+    margin-left: 45px;
+    width: 825px;
+    font-size: 32px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    transition: all 500ms ease;
+    text-align: justify;
+}
+
+.precio{
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    height: 100px;
+    padding: 4%;
+    margin: 10px;
+    color: white;
+    font-size: 82px;
+    border-radius: 100px;
+    border: 3px solid #d1852e;
+    transition: all 500ms ease;
+    
+}
+
+.botoncomprar {
+    
+}

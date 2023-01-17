@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/main.js"></script>
+    <title>Practicando</title>
+</head>
+<body>
+    
+    <head>
+
+        <h1>Titulo</h1>
+    
+    </head>
+
+    <article>
+
+        <section>
+
+            <button id="ver_mas"> Ver mas</button>
+            <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium et voluptatibus alias est. Soluta ratione asperiores 
+                ab voluptates eligendi, enim eaque expedita ullam laboriosam architecto harum itaque deserunt, autem nulla?[...]
+
+            </p>
+            <p class="oculto">Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni voluptatum deleniti neque at beatae fugit nisi adipisci atque
+                saepe facere repellendus, facilis laudantium expedita nam!
+            </p>
+            
+        </section>
+
+    </article>
+
+</body>
+</html>
+
+
+
+***************************************************************************************************************************************
+
+document.addEventListener('DOMContentLoaded', cargarPagina);
+
+    "use strict"
+
+    function cargarPagina () {
+
+        document.getElementById("ver_mas").addEventListener("click", function(){
+
+            document.querySelector(".oculto").classList.toggle("mostrar");
+
+        
+
+
+      })
+    }
+
+**************************************************************************************************************************************
+
+.oculto {
+
+   display: none;
+}
+
+.mostrar {
+
+    display: block;
+
+}

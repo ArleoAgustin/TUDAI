@@ -1,0 +1,17 @@
+public class Puntouno {
+	public static void main(String[] args) {
+		double Tipo1, Tipo2, Tipo3, Basura;
+		final double Unica = 1.0;
+		Tipo1 = 10;
+		Tipo2 = 20;
+		Tipo3 = 30;
+		Basura = Tipo1;
+			Tipo1 = Unica;
+			Tipo2 = Basura;
+			Tipo3 = Basura;
+				System.out.println("UNICA: " + Unica);
+				System.out.println("TIPO1: " + Tipo1);
+				System.out.println("TIPO2: " + Tipo2);
+				System.out.println("TIPO3: " + Tipo3);
+	}
+}

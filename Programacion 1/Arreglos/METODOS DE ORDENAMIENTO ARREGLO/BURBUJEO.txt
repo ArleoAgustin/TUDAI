@@ -1,0 +1,18 @@
+– Burbujeo: en dos ciclos voy llevando siempre el más grande
+a la derecha intercambiando.
+
+	
+
+	public static void ordenar_arreglo_burbujeo(int[] arr){
+		int temp;
+		for(int i = 1;i < MAX;i++){
+			for (int j = 0 ; j < MAX - 1; j++){
+				if (arr[j] > arr[j+1]){
+					temp = arr[j];
+					arr[j] = arr[j+1];
+					arr[j+1] = temp;
+
+				}
+			}
+		}
+	}

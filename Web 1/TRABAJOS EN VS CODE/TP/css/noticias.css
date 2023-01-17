@@ -1,0 +1,149 @@
+body {
+    color: white;
+    background-color: black;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+/* PARTE DE ARRIBA DE LA PAGINA*/
+
+.encabezado {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.redes {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between
+}
+
+.logo {
+    border: solid white;
+
+}
+
+.diariorauch {
+    color: aquamarine;
+    margin-left: -9%;
+    text-transform: uppercase;
+    font-weight: bolder;
+    font-size: 146%;
+}
+
+/*BARRA DE NAVEGACION*/
+
+
+.barranavegacion .boton, .botones {
+    padding-bottom: 10px;
+    border-bottom: 5px solid white;
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    margin: 0px 10px;
+    text-transform: uppercase;
+    padding: 15px;
+}
+
+/*CUERPO DE LA PAGINA*/
+.cuerpo {
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-right: ;
+
+}
+
+/*TABLA DE LA PAGINA*/
+
+.todatabla {
+    position: relative;
+    bottom: 500px;
+    left: 1264px;    
+}
+
+.tabla {
+    background-color: yellowgreen;
+    border: 5px solid white;
+}
+th, td {
+    padding: 8px;
+    text-align: center;
+}
+
+/*SECCION NOTICIAS*/
+
+.noticias {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 30px;
+    width: 73%;
+    position: relative;
+    right: 148px;
+
+}
+
+/*NOTICIAS DEPORTIVAS*/
+.notidepo {
+    margin: 30px 0px;
+    
+}
+.imgdeporte {
+
+    margin: 15px 380px;
+    border: 5px solid red;
+}
+.pnotidepo {
+    background-color: rgb(51, 91, 126);
+    border: 5px solid white;
+    margin: 40px 146px;
+    padding: 10px;
+    font-size: 95%;
+}
+
+/*NOTICIAS POLITICAS*/
+
+.imgpoli {
+
+    margin: 15px 380px;
+    border: 5px solid plum;
+}
+
+.pnotipoli {
+
+    font-size: 95%;
+    background-color: rgb(51, 91, 126);
+    border: 5px solid white;
+    margin: 40px 146px;
+    padding: 10px;
+}
+
+/*SECCION PUBLICIDAD*/
+
+.publicidad {
+    position: relative;
+    right: 74px
+}
+
+/*PARTE DE ABAJO DE LA PAGINA*/
+
+.piepagina {
+    color:  white;
+    justify-content: center;
+
+}
+
+.ppiepagina {
+    display: flex;
+    justify-content: center;
+    border-top: 5px solid white;
+
+}
+
+.fecha {
+
+    display: flex;
+    justify-content: center;
+}

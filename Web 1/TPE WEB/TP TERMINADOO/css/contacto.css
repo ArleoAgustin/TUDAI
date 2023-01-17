@@ -1,0 +1,43 @@
+body {
+    background-image: url(../images/contacto.jpg);
+    background-color: black;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+/*Cuerpo de "contacto" */
+
+.divContacto {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 648px;
+}
+
+/* Lista de redes */
+
+li {
+    display: flex;
+}
+
+.iconWhatsapp, .iconFacebook, .iconInstagram, .iconHorario {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 30px;
+    color: white;
+    transition: all 500ms ease;
+    border-radius: 100%;
+}
+
+.textoRedes {        
+    height: 90px;
+    display: flex;
+    align-items: center;
+    margin-left: 30px;
+    font-size: 50px;
+    text-decoration: none;
+    color: white;
+    transition: all 500ms ease;
+    margin-top: 10px;
+}

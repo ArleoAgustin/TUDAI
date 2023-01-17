@@ -1,0 +1,78 @@
+/* Hacer un programa que dado una matriz de enteros de tamaño 5*10 que se encuentra
+	precargada, obtenga la cantidad de números pares que tiene y la imprima.	
+ */
+
+
+import java.util.Random;
+public class Practica {
+	public static final int MAXFILA = 4;
+	public static final int MAXCOLUMNA = 4;
+	public static final int MAXVALOR = 10;
+	public static final int MINVALOR = 1;
+
+	public static void main(String[] args) {                
+		int [][] matint;                                  
+		matint = new int[MAXFILA][MAXCOLUMNA];
+                  
+		cargar_matriz_aleatorio_int(matint);
+		imprimir_matriz_int(matint);
+		invertir_todas_las_filas (matint);
+		System.out.println();
+	}
+
+	
+	public static void invertir_todas_las_filas (int [][] matint) {
+		
+		int fila = 0;
+		int pares = 0;
+		while (fila < MAXFILA) {
+	
+			pares += contar_pares (matint[fila]);
+			
+			fila++;
+		}
+		System.out.println("Los pares de la matriz son: " + pares);
+	}
+	
+	public static int contar_pares (int [] arrint) {
+		
+		int pos, valor;
+		pos = 0;
+		valor = 0;
+
+		while (pos < MAXCOLUMNA) {
+			if (arrint[pos] % 2 == 0) {
+				valor++;
+			}
+			pos++;
+		}
+		
+		return(valor);
+	}
+	
+
+//CARGAR MATRIZ 
+
+	public static void cargar_matriz_aleatorio_int(int [][] mat){
+		Random r = new Random();
+		for (int fila = 0; fila < MAXFILA; fila++){
+			for (int columna = 0; columna < MAXCOLUMNA; columna++){
+				mat[fila][columna]=(r.nextInt(MAXVALOR+MINVALOR-1) + MINVALOR);
+			}
+		}
+	}
+
+
+//IMPRIMIR MATRIZ
+
+	public static void imprimir_matriz_int(int [][] mat){
+		for (int fila = 0; fila < MAXFILA; fila++){
+			System.out.print("|");
+			for (int columna = 0; columna < MAXCOLUMNA; columna++){
+				System.out.print(mat[fila][columna]+"|");
+			}
+			System.out.println("");
+		}
+	}
+	
+}

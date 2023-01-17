@@ -1,0 +1,32 @@
+/* Escribir un programa que solicite al usuario el ingreso de un número entero
+positivo, y muestre por pantalla los valores entre el numero ingresado y 0
+de manera decreciente. */
+
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+public class Puntodos {
+	public static void main(String[] args) {
+		int valor;
+		final int min;
+		min = 0;
+		
+		BufferedReader entrada = new BufferedReader(new InputStreamReader(System.in));
+		
+		try {
+			System.out.println("Ingrese un valor positivo");
+			valor = Integer.valueOf(entrada.readLine());
+			System.out.println("Los valores que hay entre " + valor + " y 0 son: ");
+			while (valor != -1) {
+				valor = valor -1;
+				for (int contador = valor; contador > min; contador--) {
+				System.out.println(contador);
+			}
+				System.out.println("Si quiere seguir ingresando, cargue un valor positivo. Para salir presione '-1' ");
+				valor = Integer.valueOf(entrada.readLine());
+			}
+		}
+		catch(Exception exc) {
+			System.out.println(exc);
+		}
+	}
+}	

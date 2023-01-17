@@ -1,0 +1,82 @@
+@media only screen and (min-width: 950px) {
+
+    article {
+        
+        justify-content: center;
+    }
+
+    .formulario {
+
+        display: flex;
+        flex-direction: row;
+        margin-top: 10%;
+        align-items: center;
+    }
+    
+    #cargar {
+        
+        margin-right: 12%;
+        width: 50%;
+        height: 10%;
+    
+    }
+    
+    
+    
+
+    .tabla{
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    caption {
+
+        font-size: 4vw;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        color: rgb(185, 185, 185);
+
+    }
+
+    table {
+
+
+        background-color:rgb(201, 172, 12);
+        text-align: left;
+        border-collapse: collapse;
+        border: 5px solid rgb(199, 9, 9);
+        text-transform: uppercase;
+        font-size: 2px;
+        margin-top: 5%;
+        margin-bottom: 60px;
+        transition: all 500ms ease;
+        width: 55%;
+        
+    }
+
+    th, td {
+        width: 10%;
+        padding: 2%;
+        font-size: 2vw;
+        
+    }
+
+    td {
+
+        font-family: cursive;
+        font-weight: bolder;
+        color: black;
+
+
+    }
+
+    tr:hover td {
+        background-color: rgb(255, 255, 255);
+    }
+
+    thead {
+        background-color: rgb(199, 9, 9);
+        color: rgb(255, 255, 255);
+    }
+
+}

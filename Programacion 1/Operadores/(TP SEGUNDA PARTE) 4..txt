@@ -1,0 +1,32 @@
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+public class Puntodos {
+	public static void main(String[] args) {
+		int ingresado, valor1, valor2, valor3, multiplo1, multiplo2, multiplo3;
+		boolean esmultiplo, resultado;
+		multiplo1 = 6;
+		multiplo2 = 7;
+		multiplo3 = 2;
+		valor1 = 30;
+		valor2 = 5;
+		valor3 = 10;
+		try {
+			BufferedReader entrada = new BufferedReader(new InputStreamReader(System.in));
+/*Consigna I*/
+			System.out.println("Ingrese el valor con el que desea hacer la operacion: ");
+			ingresado = Integer.valueOf(entrada.readLine());
+			esmultiplo = ((ingresado % multiplo1) == 0) && ((ingresado % multiplo2) == 0);
+			System.out.println("El valor es multiplo de 6 y 7: " + esmultiplo);
+/*Consigna II*/
+			resultado = ((ingresado > valor1) && (ingresado % multiplo3) == 0);
+			System.out.println("El valor ingresado es > 30 y multiplo de 2: " + resultado);
+			resultado = ((ingresado <= valor1) && (ingresado % multiplo3) ==0);
+			System.out.println("El valor ingresado es <= a 30 y es multiplo de 2: " + resultado);
+/*Consigna III*/
+			System.out.println("el cociente de la división de su valor ingresado con 5 es mayor a 10: " + ((ingresado % valor2) > valor3 ));
+		}
+		catch(Exception exc) {
+			System.out.println(exc);
+		}
+	}
+}			

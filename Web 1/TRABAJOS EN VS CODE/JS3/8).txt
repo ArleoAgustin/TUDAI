@@ -1,0 +1,160 @@
+document.addEventListener('DOMContentLoaded', cargarPagina);
+"use strict"
+function cargarPagina () {
+
+       document.querySelector(".borrar_parrafo").addEventListener("click", function () {
+
+                let parrafos = document.querySelectorAll(".parrafo");
+                let ultimoParrafo = parrafos[parrafos.length-1];
+                ultimoParrafo.parentNode.removeChild(ultimoParrafo)
+
+       })
+
+}
+
+
+
+***********************************************************************************************************
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/js2.js"></script>
+    <title></title>
+</head>
+<body>
+
+    <head>
+
+        <h1>Titulo</h1>
+
+    </head>
+
+    <nav>
+
+        <div class="menu">
+
+            <a href="" class="item">Pag ant.</a>
+            <a href="" class="item">Home</a>
+            <a href="" class="item">Pag sig.</a>
+
+
+        </div>
+
+    </nav>
+
+    <button class="borrar_parrafo">BORRAR PARRAFO</button>
+
+
+    <article>
+
+        <section class="noticias">
+
+            <p class="parrafo">
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Id ullam doloremque iure ex,
+                ipsa ratione excepturi modi aliquam asperiores molestiae, placeat quod quia perferendis eos.
+            </p>
+            
+        </section>
+
+        <section class="noticias">
+
+            <p class="parrafo">
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Id ullam doloremque iure ex,
+                ipsa ratione excepturi modi aliquam asperiores molestiae, placeat quod quia perferendis eos.
+            </p>
+            
+        </section>
+
+
+        <section class="noticias">
+
+            <p class="parrafo">
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Id ullam doloremque iure ex,
+                ipsa ratione excepturi modi aliquam asperiores molestiae, placeat quod quia perferendis eos.
+            </p>
+            
+        </section>
+
+        <section class="noticias">
+
+            <p class="parrafo">
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Id ullam doloremque iure ex,
+                ipsa ratione excepturi modi aliquam asperiores molestiae, placeat quod quia perferendis eos.
+            </p>
+            
+        </section>
+
+
+
+    </article>
+
+</body>
+</html>
+
+
+
+*****************************************************************************************************************
+
+
+
+body {
+
+    background-color:  black;
+    color: white;
+    font-family: sans-serif
+
+}
+
+
+
+h1{
+    text-align: center;
+}
+
+
+
+nav {
+    margin-top: 5%;
+    display: flex;
+    justify-content: center;
+}
+
+.menu {
+    background-color: black;
+    height: 70px;
+    font-size: 40px;
+}
+
+.item {
+    list-style: none;
+    margin: 0px 20px;
+    padding: 10px 50px;
+    border-bottom: 5px solid #16c25d;
+    color: white;
+    text-decoration: none;
+    font-size: 45px;
+}
+
+
+
+article {
+
+    display: flex;
+    flex-direction: column;
+    width: 73%;
+    margin-left: 15%;
+
+}
+
+
+.parrafo {
+
+    padding: 5%;
+
+
+}

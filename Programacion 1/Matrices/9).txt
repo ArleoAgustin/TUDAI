@@ -1,0 +1,112 @@
+/* 	Hacer un programa que dado una matriz de enteros de tamaño 4*5 que
+	se encuentra precargada, solicite al usuario el ingreso de una fila y dos
+	números enteros (columnas de la matriz), y ordene de forma creciente la
+	matriz en la fila indicada entre las dos posiciones columnas ingresadas.
+ */
+
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.util.Random;
+public class Practica {
+	public static final int MAXFILA = 5;
+	public static final int MAXCOLUMNA = 10;
+	public static final int MAXVALOR = 10;
+	public static final int MINVALOR = 1;
+
+	public static void main(String[] args) {                
+		int [][] matint;                                  
+		matint = new int[MAXFILA][MAXCOLUMNA];
+                  
+		cargar_matriz_aleatorio_int(matint);
+		imprimir_matriz_int(matint);
+		System.out.println();
+		insertar_valor_en_fila (matint);
+		System.out.println();
+		imprimir_matriz_int(matint);
+	}
+
+	
+	//FUNCION CARGAR VALOR
+	
+		public static int cargar_entero () {
+							
+			int valor = 0;
+							
+			BufferedReader entrada = new BufferedReader(new InputStreamReader(System.in));
+							
+			try {
+				System.out.println ("Ingrese un valor entero: ");
+				valor = Integer.valueOf(entrada.readLine());
+			}
+			catch(Exception exc) {
+			System.out.println (exc);
+								
+			}
+		return (valor);
+		}
+	
+		
+		
+//PROCEDIMIENTO DE LA CONSIGNA 		
+		
+	public static void insertar_valor_en_fila (int [][] matint) {
+			
+		System.out.println("Ingrese una fila ");
+		int fila = cargar_entero();
+		System.out.println("Ingrese una columna ");
+		int columna1 = cargar_entero();
+		System.out.println("Ingrese una columna ");
+		int columna2 = cargar_entero();
+		
+		 if ((fila < MAXFILA) && (columna1 < MAXCOLUMNA && columna2 < MAXCOLUMNA)) {
+			 
+			 ordenar_entre_columnas (matint[fila], columna1, columna2);
+		}
+	}
+	
+		
+	
+	
+
+//METODO DE ORDENAMIENTO: BURBUJEO
+	
+	public static void ordenar_entre_columnas (int[] arrint, int columna1, int columna2) {
+		int temp;
+		for(int i = columna1;i < columna2;i++){
+			for (int j = columna1 ; j < columna2; j++){
+				if (arrint[j] > arrint[j+1]){
+					temp = arrint[j];
+					arrint[j] = arrint[j+1];
+					arrint[j+1] = temp;
+
+				}
+			}
+		}
+	}
+
+
+//CARGAR MATRIZ 
+
+	public static void cargar_matriz_aleatorio_int(int [][] mat){
+		Random r = new Random();
+		for (int fila = 0; fila < MAXFILA; fila++){
+			for (int columna = 0; columna < MAXCOLUMNA; columna++){
+				mat[fila][columna]=(r.nextInt(MAXVALOR+MINVALOR-1) + MINVALOR);
+			}
+		}
+	}
+
+
+//IMPRIMIR MATRIZ
+
+	public static void imprimir_matriz_int(int [][] mat){
+		for (int fila = 0; fila < MAXFILA; fila++){
+			System.out.print("|");
+			for (int columna = 0; columna < MAXCOLUMNA; columna++){
+				System.out.print(mat[fila][columna]+"|");
+			}
+			System.out.println("");
+		}
+	}
+	
+}

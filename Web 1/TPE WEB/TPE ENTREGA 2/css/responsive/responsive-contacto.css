@@ -1,0 +1,26 @@
+/* RESPONSIVE DE LA SECCION "CONTACTO" */
+
+ /* DISPOSITIVOS CON RESOLUCION MAXIMA DE 800px */
+
+@media only screen and (max-width: 800px){
+
+    .contacto{
+        height: 771px;
+        width: 100%;
+    }
+
+    .textoRedes{
+        font-size: 4.5vh;
+        font-weight: bold;
+        color: black;
+    }
+
+    ul{
+        width: 100%;
+        height: auto;
+    }
+
+    li{
+        width: auto;
+    }
+}

@@ -1,0 +1,96 @@
+/*	Hacer un programa que dado un arreglo ordenado creciente de enteros
+	de tamaño 10 que se encuentra precargado, solicite al usuario un numero
+	entero y elimine la primer ocurrencia de numero (un número igual) en el
+	arreglo si existe. */
+
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+public class practicos {
+
+	public static int MAXVALOR = 10;
+	public static int MINVALOR = 0;
+	
+	public static void main(String[] args) {
+		int [] arrint = new int[MAXVALOR];
+		int valor;
+
+		BufferedReader entrada = new BufferedReader(new InputStreamReader(System.in));
+		
+		try{
+			
+				cargar_arreglo(arrint);
+			System.out.println();
+				mostrar_arreglo(arrint);
+			System.out.println("Ingrese el valor que desea eliminar del arreglo ");
+				valor = Integer.valueOf(entrada.readLine());
+				eliminar_ocurrencia (arrint, valor);
+				mostrar_arreglo(arrint);
+	
+		}
+	
+		catch(Exception exc){
+			System.out.println(exc);
+		}
+	}
+	
+	
+	
+// ----------------------------------------PROCEDIMIENTOS Y FUNCIONES------------------------------------------------------------//
+	
+	// procedimiento cargar arreglo
+	
+	public static void cargar_arreglo(int [] arr){
+		BufferedReader entrada = new BufferedReader(new InputStreamReader(System.in));
+	
+		try{
+			
+				for (int pos = 0; pos < MAXVALOR; pos++){
+					System.out.println("Ingrese un entero: ");
+					arr[pos] = Integer.valueOf(entrada.readLine());
+				}
+				
+		}
+	
+		catch(Exception exc){
+			System.out.println(exc);
+		}
+	}
+
+		
+	//procedimiento eliminar ocurrencia
+	
+	public static void eliminar_ocurrencia (int [] arrint, int valor) {
+		
+		int pos_valor = buscar_ocurrencia(arrint, valor);
+		if (pos_valor != MAXVALOR) {
+			for (int front = pos_valor; front < MAXVALOR -1; front++) {
+				arrint[front] = arrint[front+1];
+			}
+		}
+		else {
+			System.out.println("El valor ingresado no existe dentro del arreglo");
+		}
+	}
+
+	//funcion que devuelve la posicion de ocurrencia en el caso que exista en el arreglo 
+	
+	public static int buscar_ocurrencia (int [] arrint, int valor) {
+		
+		int cont = MINVALOR;
+		while ((cont < MAXVALOR) && (arrint[cont] != valor )) {
+			cont = cont + 1;
+		}
+		return (cont);
+		
+	}
+	
+	
+	//procedimiento mostrar arreglo
+
+	public static void mostrar_arreglo(int [] arr){
+		for (int pos = 0; pos < MAXVALOR; pos++){
+			System.out.println("Arreglo["+pos+"] =>: " + arr[pos]);
+		}
+	}
+
+}

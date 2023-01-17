@@ -1,0 +1,115 @@
+document.addEventListener('DOMContentLoaded', cargarPagina);
+
+    "use strict"
+
+    function cargarPagina () {
+
+        document.getElementById("imprimir").addEventListener("click", function(){
+        
+            let inputE = document.getElementById("equipo").value
+            let inputPj = document.getElementById("pj").value
+            let inputPg = document.getElementById("pg").value
+            let inputPe = document.getElementById("pe").value
+            let inputPp = document.getElementById("pp").value
+            let inputP = document.getElementById("puntos").value
+            
+            let equipo = [{
+
+                "nombre": "Barcelona FC",
+                "puntos": 98,
+                "pj": 35,
+                "pg": 32,
+                "pe": 2,
+                "pp": 1
+
+            },
+
+            {
+
+                "nombre": inputE,
+                "puntos": inputPj,
+                "pj": inputPg,
+                "pg": inputPe,
+                "pe": inputPp,
+                "pp": inputP
+
+            }
+        ]
+            for (let i = 0; i < equipo.length; i++) {
+
+                cargar_tabla(equipo[i]);
+            
+            }
+            
+
+        })
+
+        function cargar_tabla(equipo) {
+
+            document.getElementById("tbody").innerHTML  +=  '<td>' + equipo.nombre +'</td><td>'+ equipo.pj +'</td><td>' + equipo.pg + '</td><td>' + equipo.pe +'</td><td>' + equipo.pp +'</td><td>' + equipo.puntos +'</td>'
+
+        }
+    }
+
+
+*******************************************************************************************************************************************************************************************************
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/main.js"></script>
+    <title>Practicando</title>
+</head>
+<body>
+    
+    <form >
+
+        <input type="text" id="equipo" value="" placeholder="Equipo">
+        <input type="number" id="pj" value="" placeholder="PJ">
+        <input type="number" id="pg" value="" placeholder="PG">
+        <input type="number" id="pe" value="" placeholder="PE">
+        <input type="number" id="pp" value="" placeholder="PP">
+        <input type="number" id="puntos" value="" placeholder="Puntos">
+        
+        
+    </form>
+
+<button id="imprimir"> CARGAR TABLA</button>
+
+
+    <table>
+
+        <thead>
+            <th>EQUIPO</th><th>PJ</th><th>PG</th><th>PE</th><th>PP</th><th>PUNTOS</th>
+        </tbody>
+        </thead>
+
+        <tbody id="tbody">
+
+
+    </table>
+
+</body>
+</html>
+
+
+
+
+*******************************************************************************************************************
+
+table {
+    margin: 4%;
+    border-collapse: collapse;
+}
+
+th, td {
+    width: 2%;
+    border: 1px solid black;
+    text-align: center;
+    padding: 1% 4% 1% 4%; 
+    font-size: small;
+}
+

@@ -1,0 +1,41 @@
+body {
+    text-align: center;
+    text-transform: uppercase;
+    background-color: brown;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.ruleta {
+    background-color: beige;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 10%;
+
+}
+
+#apostar {
+    position: relative;
+    width: 20%;
+    left: 40%;
+}
+
+#boton {
+    position: relative;
+    margin: 5px;
+    width: 10%;
+    left: 44%;
+    margin-top: 25px;
+}
+
+#intentar {
+    position: relative;
+    margin: 5px;
+    width: 10%;
+    left: 44%;
+    margin-top: 25px;
+}
+
+.ocultar {
+    display: none;
+}

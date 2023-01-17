@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/arr.js"></script>
+    <title>Tabla dinamica</title>
+</head>
+<body>
+
+    <article>
+
+        <form>
+        
+            <h1>Tabla de compras</h1>
+            <label> Producto </label><input id="producto"  type="text">
+            <label > Precio </label><input id="precio"  type= "number">
+            <button type="reset" id="agregar">Agregar</button>
+            <button type="reset" id="agregar3">Agregar x3</button>
+            <button type="reset" id="borrar1">Borrar ultimo</button>
+            <button type="reset" id="borrarTodo">Borrar tabla</button>
+   
+        </form>
+
+        <section class="tabla">
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Producto</th> <th>Precio</th> <th>Total</th>
+                    </tr>
+                </thead>
+                <tbody id="tbodyTabla">
+                </tbody>
+            </table >
+
+        </section>    
+    </article>
+
+</body>
+</html>

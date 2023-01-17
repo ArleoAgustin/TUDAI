@@ -1,0 +1,124 @@
+/* 	Se pide: hacer un programa completo en el cual se solicite de teclado el
+	ingreso de un día, un número de mes, y un año; luego calcule la cantidad
+	de días desde la última luna nueva (edad lunar), e informe por pantalla en
+	cual de las 4 fases se corresponde para esa fecha. */
+
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+public class Puntodos {
+	
+	public static int ANIO = 0;
+	public static int MES = 0;
+	public static int DIA = 0;
+
+	public static void main(String[] args) {
+		BufferedReader entrada = new BufferedReader(new InputStreamReader(System.in));
+		
+		try {
+			System.out.println("Ingrese el año, para salir presione '-1' ");
+			ANIO = Integer.valueOf(entrada.readLine());
+	
+			while (ANIO != -1) {
+				System.out.println("Ingrese el mes");
+				MES = Integer.valueOf(entrada.readLine());
+				System.out.println("Ingrese el dia");
+				DIA = Integer.valueOf(entrada.readLine());
+				edad_de_la_luna (ANIO, MES, DIA);
+				System.out.println("");
+				System.out.println("Ingrese el año, para salir presione '-1' ");
+				ANIO = Integer.valueOf(entrada.readLine());
+
+			}
+		}
+		catch(Exception exc) {
+			System.out.println (exc);
+		}
+		
+	}
+	public static int num_aureo (int ANIO) {
+		int AUREO;
+		
+		AUREO = ANIO;
+		AUREO = AUREO +1;
+		AUREO = AUREO % 19;
+		return (AUREO);
+	}
+	
+	public static int calculo_epacta () {
+		int EPACTA;
+		
+		EPACTA = num_aureo (ANIO);
+		EPACTA = EPACTA -1;
+		EPACTA = EPACTA * 11;
+		EPACTA = EPACTA % 30;
+		return (EPACTA);
+	}
+	public static void edad_de_la_luna (int ANIO, int MES, int DIA) {
+		int epacta, mesaux;
+		
+		mesaux = MES;
+		epacta = calculo_epacta();
+		
+		switch (MES) {
+		
+			case (1):
+				MES = 11;
+			break;
+			case (2):
+				MES = 12;
+			break;
+			case (3):
+				MES = 1;
+			break;
+			case (4):
+				MES = 2;
+			break;
+			case (5):
+				MES = 3;
+			break;
+			case (6):
+				MES = 4;
+			break;
+			case (7):
+				MES = 5;
+			break;
+			case(8):
+				MES = 6;
+			break;
+			case (9):
+				MES = 7;
+			break;
+			case (10):
+				MES= 8;
+			break;
+			case(11):
+				MES = 9;
+			break;
+			case(12):
+				MES = 10;
+		break;
+		}
+		
+		epacta = epacta + MES + DIA;
+		
+		if (epacta > 29) {
+			epacta = epacta % 30;
+		}
+		
+		System.out.println("Edad lunar para la fecha " + DIA + "/" + mesaux + "/" + ANIO + " es de: " + epacta);
+		
+		if ((epacta >= 1) && (epacta <= 7)) {
+			System.out.println("La luna estara en su primera fase.");
+		}
+		if ((epacta >= 8) && (epacta <= 14)) {
+			System.out.println("La luna estara en su segunda fase.");
+		}
+		if ((epacta > 14) && (epacta <= 22)) {
+			System.out.println("La luna estara en su tercer fase.");
+		}
+		if ((epacta > 22) && (epacta <= 29)) {
+			System.out.println("La luna estara en su cuarta fase.");
+		}
+	}
+	
+}

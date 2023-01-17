@@ -1,0 +1,49 @@
+/* FUENTES DE GOOGLE */
+
+@import url('https://fonts.googleapis.com/css2?family=Balsamiq+Sans:wght@700&display=swap');
+
+/* RESPONSIVE DE LA SECCION "SOBRE MI VIANDITA" */
+
+  /* DISPOSITIVOS CON RESOLUCION MAXIMA DE 1919px */
+
+@media only screen and (max-width: 1919px){
+
+    .informacion{
+        font-size: 2vw;
+    }
+}
+
+  /* DISPOSITIVOS CON RESOLUCION MAXIMA DE 800px */
+
+@media only screen and (max-width: 800px){
+
+    .descripcion {
+        width: 100%;
+        height: auto;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    .contenedor-imagen {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+    
+    .logo {
+        width: 50vw;
+        height: auto;
+    }
+
+    .informacion {
+        font-size: 4vw;
+        font-family: 'Balsamiq Sans', cursive;
+        height: auto;
+        margin: 40px;
+        padding: 20px;
+        background-color: rgb(6, 87, 6);
+        border: 5px solid green;
+        border-radius: 20px;
+    }
+}

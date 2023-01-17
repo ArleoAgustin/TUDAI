@@ -1,0 +1,79 @@
+/* Realizar un programa que dado dos números enteros y un carácter, todos ingresados por
+ *  el usuario, muestre por pantalla el resultado de la operación matemática básica
+	considerando el valor del carácter. Si ingreso el caracter:  ‘a’ la suma, ‘b’ la resta,
+	‘c’ la multiplicación y ‘d’ la división entre ambos números. */
+
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+public class entrega {
+	
+	public static int VALOR1 = 0;
+	public static int VALOR2 = 0;
+	
+	public static void main(String[] args) {
+		
+		operaciones_valores();
+	}	
+		
+		
+	
+	public static char cargar_operacion () {
+		char caracter = 'a';
+	
+		BufferedReader entrada = new BufferedReader(new InputStreamReader(System.in));
+		
+		try {
+				
+				System.out.println("Si desea realizar una suma introduzca 'a'");
+				System.out.println("Si desea realizar una resta introduzca 'b'");
+				System.out.println("Si desea realizar una multiplicacion introduzca 'c'");
+				System.out.println("Si desea realizar una division introduzca 'd'");
+				caracter = entrada.readLine().charAt(0);
+
+				if ((caracter == 'a') || (caracter == 'b') || (caracter == 'c') || (caracter == 'd')) {
+					System.out.println("Ingrese un valor:");
+					VALOR1 = Integer.valueOf(entrada.readLine());
+					System.out.println("Ingrese otro valor:");
+					VALOR2 = Integer.valueOf(entrada.readLine());
+		
+				}
+
+		}	
+		
+		catch(Exception exc) {
+			System.out.println (exc);
+		}
+		return(caracter);
+	}
+	
+		
+	public static void operaciones_valores () {
+		char caracter;
+		int resultado = 0;
+		caracter = cargar_operacion();
+		while ((caracter >= 'a') && (caracter <= 'd')) {
+			switch (caracter) {
+				case ('a'):
+					resultado = VALOR1 + VALOR2;
+				System.out.println("El resultado de la suma es: " + resultado);
+				break;
+				case ('b'):
+					resultado = VALOR1 - VALOR2;
+					System.out.println("El resultado de la resta es: " + resultado);
+					break;
+				case ('c'):
+					resultado = VALOR1 * VALOR2;
+				System.out.println("El resultado de la multiplicacion es: " + resultado);
+				break;
+				case ('d'):
+					resultado = VALOR1 / VALOR2;
+					System.out.println("El resultado de la division es: " + resultado);
+				break;
+			}
+			VALOR1 = 0;
+			VALOR2 = 0;
+			caracter = cargar_operacion();
+		}
+
+	}
+}

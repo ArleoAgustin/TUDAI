@@ -1,0 +1,12 @@
+"use strict"
+document.addEventListener('DOMContentLoaded', cargarPagina);
+
+function cargarPagina () {
+        document.querySelector("#boton").addEventListener("click", function () {
+           let cambiar = document.querySelector("#titulo");
+           cambiar.classList.toggle("clase1")
+
+
+        })
+ 
+}

@@ -1,0 +1,29 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: pink;
+}
+.titulo {
+    color: blue;
+    text-align: center;
+    font-size: 30px;
+}
+.parrafo {
+    color: red;
+    text-align: center;
+}
+.subtitulo {
+    color: green;
+    font-style: italic;
+}
+.subbtitulo {
+    text-transform: uppercase;
+    color: white;
+    text-decoration: underline;
+}
+.lista2 {
+    color:blue;
+    font-style: italic;
+}
+.lista1 {
+    color: black;
+}

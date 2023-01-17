@@ -1,0 +1,36 @@
+.titulo {
+    color: wheat;
+    font-family: Arial, Helvetica, sans-serif ;
+    text-transform: uppercase;
+}
+.subtitulo {
+    color: blueviolet;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.subbtitulo {
+    color: brown;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.parrafo1 {
+    color: aquamarine;
+    font-family: Arial, Helvetica, sans-serif;
+    text-transform: capitalize;
+}
+.parrafo2 {
+    color: gray;
+    font-family: Arial, Helvetica, sans-serif;
+    text-transform: capitalize;
+}
+.piepagina {
+    color: aqua;
+    font-family: Arial, Helvetica, sans-serif;
+}
+body {
+    background-color: black;
+    font-family: Arial, Helvetica, sans-serif ;
+}
+.lista{
+    color: aliceblue;
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: italic;
+}

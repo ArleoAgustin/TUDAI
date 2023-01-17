@@ -1,0 +1,10 @@
+public static int obtener_suma_secuencia(int[] arr, int inicio, int fin){
+		
+		int suma = 0;
+		
+		for (int pos = inicio; pos <= fin; pos++) {
+			suma += arr[pos];
+		}
+		
+		return (suma);
+	}

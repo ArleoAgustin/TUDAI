@@ -1,0 +1,20 @@
+/* RESPONSIVE DE LA SECCION "CONSULTAS" */
+
+ /*DISPOSITIVOS CON RESOLUCION MAXIMA DE 700px */
+
+@media only screen and (max-width: 700px){
+
+    .formulario{
+        width: 70%;
+    }
+}
+
+/* DISPOSITIVOS CON RESOLUCION MAXIMA DE 300px */
+
+@media only screen and (max-width: 300px){
+
+    .contenedorCaptcha{
+        display: flex;
+        flex-direction: column;
+    }
+}

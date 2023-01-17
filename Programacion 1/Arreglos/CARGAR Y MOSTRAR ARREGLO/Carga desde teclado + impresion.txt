@@ -1,0 +1,36 @@
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+
+
+
+// procedimiento cargar arreglo
+	
+	public static void cargar_arreglo(int [] arr){
+		BufferedReader entrada = new BufferedReader(new InputStreamReader(System.in));
+	
+		try{
+			
+				for (int pos = 0; pos < MAX; pos++){
+					System.out.println("Ingrese un entero: ");
+					arr[pos] = Integer.valueOf(entrada.readLine());
+				}
+				
+		}
+	
+		catch(Exception exc){
+			System.out.println(exc);
+		}
+	}
+
+
+//IMPRIMIR ARREGLOS
+	
+	
+	public static void imprimir_arreglo(int [] arr){
+		
+		System.out.print("Arreglo de secuencias int\n|");
+		for (int pos = 0; pos < MAX; pos++){
+			System.out.print(arr[pos]+"|");
+		}
+		System.out.print("\n");
+		}

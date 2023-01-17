@@ -1,0 +1,124 @@
+/* FUENTES DE GOOGLE */
+
+@import url('https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap');
+
+/* RESPONSIVE DE SECCION "PROMOS" */
+
+ /* DISPOSITIVOS CON RESOLUCION MAXIMA DE 1180px */
+
+@media only screen and (max-width: 1180px){
+
+    .subtituloPromo {
+        margin-top: 10px;
+        font-size: 4vw;
+    }
+    
+    .plato {
+        width: 25%;
+        margin: 10px;
+    }
+
+    .contenedorPromo {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+    }
+    
+    .fotoPromo {
+        height: 30%;
+        width: 25%;
+        margin: 15px;
+    }
+
+    .precio{
+        width: 20%;
+        font-size: 6vw;
+    }
+
+    .descripcion{
+        padding: 15px;
+        text-align: left;
+    }
+
+}
+
+ /* DISPOSITIVOS CON RESOLUCION MAXIMA DE 972px */
+
+@media only screen and (max-width: 972px){
+
+    .contenedorPromo{
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        border: 8px solid rgb(128, 0, 0);
+        border-radius: 15px;
+        margin: 10px;
+    }
+
+    .descripcion{
+        display: flex;
+        text-align: center;
+        font-size: 4vw;
+        margin: 10px;
+        border: 5px solid rgb(49, 49, 49);
+        background-color: rgb(0, 0, 0);
+        border-radius: 10px;
+    }
+
+    .subtituloPromo{
+        text-align: center;
+        font-family: 'Bree Serif', serif;
+        font-size: 6vw;
+        width: auto;
+    }
+    
+}
+
+ /* DISPOSITIVOS CON RESOLUCION MAXIMA DE 880px */
+
+@media only screen and (max-width: 800px) {
+
+    .descripcion{
+        font-weight: bold;
+        color: black;
+        border: none;
+        background-color: transparent;
+        width: auto;
+    }
+
+    .subtituloPromo{
+        display: flex;
+        justify-content: center;
+        width: auto;
+        background-color: rgb(205, 68, 50);
+        border: 5px solid rgb(163, 52, 37);
+        border-bottom: 5px solid rgb(94, 24, 24);
+        border-right: 5px solid rgb(94, 24, 24);
+        font-size: 6vw;
+        border-radius: 10px;
+        color: rgb(0, 0, 0);
+        padding: 15px;
+    }
+
+    .fotoPromo {
+        height: 30%;
+        width: 45%;
+        margin: 15px;
+    }
+
+    td, th{
+        font-size: 5vw;
+    }
+
+}
+
+ /* DISPOSITIVOS CON RESOLUCION MAXIMA DE 500px */
+
+@media only screen and (max-width: 500px) {
+
+    .descripcion{
+        font-weight: bold;
+        font-size: 6vw;
+    }
+
+}

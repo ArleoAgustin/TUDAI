@@ -1,0 +1,50 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    background-color: rebeccapurple;
+    justify-content: center;
+
+}
+
+.formulario {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    left: 35%;
+}
+
+.div1 {
+    display: flex;
+    margin: 1%;
+    justify-content: center;
+    background-color: red;
+    width: 30%;
+}
+
+.div2 {
+    display: flex;
+    justify-content: center;
+    width: 30%;
+    margin: 1%;
+    background-color: cadetblue;
+}
+
+.div3 {
+    display: flex;
+    justify-content: center;
+    width: 30%;
+    margin: 1%;
+    background-color: green;
+}
+
+#boton {
+    display: flex;
+    position: relative;
+    margin-bottom: 1%;
+    left: 13%;
+}
+
+.agregarborde {
+    background-color: blue;
+    border: 3px solid black;
+}

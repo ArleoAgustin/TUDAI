@@ -1,0 +1,131 @@
+PARTE 1
+
+LAYOUTS:
+
+	SLIDES: https://docs.google.com/presentation/d/1tnM0IZNBsITilqWsIhBx9b4NX1ST3mATXCyCy3HHds4/edit#slide=id.g34f4815cb9_0_429
+	PRACTICO: https://docs.google.com/document/d/1A8AZCR8giTJMkCN583Lileded9YHUpXBUhzxbFZIpVM/edit
+	
+	VIDEOS: 
+		https://youtu.be/94sT_66nQeA
+		https://youtu.be/kyn6AOKAoKY
+		https://youtu.be/pcx__qswokc
+
+TABLAS Y FORMULARIOS:
+	
+	SLIDES: https://docs.google.com/presentation/d/1SIwOG94Lg7Py2FAkT8lKjtWYLQ2c8f7K-YsxXlF38OU/edit?usp=sharing
+	PRACTICO: https://docs.google.com/document/d/1A8AZCR8giTJMkCN583Lileded9YHUpXBUhzxbFZIpVM/edit
+	
+	VIDEOS:
+		https://youtu.be/VmCceDTysiQ
+
+SITIO COMPLETO: 
+	
+	SLIDES: https://docs.google.com/presentation/d/1CD5IPdYnsRxIUoAGd1Dw87wYUd2XVZQuX40vWbOb5No/edit#slide=id.g1d24cb0464_0_126
+	PRACTICO: https://docs.google.com/document/d/1A8AZCR8giTJMkCN583Lileded9YHUpXBUhzxbFZIpVM/edit
+
+	VIDEOS:
+		https://youtu.be/9Hp-hCnRXRc
+
+
+JAVASCRIPT PARTE 1: 
+	
+	SLIDES: https://docs.google.com/presentation/d/1POlnQCLMNC9ckITDK58WmNQK1GCmboH4X8utSj2iPyc/edit?usp=sharing
+	PRACTICO: https://docs.google.com/document/d/18gD8JpNWNXrRgpDE7mEE_S3OgXsXAEj2NtRohfHn5JA/edit?usp=sharing
+	
+	VIDEOS:
+		https://youtu.be/Za2eYnP27Q4
+		https://youtu.be/H6C66aSxZgc
+		https://youtu.be/85n_6CjSe_k
+		https://youtu.be/OapiY5tBSW8
+		https://youtu.be/DjdLtcUP0Gg
+		https://youtu.be/cpWOzqpZJB8
+
+CSS AVANZADO:
+
+	SLIDES: https://docs.google.com/presentation/d/1g4H5rXzu1xf5okDCYUM6A6_p04AtrfAbb57bwBaNCk0/edit
+	PRACTICO: https://docs.google.com/document/d/1PsPHtPHZn3qznzTEqI46-1TOawqW3XDd328J_K8NLOA/edit
+	
+	VIDEOS:
+		https://youtu.be/ptr-BFK90zo
+		https://youtu.be/EnJe6Kp7TfY
+		https://youtu.be/7x_m40aElLM
+		https://youtu.be/kWcUWbCW98U
+
+
+
+PARTE 2
+
+
+HTML5 Y CSS3:
+
+	SLIDES: https://docs.google.com/presentation/d/1Z-BESfnTrhAkbYsYe5z5YzVp4WudDZeQ9CUzmUuA7eg/edit#slide=id.gacfe39c02_0_18
+	PRACTICO: https://docs.google.com/document/d/1iJt0RcXwfwiExARf_dDlqZmMzUT8Ol3KfJLQhxhPjWs/edit?usp=sharing
+
+	VIDEOS: 
+		https://youtu.be/DKhxl9Im9BQ
+		https://youtu.be/B35XIdK2NhI
+
+RESPONSIVE: 
+
+	SLIDES: https://docs.google.com/presentation/d/10uWrxIeEYPYI0t2QClVEUfX6VQ7zyKPovQjEj3wNWfQ/edit?usp=sharing
+	PRACTICO: https://docs.google.com/document/d/1BEz_VzBcxwAAUnx9Yio_4f2-nkcoi0L6ls3hjxZyGFg/edit?usp=sharing
+
+	VIDEOS: 
+		https://drive.google.com/file/d/1z06p6aX873RgiFiA97vYfg5f_B6DiElE/view
+
+SEMANTICA: 
+	
+	SLIDES: https://docs.google.com/presentation/d/1xmZXWj-l5jfJvLW1f1gqfgD3AxWy4q3YRRaCuRKj4Xw/edit#slide=id.gad4d0dea4_0_0
+	PRACTICOS: https://docs.google.com/document/d/1iJt0RcXwfwiExARf_dDlqZmMzUT8Ol3KfJLQhxhPjWs/edit#heading=h.c3iywoe3svfo
+
+	VIDEOS: 
+		https://youtu.be/4EsoiRr4DHw
+
+JAVASCRIPT PARTE 2:
+
+	SLIDES: https://docs.google.com/presentation/d/1Xgpwl667ypOQT1Mb34DCTNmoworZcKYeJV7VrMnVJTs/edit?usp=sharing
+	PRACTICO: https://drive.google.com/open?id=1c93geUq_FsbvmxXwiu9XDfQR3z0CHb6g95efe9bQspI
+
+	VIDEOS:
+		https://youtu.be/SbJ-6QxPfpA
+		https://youtu.be/5JDjih3bak4
+		https://youtu.be/6JhdDWlHvdM
+		https://youtu.be/c8cyXbCYeP4
+
+JAVASCRIPT PARTE 3, JSON Y FUNCIONES:
+
+	SLIDES: https://docs.google.com/presentation/d/1BrwFz2L3WpUZCpziB9dveE7TnHa6OptvVYHRSQ8Qz4o/edit?usp=sharing
+	PRACTICO: https://docs.google.com/document/d/1jYOs_Y_FbGLER4xaVKt--FZBh_DSpeo3uXpXp0rT29g/edit?usp=sharing
+	
+	VIDEOS: NO HAY
+
+
+PARTE 3
+
+
+SPA Y AJAX - PARTIAL RENDER
+
+	SLIDES: https://docs.google.com/presentation/d/10k0Kco_4Z3HAibkPHff8hN_rG9PibRiogwx_R3Nkhuk/edit?usp=sharing
+	PRACTICO: https://docs.google.com/document/d/1JutKPp9G3zxPUQwN_2_eHnlEoPqd9ERQ7H5_G2KZ96I/edit?usp=sharing
+
+	VIDEOS: NO HAY
+
+SPA Y AJAX REST: 
+	
+	SLIDES: https://docs.google.com/presentation/d/1eKQDXr7kPtpsjmdjKpc43Z5Pr9hHJj-bvdEWp4FHUoQ/edit?usp=sharing
+	PRACTICO: https://docs.google.com/document/d/13X_cBgs_zuuMIu3XDdhdqAJgmdwe-LZuDl623Kf9ZWU/edit?usp=sharing
+
+	VIDEOS:
+		https://youtu.be/fV-AkzlXryE
+		https://youtu.be/1CR-ALukU1s
+		https://youtu.be/xmY4NtCrva4
+		https://youtu.be/fL3Wgbr-CCA
+		https://youtu.be/qt_jDvMKZus
+
+ASINCRONISMO:
+
+	SLIDES: https://docs.google.com/presentation/d/1ykUc-B97sHj3iXWaacOtJnNnXAaF8KWIl3fZaI_dwMM/edit?usp=sharing
+	PRACTICO: NO HAY
+
+	VIDEOS:
+		NO HAY

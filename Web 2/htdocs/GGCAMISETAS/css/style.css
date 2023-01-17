@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Spartan:wght@200;500&display=swap');
+
+body {
+
+    background-color: rgb(219, 179, 104)
+}
+
+header {
+
+    display: flex;
+    align-items: center;
+    padding: 1%;
+    background-color: black;
+
+}
+
+.logo {
+
+    width: 15%;
+    margin-left: 4%;
+
+}
+
+h1 {
+
+    font-family: 'Spartan', sans-serif;
+    text-align: center;
+    font-size: 370%;
+    margin-left: 27%;
+    color: rgb(240, 240, 240);
+}
+
+.tituloCamisetas {
+
+    font-weight: 300;
+    font-family: 'Spartan', sans-serif;
+
+}
+
+nav {
+
+    display: flex;
+    justify-content: center;
+    margin-top: 2.7%;
+    background-color: currentColor;
+    padding: 10px;
+    border-radius: 17px;
+}
+
+.item {
+
+    margin: 0px 20px;
+    font-weight: 600;
+    text-decoration: none;
+    color: rgb(247, 230, 230);
+    font-size: 190%;
+    text-transform: uppercase;
+    font-family: 'Spartan', sans-serif;
+
+}
+
+.item:hover {
+
+    color: rgb(8, 188, 194);
+    font-weight: bold;
+
+}
+
+.cuerpo {
+
+    display: flex;
+    flex-direction: row;
+    border-radius: 3px;
+    margin: 2%;
+    padding: 5%;
+
+
+}
+
+
+.presentacion , .contacto, .pagos {
+
+    border: 2px solid black;
+    border-radius: 5%;
+    text-align: center;
+    padding: 2%;
+    margin: 2%;
+
+}

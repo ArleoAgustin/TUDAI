@@ -1,0 +1,48 @@
+/* Escribir un programa que mientras el usuario cargue desde
+	teclado un caracter letra minúscula, llame a un método
+	que imprime por pantalla la tabla de multiplicar de 9. */
+
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+public class entrega {
+
+//PROGRAMA PRINCIPAL
+	
+	public static void main(String[] args) {
+		imprimir_tabla();
+	}
+	
+//FUNCION CARGA DE LETRA
+	
+	public static char cargar_caracter () {
+		char caracter = '*';
+		
+		BufferedReader entrada = new BufferedReader(new InputStreamReader(System.in));
+		
+		try {
+				System.out.println("Ingrese un caracter letra minuscula");
+				caracter = entrada.readLine().charAt(0);
+			
+		}	
+		catch(Exception exc) {
+			System.out.println(exc);
+		}
+		return (caracter);
+		
+	}
+	
+//PROCEDIMIENTO IMPRIMIR TABLA DE MULTIPLICAR
+	
+		public static void imprimir_tabla () {
+			char caracter = cargar_caracter();
+			final int max, valor;
+			max = 10;
+			valor = 9;
+			if ((caracter >= 'a') && (caracter <= 'z')) {
+				for (int multi= 1; multi <= max; multi++ ) {
+					System.out.println(valor + " * " + multi + " = " + (valor * multi));
+				}
+		
+			}
+		}
+}

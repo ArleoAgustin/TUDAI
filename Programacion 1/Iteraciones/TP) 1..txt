@@ -1,0 +1,34 @@
+/*Escribir un programa que mientras el usuario ingrese un número entero
+menor que 10 y mayor a 1, muestre por pantalla si el número es múltiplo de
+2 y múltiplo de 3 simultáneamente.*/
+
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+public class Puntodos {
+	public static void main(String[] args) {
+		int valor;
+		final int min, max;
+		min = 1;
+		max = 10;
+		
+		BufferedReader entrada = new BufferedReader(new InputStreamReader(System.in));
+		
+		try {
+			
+			System.out.println("Ingrese un valor menor a 10 y mayor a 1");
+			valor = Integer.valueOf(entrada.readLine());
+			
+			while ((valor < max) && (valor > min)) {
+				if ((valor % 2 == 0) && (valor % 3 == 0)) {
+					System.out.println(valor + " es multiplo de 2 y 3");
+				}
+				System.out.println("Ingrese un valor menor a 10 y mayor a 1, (para salir presiones otro valor)");
+				valor = Integer.valueOf(entrada.readLine());
+			}
+			
+		}
+		catch(Exception exc) {
+			System.out.println(exc);
+		}
+	}
+}	

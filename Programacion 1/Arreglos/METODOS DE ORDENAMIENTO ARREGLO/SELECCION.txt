@@ -1,0 +1,23 @@
+– Selección: en un ciclo iterativo, en un posición, lo de la
+izquierda está ordenado, y selecciona el más chico
+(segundo ciclo) de los que le siguen y lo intercambia. Luego
+avanza.
+
+
+	public static void ordenar_arreglo_seleccion(int[]arr) {
+		int pos_menor, tmp;
+		for (int i = 0; i < MAX; i++) {
+			pos_menor = i;
+			for (int j = i + 1; j < MAX; j++){
+				if (arr[j] < arr[pos_menor]) {
+					pos_menor = j;
+
+				}
+			}
+			if (pos_menor != i){
+				tmp = arr[i];
+				arr[i] = arr[pos_menor];
+				arr[pos_menor] = tmp;
+			}
+		}
+	}

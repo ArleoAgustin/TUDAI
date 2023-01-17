@@ -1,0 +1,55 @@
+/* 	Escribir un programa que mientras que el usuario ingrese un caracter letra
+	minúscula, pida ingresar un numero entero. Si el número ingresado está
+	entre 1 y 5 inclusive deberá imprimir la tabla de multiplicar de dicho
+	numero. */
+
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+public class entrega {
+
+	public static int MIN = 1;
+	public static int MAXMULTI = 10;
+	
+	public static void main(String[] args) {
+	
+		tabla_multiplicar();
+	}
+	
+	
+	
+//FUNCION CARGA DE LETRA Y NUMERO A MULTIPLICAR 
+	
+	public static int ingresar_caracter () {
+		char caracter = '0';
+		int valor = 0;
+		
+		BufferedReader entrada = new BufferedReader(new InputStreamReader(System.in));
+		
+		try {
+			System.out.println ("Ingrese una letra minuscula, para salir ingrese otro caracter");
+			caracter = entrada.readLine().charAt(0);
+			if ((caracter >= 'a') && (caracter <= 'z')) {
+				System.out.println ("Ingrese un valor entre 1 y 5 para imprimir la tabla de multiplicar");
+				valor = Integer.valueOf(entrada.readLine());
+			}
+		}	
+		
+		catch(Exception exc) {
+			System.out.println (exc);
+		}
+		return (valor);
+	}
+	
+// PROCEDIMIENTO TABLA DE MULTIPLICAR
+
+	public static void tabla_multiplicar () {
+		int valor = ingresar_caracter();
+		while ((valor >= 1) && (valor <= 5)) {
+			for (int multi = MIN; multi <= MAXMULTI; multi++) {
+				System.out.println(valor + " x " + multi + " = " + (valor * multi));
+			}
+			valor = ingresar_caracter();
+		}
+	}
+	
+}

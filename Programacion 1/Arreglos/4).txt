@@ -1,0 +1,77 @@
+/*	Hacer un programa que dado un arreglo de enteros de tamaño 10 que se encuentra
+	precargado, solicite al usuario un numero entero y lo agregue al principio del arreglo (posición
+	0). Para ello tendrá que realizar un corrimiento a derecha (se pierde el último valor del arreglo) y
+	colocar el numero en el arreglo en la posición indicada. */
+
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+public class practicos {
+
+	public static int MAX = 10;
+	public static int MAXVALOR = 10;
+	public static int MINVALOR = 0;
+	
+	public static void main(String[] args) {
+		int [] arrint = new int[MAX];
+		int valor;
+		
+		BufferedReader entrada = new BufferedReader(new InputStreamReader(System.in));
+		
+		try{
+			
+				cargar_arreglo(arrint);
+				System.out.println("Ingrese un numero entero para agregar al inicio del arreglo");
+				valor = Integer.valueOf(entrada.readLine());
+				System.out.println();
+				corrimiento_y_agregar(arrint, valor);
+				mostrar_arreglo(arrint);
+				System.out.println();
+	
+		}
+	
+		catch(Exception exc){
+			System.out.println(exc);
+		}
+	}
+	
+	
+	
+// ----------------------------------------PROCEDIMIENTOS Y FUNCIONES------------------------------------------------------------//
+	
+	public static void cargar_arreglo(int [] arr){
+		BufferedReader entrada = new BufferedReader(new InputStreamReader(System.in));
+	
+		try{
+			
+				for (int pos = 0; pos < MAX; pos++){
+					System.out.println("Ingrese un entero: ");
+					arr[pos] = Integer.valueOf(entrada.readLine());
+				}
+				
+		}
+	
+		catch(Exception exc){
+			System.out.println(exc);
+		}
+	}
+
+	
+	public static void corrimiento_y_agregar( int [] arrint, int valor) {
+		int front;
+		front = MAXVALOR -1;
+		while (front > MINVALOR) {
+			arrint[front] = arrint[front -1];
+			front = front -1;
+		}
+		arrint[front]= valor;
+		
+	}
+
+
+	public static void mostrar_arreglo(int [] arr){
+		for (int pos = 0; pos < MAX; pos++){
+			System.out.println("Arreglo["+pos+"] =>: " + arr[pos]);
+		}
+	}
+
+}

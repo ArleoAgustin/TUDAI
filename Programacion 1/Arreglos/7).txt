@@ -1,0 +1,83 @@
+/*	Hacer un programa que dado un arreglo ordenado creciente de enteros
+	de tamaño 10 que se encuentra precargado, solicite al usuario un numero
+	entero y lo inserte en el arreglo manteniendo su orden. Para ello tendrá
+	que realizar un corrimiento a derecha (se pierde el último valor del arreglo)
+	y colocar el numero en el arreglo en la posición indicada. */
+
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+public class practicos {
+
+	public static int MAXVALOR = 10;
+	public static int MINVALOR = 0;
+	
+	public static void main(String[] args) {
+		int [] arrint = new int[MAXVALOR];
+		int valor, pos;
+
+		BufferedReader entrada = new BufferedReader(new InputStreamReader(System.in));
+		
+		try{
+			
+				cargar_arreglo(arrint);
+			System.out.println();
+				mostrar_arreglo(arrint);
+			System.out.println("Ingrese el valor que desea agregar al arreglo: ");
+				valor = Integer.valueOf(entrada.readLine());
+			System.out.println("Ingrese la posicion en la que lo desea agregar: ");
+				pos = Integer.valueOf(entrada.readLine());
+				corrimiento_y_agregar (arrint, valor, pos);
+				mostrar_arreglo(arrint);
+	
+		}
+	
+		catch(Exception exc){
+			System.out.println(exc);
+		}
+	}
+	
+	
+	
+// ----------------------------------------PROCEDIMIENTOS Y FUNCIONES------------------------------------------------------------//
+	
+	// procedimiento cargar arreglo
+	
+	public static void cargar_arreglo(int [] arr){
+		BufferedReader entrada = new BufferedReader(new InputStreamReader(System.in));
+	
+		try{
+			
+				for (int pos = 0; pos < MAXVALOR; pos++){
+					System.out.println("Ingrese un entero: ");
+					arr[pos] = Integer.valueOf(entrada.readLine());
+				}
+				
+		}
+	
+		catch(Exception exc){
+			System.out.println(exc);
+		}
+	}
+
+	//procedimiento hacer corrimiento y agregar valor al arreglo
+	
+	public static void corrimiento_y_agregar (int [] arrint, int valor, int pos) {
+		
+		for (int cont = MAXVALOR -1; cont > pos; cont--) {
+			
+			arrint[cont] = arrint[cont -1];
+		}
+		arrint[pos] = valor;
+	}
+
+	
+	
+	//procedimiento mostrar arreglo
+
+	public static void mostrar_arreglo(int [] arr){
+		for (int pos = 0; pos < MAXVALOR; pos++){
+			System.out.println("Arreglo["+pos+"] =>: " + arr[pos]);
+		}
+	}
+
+}

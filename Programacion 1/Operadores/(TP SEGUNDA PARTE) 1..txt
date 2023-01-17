@@ -1,0 +1,22 @@
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+public class Puntodos {
+	public static void main(String[] args) {
+		int valor, auxiliar;
+		final int dos, tres, cuatro;
+		dos = 2;
+		tres = 3;
+		cuatro = 4;
+		try {
+			BufferedReader entrada = new BufferedReader(new InputStreamReader(System.in));
+			System.out.println("Ingrese el numero que desea dividir por 4");
+			valor = Integer.valueOf(entrada.readLine());
+			auxiliar = valor;
+			System.out.println("Resultado: " + (valor /= cuatro));
+			System.out.println("Cociente: " + (auxiliar %= cuatro));
+		}
+			catch (Exception exc) {
+					System.out.println(exc);
+			}
+	}
+}			

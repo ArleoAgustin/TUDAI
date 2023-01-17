@@ -1,0 +1,67 @@
+/*	Hacer un programa que dado un arreglo de enteros de tamaño 10 que se encuentra
+	precargado, invierta el orden del contenido (por ejemplo: el que está en 0 se intercambia con
+	el que está en 9, el que está en 1 con el que está en 8...). Este intercambio no se debe realizar
+	de manera explícita, hay que hacer un método que incluya una iteración de intercambio. */
+
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+public class practicos {
+
+	public static int MAX = 10;
+	public static int MAXVALOR = 10;
+	public static int MINVALOR = 1;
+	
+	public static void main(String[] args) {
+		int [] arrint = new int[MAX];
+		
+		cargar_arreglo(arrint);
+		mostrar_arreglo_int(arrint);
+		intercambio(arrint);
+		System.out.println();
+		mostrar_arreglo_int(arrint);
+	
+	}
+	
+	
+	
+// ----------------------------------------PROCEDIMIENTOS Y FUNCIONES------------------------------------------------------------//
+	
+	public static void cargar_arreglo(int [] arr){
+		
+		BufferedReader entrada = new BufferedReader(new InputStreamReader(System.in));
+	
+		try{
+	
+				for (int pos = 0; pos < MAX; pos++){
+					System.out.println("Ingrese un entero: ");
+					arr[pos] = Integer.valueOf(entrada.readLine());
+				}
+			}
+	
+		catch(Exception exc){
+			System.out.println(exc);
+		}
+	}
+
+
+	public static void intercambio (int [] arrint) {
+		int front1, front2, valor;
+		front1 = MINVALOR -1;
+		front2 = MAXVALOR-1;
+		while (front1 < front2) {
+			valor = arrint[front1];
+			arrint[front1] = arrint[front2];
+			arrint[front2] = valor;
+			front1 ++;
+			front2 --;
+		}
+	}
+	
+	
+	public static void mostrar_arreglo_int(int [] arr){
+		for (int pos = 0; pos < MAX; pos++){
+			System.out.println("Arreglo["+pos+"] =>: " + arr[pos]);
+		}
+	}
+
+}

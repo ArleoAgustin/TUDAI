@@ -1,0 +1,157 @@
+/* 	Hacer un programa que dada la matriz de secuencias de caracteres definida y
+	precargada, permita encontrar por cada fila la posición de inicio y fin de la
+	anteúltima secuencia (considerar comenzar a buscarla a partir de la ultima
+	posición de la fila).
+ */
+
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.util.Random;
+public class Practica {
+	public static final int MAXFILA = 5;
+	public static final int MAXCOLUMNA = 10;
+	public static final int MAXVALOR = 10;
+	public static final int MINVALOR = 1;
+	public static final double probabilidad_numero = 0.4;
+
+	public static void main(String[] args) {                
+		int [][] matint;                                  
+		matint = new int[MAXFILA][MAXCOLUMNA];
+                  
+		cargar_matriz_aleatorio_secuencias_int(matint);
+		System.out.println();
+		imprimir_matriz_int(matint);
+		System.out.println();
+		recorrer_filas (matint);
+	}
+
+
+//FUNCION RECORRER MATRIZ POR FILAS
+	
+	public static void recorrer_filas (int [][] matint) {
+		
+		int fila = 0;
+		
+		while (fila < MAXFILA) {
+			buscar_anteultima_secuencia(matint[fila]);
+			fila++;
+		}
+	}
+	
+	
+	
+//PROCEDIMIENTO IMPRIMIR INICIO Y FIN DE SECUENCIA
+	
+	public static void buscar_anteultima_secuencia (int [] arrint) {
+		
+		int inicio = MAXCOLUMNA;
+		int fin = 0;
+		int contador = 0;
+
+		while (contador < 2) {
+			fin = inicio;
+			if (fin > 0) { 	/*ve si anda con while o if*/
+				fin = obtener_fin_secuencia(arrint, fin-1);
+				if (fin > 0) {
+					inicio = obtener_inicio_secuencia(arrint, fin);
+		
+				}
+			}
+			contador++;
+		}
+		if (fin == 0) {
+			System.out.println("HAY UNA SOLA SECUENCIA");
+		}
+		else {
+			System.out.println("LA ANTEULTIMA SECUENCIA INICIA EN " + inicio + " HASTA " + fin);
+		}
+	}
+	
+	
+
+
+
+
+
+// INICIO DE SECUENCIA	
+		
+	public static int obtener_inicio_secuencia (int [] arr, int fin) {
+		
+		int pos = fin;
+		
+		while ((arr[pos] != 0) && (pos > 0)) {
+			pos--;
+		}
+		
+		return (pos+1);
+	}
+		
+		
+		
+		
+		
+// FIN DE SECUENCIA	
+		
+	public static int obtener_fin_secuencia (int [] arr, int fin) {
+		
+		int front = fin;
+			
+		while ((arr [front] == 0) && (front > 0)) {
+			front--;
+		}
+			
+		return (front);
+	} 
+	
+	
+	
+
+
+
+//CARGA DE SECUENCIAS EN MATRICES LLAMANDO A "CARGA ALEATORIA DE ARREGLOS"
+
+	public static void cargar_matriz_aleatorio_secuencias_int(int [][] matint){
+		for (int fila = 0; fila < MAXFILA; fila++){
+			cargar_arreglo_aleatorio_secuencias_int(matint[fila]);
+		}
+		System.out.println("");
+	}
+
+
+
+
+
+//CARGA DE SECUENCIAS EN ARREGLOS
+
+	public static void cargar_arreglo_aleatorio_secuencias_int(int [] arrint){
+				
+		Random r = new Random();
+		arrint[0] = 0;
+		arrint[MAXCOLUMNA-1] = 0;
+		for (int pos = 1; pos < MAXCOLUMNA-1; pos++){
+			if (r.nextDouble()>probabilidad_numero){
+				arrint[pos]=(r.nextInt(MAXVALOR-MINVALOR+1) + MINVALOR);
+			}
+			else {
+				arrint[pos]=0;
+			}
+		}
+	}
+
+
+
+//IMPRIMIR MATRIZ
+
+
+	public static void imprimir_matriz_int(int [][] mat){
+		for (int fila = 0; fila < MAXFILA; fila++){
+			System.out.print("|");
+			for (int columna = 0; columna < MAXCOLUMNA; columna++){
+				System.out.print(mat[fila][columna]+"|");
+			}
+		System.out.println("");
+		}
+	}
+
+	
+}

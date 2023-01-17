@@ -1,0 +1,23 @@
+"uses strict"
+document.addEventListener('DOMContentLoaded', cargarPagina);
+
+function cargarPagina () {
+    
+    let contador1 = 0;
+    let contador2 = 0;
+    let contador3 = 0;
+        document.querySelector("#boton1").addEventListener("click", function () {
+            contador1++;
+            document.querySelector("#clicks1").innerHTML = contador1;
+        })
+
+        document.querySelector("#boton2").addEventListener("click", function () {
+            contador2++;
+            document.querySelector("#clicks2").innerHTML = contador2;
+        })
+
+        document.querySelector("#boton3").addEventListener("click", function () {
+            contador3++;
+            document.querySelector("#clicks3").innerHTML = contador3;
+        })
+}

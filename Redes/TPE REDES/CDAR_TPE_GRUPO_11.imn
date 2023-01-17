@@ -1,0 +1,885 @@
+node n1 {
+    type router
+    model router
+    network-config {
+	hostname ISP
+	!
+	interface eth1
+	 ip address 201.0.2.1/24
+	!
+	interface eth0
+	 ip address 201.0.1.1/24
+	!
+    }
+    canvas c1
+    iconcoords {336.0 72.0}
+    labelcoords {338.3333333333333 113.33333333333337}
+    interface-peer {eth0 n2}
+    interface-peer {eth1 n4}
+    custom-config {
+	custom-config-id service:UserDefined
+	custom-command UserDefined
+	config {
+	cmdup=('ifconfig eth0 201.0.1.1/24 up', 'ifconfig eth1 201.0.2.1/24 up', )
+	}
+    }
+    services {IPForward UserDefined}
+}
+
+node n2 {
+    type router
+    model router
+    network-config {
+	hostname R8
+	!
+	interface eth1
+	 ip address 192.168.10.1/24
+	!
+	interface eth0
+	 ip address 201.0.1.2/24
+	!
+    }
+    canvas c1
+    iconcoords {888.0 72.0}
+    labelcoords {887.6666666666666 111.99999999999994}
+    interface-peer {eth0 n1}
+    custom-config {
+	custom-config-id service:UserDefined
+	custom-command UserDefined
+	config {
+	cmdup=('ifconfig eth0 201.0.1.2/24 up', 'ifconfig eth1 192.168.10.1/24 up', )
+	}
+    }
+    services {IPForward UserDefined}
+    interface-peer {eth1 n3}
+}
+
+node n5 {
+    type router
+    model PC
+    network-config {
+	hostname CasaJefe
+	!
+	interface eth0
+	 ip address 192.168.10.2/24
+	!
+    }
+    canvas c1
+    iconcoords {1296.0 72.0}
+    labelcoords {1296.0 120.0}
+    interface-peer {eth0 n3}
+}
+
+node n4 {
+    type router
+    model router
+    network-config {
+	hostname R2
+	!
+	interface eth0
+	 ip address 10.11.0.1/23
+	!
+	interface eth1
+	 ip address 201.0.2.2/24
+	!
+    }
+    canvas c1
+    iconcoords {336.0 312.0}
+    labelcoords {324.0 361.3333333333333}
+    interface-peer {eth0 n8}
+    interface-peer {eth1 n1}
+    custom-config {
+	custom-config-id service:UserDefined
+	custom-command UserDefined
+	config {
+	cmdup=('ifconfig eth0 10.11.0.1/23 up', 'ifconfig eth1 201.0.2.2/24 up', 'ip route add 10.11.2.0/24 via 10.11.0.2 dev eth0', 'ip route add 10.11.4.0/23 via 10.11.0.2 dev eth0', 'ip route add default via 201.0.2.1 dev eth1', )
+	}
+    }
+    services {IPForward UserDefined}
+}
+
+node n6 {
+    type router
+    model router
+    network-config {
+	hostname R3
+	!
+	interface eth1
+	 ip address 10.11.2.1/23
+	!
+	interface eth0
+	 ip address 10.11.0.2/23
+	!
+    }
+    canvas c1
+    iconcoords {336.0 648.0}
+    labelcoords {326.6666666666667 689.3333333333334}
+    interface-peer {eth0 n8}
+    interface-peer {eth1 n11}
+    custom-config {
+	custom-config-id service:UserDefined
+	custom-command UserDefined
+	config {
+	cmdup=('ifconfig eth0 10.11.0.2/23 up', 'ifconfig eth1 10.11.2.1/23 up', 'ip route add 10.11.4.0/24 via 10.11.2.3 dev eth1', 'ip route add 10.11.5.0/24 via 10.11.2.4 dev eth1', 'ip route add default via 10.11.0.1 dev eth0', )
+	}
+    }
+    services {IPForward UserDefined}
+}
+
+node n7 {
+    type router
+    model router
+    network-config {
+	hostname R4
+	!
+	interface eth1
+	 ip address 10.11.2.2/23
+	!
+	interface eth0
+	 ip address 10.11.0.3/23
+	!
+    }
+    canvas c1
+    iconcoords {1008.0 648.0}
+    labelcoords {1000.0 711.3333333333334}
+    interface-peer {eth0 n8}
+    interface-peer {eth1 n11}
+    custom-config {
+	custom-config-id service:UserDefined
+	custom-command UserDefined
+	config {
+	cmdup=('ifconfig eth0 10.11.0.3/23 up', 'ifconfig eth1 10.11.2.2/23 up', 'ip route add 10.11.4.0/24 via 10.11.2.3 dev eth1', 'ip route add 10.11.5.0/24 via 10.11.2.4 dev eth1', 'ip route add default via 10.11.0.1 dev eth0', )
+	}
+    }
+    services {IPForward UserDefined}
+}
+
+node n8 {
+    type lanswitch
+    network-config {
+	hostname Sw-1
+	!
+    }
+    canvas c1
+    iconcoords {648.0 504.0}
+    labelcoords {645.3333333333334 540.0}
+    interface-peer {e0 n4}
+    interface-peer {e1 n7}
+    interface-peer {e2 n6}
+    interface-peer {e3 n9}
+    interface-peer {e4 n10}
+}
+
+node n9 {
+    type router
+    model host
+    network-config {
+	hostname Server-1
+	!
+	interface eth0
+	 ip address 10.11.0.4/23
+	!
+    }
+    canvas c1
+    iconcoords {888.0 312.0}
+    labelcoords {921.3333333333334 350.0}
+    interface-peer {eth0 n8}
+}
+
+node n10 {
+    type router
+    model host
+    network-config {
+	hostname Server-2
+	!
+	interface eth0
+	 ip address 10.11.0.5/23
+	!
+    }
+    canvas c1
+    iconcoords {960.0 432.0}
+    labelcoords {982.6666666666665 493.33333333333337}
+    interface-peer {eth0 n8}
+}
+
+node n11 {
+    type lanswitch
+    network-config {
+	hostname Sw-2
+	!
+    }
+    canvas c1
+    iconcoords {648.0 840.0}
+    labelcoords {650.0 876.0}
+    interface-peer {e0 n6}
+    interface-peer {e1 n7}
+    interface-peer {e2 n13}
+    interface-peer {e3 n12}
+}
+
+node n12 {
+    type router
+    model router
+    network-config {
+	hostname R6
+	!
+	interface eth1
+	 ip address 10.11.4.225/30
+	!
+	interface eth2
+	 ip address 10.11.4.193/27
+	!
+	interface eth3
+	 ip address 10.11.4.129/26
+	!
+	interface eth0
+	 ip address 10.11.2.3/23
+	!
+    }
+    canvas c1
+    iconcoords {336.0 1056.0}
+    labelcoords {343.3333333333333 1120.6666666666663}
+    interface-peer {eth0 n11}
+    interface-peer {eth1 n16}
+    interface-peer {eth2 n14}
+    interface-peer {eth3 n19}
+    custom-config {
+	custom-config-id service:UserDefined
+	custom-command UserDefined
+	config {
+	cmdup=('ifconfig eth0 10.11.2.3/23 up', 'ifconfig eth2 10.11.4.193/27 up', 'ifconfig eth3 10.11.4.129/26 up', 'ip route add 10.11.5.0/24 via 10.11.2.4 dev eth0', 'ip route add 10.11.4.0/25 via 10.11.0.226 dev eth1', 'ifconfig eth1 10.11.4.225/30 up', 'ip route add default via 10.11.2.1 dev eth0', )
+	}
+    }
+    services {IPForward UserDefined}
+}
+
+node n13 {
+    type router
+    model router
+    network-config {
+	hostname R5
+	!
+	interface eth1
+	 ip address 10.11.5.129/26
+	!
+	interface eth2
+	 ip address 10.11.5.1/25
+	!
+	interface eth3
+	 ip address 10.11.5.193/28
+	!
+	interface eth0
+	 ip address 10.11.2.4/23
+	!
+    }
+    canvas c1
+    iconcoords {1008.0 1032.0}
+    labelcoords {1025.3333333333333 1007.3333333333334}
+    interface-peer {eth0 n11}
+    interface-peer {eth1 n22}
+    interface-peer {eth2 n24}
+    interface-peer {eth3 n27}
+    custom-config {
+	custom-config-id service:UserDefined
+	custom-command UserDefined
+	config {
+	cmdup=('ifconfig eth0 10.11.2.4/23 up', 'ifconfig eth1 10.11.5.129/26 up', 'ifconfig eth2 10.11.5.1/25 up', 'ifconfig eth3 10.11.5.193/28 up', 'ip route add default via 10.11.2.1 dev eth0', 'ip route add 10.11.4.0/24 via 10.11.2.3 dev eth0', )
+	}
+    }
+    services {IPForward UserDefined}
+}
+
+node n14 {
+    type lanswitch
+    network-config {
+	hostname Sw-4
+	!
+    }
+    canvas c1
+    iconcoords {528.0 1104.0}
+    labelcoords {529.3333333333334 1140.0}
+    interface-peer {e0 n12}
+    interface-peer {e1 n15}
+}
+
+node n15 {
+    type router
+    model host
+    network-config {
+	hostname Server-a
+	!
+	interface eth0
+	 ip address 10.11.4.194/27
+	!
+    }
+    canvas c1
+    iconcoords {600.0 1248.0}
+    labelcoords {601.3333333333334 1289.3333333333335}
+    interface-peer {eth0 n14}
+}
+
+node n16 {
+    type router
+    model router
+    network-config {
+	hostname R7
+	!
+	interface eth0
+	 ip address 10.11.4.226/30
+	!
+	interface eth1
+	 ip address 10.11.4.1/25
+	!
+    }
+    canvas c1
+    iconcoords {384.0 1224.0}
+    labelcoords {353.33333333333337 1260.6666666666665}
+    interface-peer {eth0 n12}
+    interface-peer {eth1 n17}
+    custom-config {
+	custom-config-id service:UserDefined
+	custom-command UserDefined
+	config {
+	cmdup=('ifconfig eth1 10.11.4.1/30 up', 'ifconfig eth0 10.11.4.226/30 up', 'ip route add default via 10.11.225 dev eth0', )
+	}
+    }
+    services {IPForward UserDefined}
+}
+
+node n17 {
+    type wlan
+    network-config {
+	hostname 
+	!
+	interface wireless
+	 ip address 10.0.1.0/32
+	 ipv6 address 2001:1::0/128
+	!
+	mobmodel
+	coreapi
+	basic_range
+	!
+    }
+    custom-config {
+	custom-config-id basic_range
+	custom-command {3 3 9 9 9}
+	config {
+	range=264.7058823529412
+	bandwidth=54000000
+	jitter=0
+	delay=20000
+	error=0
+	}
+    }
+    canvas c1
+    iconcoords {432.0 1320.0}
+    labelcoords {432.0 1355.0}
+    interface-peer {e0 n16}
+    interface-peer {e1 n18}
+}
+
+node n18 {
+    type router
+    model PC
+    network-config {
+	hostname Pc-3
+	!
+	interface eth0
+	 ip address 10.11.4.2/25
+	!
+    }
+    canvas c1
+    iconcoords {576.0 1368.0}
+    labelcoords {586.0 1418.6666666666667}
+    interface-peer {eth0 n17}
+}
+
+node n19 {
+    type lanswitch
+    network-config {
+	hostname SW-3
+	!
+    }
+    canvas c1
+    iconcoords {216.0 1152.0}
+    labelcoords {233.0 1193.0}
+    interface-peer {e0 n12}
+    interface-peer {e1 n21}
+    interface-peer {e2 n20}
+}
+
+node n20 {
+    type router
+    model PC
+    network-config {
+	hostname Pc-1
+	!
+	interface eth0
+	 ip address 10.11.4.130/26
+	!
+    }
+    canvas c1
+    iconcoords {96.0 1224.0}
+    labelcoords {83.0 1279.0}
+    interface-peer {eth0 n19}
+}
+
+node n21 {
+    type router
+    model PC
+    network-config {
+	hostname Pc-2
+	!
+	interface eth0
+	 ip address 10.11.4.131/26
+	!
+    }
+    canvas c1
+    iconcoords {240.0 1392.0}
+    labelcoords {242.66666666666663 1437.3333333333335}
+    interface-peer {eth0 n19}
+}
+
+node n22 {
+    type lanswitch
+    network-config {
+	hostname Sw-6
+	!
+    }
+    canvas c1
+    iconcoords {1152.0 1128.0}
+    labelcoords {1152.0 1165.3333333333335}
+    interface-peer {e0 n13}
+    interface-peer {e1 n23}
+}
+
+node n23 {
+    type router
+    model host
+    network-config {
+	hostname server-b
+	!
+	interface eth0
+	 ip address 10.11.5.130/26
+	!
+    }
+    canvas c1
+    iconcoords {1248.0 1200.0}
+    labelcoords {1249.3333333333333 1242.6666666666665}
+    interface-peer {eth0 n22}
+}
+
+node n24 {
+    type lanswitch
+    network-config {
+	hostname Sw-5
+	!
+    }
+    canvas c1
+    iconcoords {1056.0 1224.0}
+    labelcoords {1068.0 1277.3333333333335}
+    interface-peer {e0 n13}
+    interface-peer {e1 n26}
+    interface-peer {e2 n25}
+}
+
+node n25 {
+    type router
+    model PC
+    network-config {
+	hostname Pc-6
+	!
+	interface eth0
+	 ip address 10.11.5.2/25
+	!
+    }
+    canvas c1
+    iconcoords {984.0 1368.0}
+    labelcoords {986.6666666666665 1414.6666666666665}
+    interface-peer {eth0 n24}
+}
+
+node n26 {
+    type router
+    model PC
+    network-config {
+	hostname Pc-7
+	!
+	interface eth0
+	 ip address 10.11.5.3/25
+	!
+    }
+    canvas c1
+    iconcoords {1224.0 1344.0}
+    labelcoords {1228.0 1393.3333333333335}
+    interface-peer {eth0 n24}
+}
+
+node n27 {
+    type hub
+    network-config {
+	hostname Hub
+	!
+    }
+    canvas c1
+    iconcoords {840.0 1056.0}
+    labelcoords {872.0 1094.6666666666665}
+    interface-peer {e0 n13}
+    interface-peer {e1 n29}
+    interface-peer {e2 n28}
+}
+
+node n28 {
+    type router
+    model PC
+    network-config {
+	hostname Pc-4
+	!
+	interface eth0
+	 ip address 10.11.5.194/28
+	!
+    }
+    canvas c1
+    iconcoords {720.0 1176.0}
+    labelcoords {720.0 1217.3333333333335}
+    interface-peer {eth0 n27}
+}
+
+node n29 {
+    type router
+    model PC
+    network-config {
+	hostname Pc-5
+	!
+	interface eth0
+	 ip address 10.11.5.195/28
+	!
+    }
+    canvas c1
+    iconcoords {840.0 1368.0}
+    labelcoords {842.6666666666666 1414.6666666666665}
+    interface-peer {eth0 n27}
+}
+
+node n3 {
+    type wlan
+    network-config {
+	hostname 
+	!
+	interface wireless
+	 ip address 10.0.0.0/32
+	 ipv6 address 2001:0::0/128
+	!
+	mobmodel
+	coreapi
+	basic_range
+	!
+    }
+    custom-config {
+	custom-config-id basic_range
+	custom-command {3 3 9 9 9}
+	config {
+	range=661.7647058823529
+	bandwidth=54000000
+	jitter=0
+	delay=20000
+	error=0
+	}
+    }
+    canvas c1
+    iconcoords {1104.0 120.0}
+    labelcoords {1104.0 152.0}
+    interface-peer {e0 n2}
+    interface-peer {e1 n5}
+}
+
+link l1 {
+    nodes {n1 n2}
+    bandwidth 0
+}
+
+link l4 {
+    nodes {n4 n8}
+    bandwidth 0
+}
+
+link l5 {
+    nodes {n8 n7}
+    bandwidth 0
+}
+
+link l6 {
+    nodes {n8 n6}
+    bandwidth 0
+}
+
+link l7 {
+    nodes {n8 n9}
+    bandwidth 0
+}
+
+link l8 {
+    nodes {n8 n10}
+    bandwidth 0
+}
+
+link l9 {
+    nodes {n6 n11}
+    bandwidth 0
+}
+
+link l10 {
+    nodes {n7 n11}
+    bandwidth 0
+}
+
+link l11 {
+    nodes {n11 n13}
+    bandwidth 0
+}
+
+link l12 {
+    nodes {n11 n12}
+    bandwidth 0
+}
+
+link l13 {
+    nodes {n1 n4}
+    bandwidth 0
+}
+
+link l14 {
+    nodes {n12 n16}
+    bandwidth 0
+}
+
+link l15 {
+    nodes {n17 n16}
+}
+
+link l16 {
+    nodes {n17 n18}
+}
+
+link l17 {
+    nodes {n12 n14}
+    bandwidth 0
+}
+
+link l18 {
+    nodes {n14 n15}
+    bandwidth 0
+}
+
+link l19 {
+    nodes {n12 n19}
+    bandwidth 0
+}
+
+link l20 {
+    nodes {n19 n21}
+    bandwidth 0
+}
+
+link l21 {
+    nodes {n19 n20}
+    bandwidth 0
+}
+
+link l22 {
+    nodes {n13 n22}
+    bandwidth 0
+}
+
+link l23 {
+    nodes {n22 n23}
+    bandwidth 0
+}
+
+link l24 {
+    nodes {n13 n24}
+    bandwidth 0
+}
+
+link l25 {
+    nodes {n24 n26}
+    bandwidth 0
+}
+
+link l26 {
+    nodes {n24 n25}
+    bandwidth 0
+}
+
+link l27 {
+    nodes {n13 n27}
+    bandwidth 0
+}
+
+link l28 {
+    nodes {n27 n29}
+    bandwidth 0
+}
+
+link l29 {
+    nodes {n27 n28}
+    bandwidth 0
+}
+
+link l2 {
+    nodes {n3 n2}
+}
+
+link l3 {
+    nodes {n3 n5}
+}
+
+annotation a1 {
+    iconcoords {274.0 6.0 879.0 304.0}
+    type rectangle
+    label {ISP}
+    labelcolor black
+    fontfamily {Arial}
+    fontsize {16}
+    color #f3f99c
+    width 0
+    border black
+    rad 25
+    canvas c1
+}
+
+annotation a2 {
+    iconcoords {897.0 7.0 1313.0 304.0}
+    type rectangle
+    label {}
+    labelcolor black
+    fontfamily {Arial}
+    fontsize {12}
+    color #ff7c84
+    width 0
+    border black
+    rad 25
+    canvas c1
+}
+
+annotation a6 {
+    iconcoords {7.0 320.0 1291.0 1553.0}
+    type rectangle
+    label {Parque Inustrial}
+    labelcolor black
+    fontfamily {Arial}
+    fontsize {16}
+    color #e9e9ec
+    width 0
+    border black
+    rad 25
+    effects {bold underline}
+    canvas c1
+}
+
+annotation a5 {
+    iconcoords {19 1050 647 1495}
+    type rectangle
+    label {}
+    labelcolor black
+    fontfamily {Arial}
+    fontsize {12}
+    color #f9bfbf
+    width 0
+    border black
+    rad 25
+    canvas c1
+}
+
+annotation a7 {
+    iconcoords {655.0 1046.0 1278.0 1490.0}
+    type rectangle
+    label {}
+    labelcolor black
+    fontfamily {Arial}
+    fontsize {12}
+    color #f9f9bf
+    width 0
+    border black
+    rad 25
+    canvas c1
+}
+
+annotation a8 {
+    iconcoords {24.0 360.0}
+    type text
+    label {Parque}
+    labelcolor black
+    fontfamily {Arial}
+    fontsize {16}
+    canvas c1
+}
+
+annotation a9 {
+    iconcoords {24.0 408.0}
+    type text
+    label {Industrial}
+    labelcolor black
+    fontfamily {Arial}
+    fontsize {16}
+    canvas c1
+}
+
+annotation a10 {
+    iconcoords {912.0 264.0}
+    type text
+    label {Casa Jefe}
+    labelcolor black
+    fontfamily {Arial}
+    fontsize {16}
+    canvas c1
+}
+
+annotation a3 {
+    iconcoords {324.0 659.0 1020.0 1033.0}
+    type rectangle
+    label {}
+    labelcolor black
+    fontfamily {Arial}
+    fontsize 12
+    color #c8ffd4
+    width 0
+    border black
+    rad 25
+    canvas c1
+}
+
+annotation a4 {
+    iconcoords {332.0 333.0 1011.0 634.0}
+    type rectangle
+    label {}
+    labelcolor black
+    fontfamily {Arial}
+    fontsize 12
+    color #ccf0ff
+    width 0
+    border black
+    rad 25
+    canvas c1
+}
+
+canvas c1 {
+    name {Canvas1}
+}
+
+option global {
+    interface_names yes
+    ip_addresses yes
+    ipv6_addresses yes
+    node_labels yes
+    link_labels yes
+    show_api no
+    background_images no
+    annotations yes
+    grid yes
+    traffic_start 0
+}
+
+option session {
+}
+

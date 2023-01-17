@@ -1,0 +1,165 @@
+body {
+    background-image: url(../Images/fondo_viandas.jpg);
+    background-color: black;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+/* CUERPO DE VIANDAS */
+
+  /* VIANDAS */
+
+.subtitulo {
+    color: white;
+    width: 221px;
+    font-size: 37px;
+    margin-top: 10px;
+    font-family: 'Times New Roman', Times, serif;
+    transition: all 500ms ease;
+}
+
+.contenedorVianda {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.fotoComida {
+    margin: 50px;
+    width: 300px;
+    height: 200px;
+    margin-right: 20px;
+    border-radius: 100px;
+    border: 3px solid rgb(72, 145, 0);
+    transition: all 500ms ease;
+}
+
+/* NOMBRE DEL PLATO */
+
+.plato{
+    display: flex;
+    justify-content: center;
+}
+
+.descripcionViandas {
+    color: white;
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px;
+    font-size: 30px;
+    transition: all 500ms ease;
+    text-align: justify;
+}
+
+.precio {
+    font-family: 'Times New Roman', Times, serif;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    padding: 12px;
+    margin: 40px;
+    color: rgb(255, 248, 240);
+    font-size: 82px;
+    border-radius: 100px;
+    background-color: #d1852e;
+    transition: all 500ms ease;
+}
+
+/* TABLA DE VIANDAS */
+
+.tabla{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+table {
+    opacity: 0.9;
+    background-color: white;
+    text-align: left;
+    border-collapse: collapse;
+    text-transform: uppercase;
+    font-size: 30px;
+    margin-top: 60px;
+    margin-bottom: 60px;
+    transition: all 500ms ease;
+    width: 100%;
+}
+
+th, td {
+    width: 10%;
+    padding: 2%;
+    font-size: 25px;
+}
+
+tr:nth-child(even) {
+    background-color: bisque;
+}
+
+tr:hover td {
+    background-color: rgb(197, 131, 31);
+}
+
+thead {
+    background-color: green;
+    color: rgb(248, 248, 248);
+}
+
+/* INPUTS PARA TABLA*/
+
+.agregarAtabla {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+    background-color: rgb(212, 152, 62);
+    font-size: 30px;
+    font-weight: bold;
+    width: 100%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.textoInput {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#producto {
+    height: 30px;
+    font-size: 2vw;
+    margin-left: 10px;
+    margin-right: 10px;
+    padding-left: 10px;
+}
+
+#precio {
+    height: 30px;
+    font-size: 2vw;
+    margin-left: 10px;
+    margin-right: 10px;
+    padding-left: 10px;
+}
+
+/*CONTENEDOR DE BOTONES */
+
+.botones {
+    display: flex;
+    justify-content: center;
+}
+
+/* ESTILO PARA TODOS LOS BOTONES */
+
+button {
+    margin: 5px;
+    height: auto;
+    padding: 4px;
+    font-weight: bold;
+    border: 4px solid rgb(22, 29, 9);
+    border-radius: 10px;
+    cursor: pointer;
+}

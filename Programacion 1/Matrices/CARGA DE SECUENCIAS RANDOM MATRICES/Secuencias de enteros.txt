@@ -1,0 +1,98 @@
+/* 	
+ */
+
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.util.Random;
+public class Practica {
+	public static final int MAXFILA = 5;
+	public static final int MAXCOLUMNA = 10;
+	public static final int MAXVALOR = 10;
+	public static final int MINVALOR = 1;
+	public static final double probabilidad_numero = 0.4;
+
+	public static void main(String[] args) {                
+		int [][] matint;                                  
+		matint = new int[MAXFILA][MAXCOLUMNA];
+                  
+		cargar_matriz_aleatorio_secuencias_int(matint);
+		
+		System.out.println();
+
+		System.out.println();
+		imprimir_matriz_int(matint);
+	}
+
+	
+	//FUNCION CARGAR VALOR
+	
+		public static int cargar_entero () {
+							
+			int valor = 0;
+							
+			BufferedReader entrada = new BufferedReader(new InputStreamReader(System.in));
+							
+			try {
+				System.out.println ("Ingrese un valor entero: ");
+				valor = Integer.valueOf(entrada.readLine());
+			}
+			catch(Exception exc) {
+			System.out.println (exc);
+								
+			}
+		return (valor);
+		}
+	
+		
+		
+		
+
+
+
+//CARGA DE SECUENCIAS EN MATRICES LLAMANDO A "CARGA ALEATORIA DE ARREGLOS"
+
+	public static void cargar_matriz_aleatorio_secuencias_int(int [][] matint){
+		for (int fila = 0; fila < MAXFILA; fila++){
+			cargar_arreglo_aleatorio_secuencias_int(matint[fila]);
+		}
+		System.out.println("");
+	}
+
+
+
+
+
+//CARGA DE SECUENCIAS EN ARREGLOS
+
+	public static void cargar_arreglo_aleatorio_secuencias_int(int [] arrint){
+				
+		Random r = new Random();
+		arrint[0] = 0;
+		arrint[MAXCOLUMNA-1] = 0;
+		for (int pos = 1; pos < MAXCOLUMNA-1; pos++){
+			if (r.nextDouble()>probabilidad_numero){
+				arrint[pos]=(r.nextInt(MAXVALOR-MINVALOR+1) + MINVALOR);
+			}
+			else {
+				arrint[pos]=0;
+			}
+		}
+	}
+
+
+
+//IMPRIMIR MATRIZ
+
+
+	public static void imprimir_matriz_int(int [][] mat){
+		for (int fila = 0; fila < MAXFILA; fila++){
+			System.out.print("|");
+			for (int columna = 0; columna < MAXCOLUMNA; columna++){
+				System.out.print(mat[fila][columna]+"|");
+			}
+		System.out.println("");
+		}
+	}
+
+	
+}

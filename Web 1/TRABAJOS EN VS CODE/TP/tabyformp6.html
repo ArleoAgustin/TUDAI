@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/tabyformp6.css">
+</head>
+<body>
+    <h1>Formulario de inscripcion a comisiones</h1>
+        <div class="formulario">
+            <form>
+                <label for="nombre"> Apellido y nombre </label><input type="text" class="tipotext" name="nombre" value=""> 
+                <label for="dni"> DNI </label> <input type="text" class="tipotext" name="dni" value="" maxlength="8">
+                <label for="email">E-mail</label> <input type="text" class="tipotext" name="email" value="">
+                <p> Seleccione a que comision desea asistir </p>
+                <select class="select">
+                    <option value="comision1">Comision 1</option>
+                    <option value="comision2">Comision 2</option>
+                    <option value="comision3">Comision 3</option>
+                </select>
+                <input class="enviar" type="submit" value="Enviar">
+            </form>
+            <table>
+                <thead>
+                    <tr>
+                        <td>Marca</td> <td>Modelo</td> <td>color</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td rowspan="4"> Vw</td> <td>Gol Trend</td> <td>Rojo</td>
+                    </tr>
+                    <tr>
+                        <td>Gol Trend</td> <td>Negro</td>
+                    </tr>
+                    <tr>
+                        <td>Gol Trend</td> <td>Azul</td>
+                    </tr>
+                    <tr>
+                        <td>Gol Trend</td> <td>Gris</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+</body>
+</html>

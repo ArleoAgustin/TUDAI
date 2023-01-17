@@ -1,0 +1,100 @@
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+public class Puntodos {
+	public static void main(String[] args) {
+		int anio, aurio, mes, mesaux, dia;
+		try {
+			BufferedReader entrada = new BufferedReader(new InputStreamReader(System.in));
+			System.out.println("Ingrese el año");
+			anio = Integer.valueOf(entrada.readLine());
+			System.out.println("Ingrese el mes");
+			mes = Integer.valueOf(entrada.readLine());
+			System.out.println("Ingrese el dia");
+			dia = Integer.valueOf(entrada.readLine());
+/*Punto 1*/		
+			aurio = anio;
+			aurio = ++aurio;
+			aurio = aurio % 19;
+/*Punto 2*/
+			aurio = --aurio;
+			aurio = aurio * 11;
+			aurio = aurio % 30;
+/*Punto 3*/
+			mesaux = mes;
+			switch (mes) {
+			 case (1):
+				 if (mes == 1) {
+					 mes = 11;
+				 }
+			 case (2):
+				 if (mes == 2) {
+					 mes = 12;
+				 }
+			 case (3):
+				 if (mes == 3) {
+					 mes = 1;	
+				 }
+			 case (4):
+				 if (mes == 4) {
+					 mes = 2;
+				 }
+			 case(5):
+				 if (mes == 5) {
+					 mes = 3;
+				 }
+			 case (6):
+				 if (mes == 6) {
+					 mes = 4;
+				 }
+			 case(7):
+				 if (mes == 7) {
+					 mes = 5;
+				 }
+			 case(8):
+				 if (mes == 8) {
+					 mes = 6;
+				 }
+			 case(9):
+				 if (mes == 9) {
+					 mes = 7;
+				 }
+			 case(10):
+				 if (mes == 10) {
+					 mes = 8;
+				 }
+			 case(11):
+				 if (mes == 11) {
+					 mes = 9;
+				 }
+			 case(12):
+				 if (mes == 12){
+					 mes = 10;
+				 }
+			break;
+			}
+			aurio = aurio + mes + dia;
+			
+			if (aurio > 29) {
+				aurio = aurio % 30;
+			}
+			
+			System.out.println("Edad lunar para la fecha " + dia + "/" + mesaux + "/" + anio + " es de: " + aurio);
+			
+			if ((aurio >= 1) && (aurio <= 7)) {
+				System.out.println("La luna estara en su primera fase.");
+			}
+			if ((aurio >= 8) && (aurio <= 14)) {
+				System.out.println("La luna estara en su segunda fase.");
+			}
+			if ((aurio > 14) && (aurio <= 22)) {
+				System.out.println("La luna estara en su tercer fase.");
+			}
+			if ((aurio > 22) && (aurio <= 29)) {
+				System.out.println("La luna estara en su cuarta fase.");
+			}
+		}
+		catch(Exception exc) {
+			System.out.println(exc);
+		}
+	}
+}	

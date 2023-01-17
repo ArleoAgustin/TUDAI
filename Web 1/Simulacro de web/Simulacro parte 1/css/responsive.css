@@ -1,0 +1,69 @@
+@media only screen and (min-width: 650px) {
+
+    .contenedor {
+
+        width: 81%;
+        margin: 3% 0% 0% 10%;
+    }
+
+    .encabezado  {
+    
+        padding: 1%;
+    }
+
+    h1 {
+
+        font-size: 320%;
+        font-weight: normal;
+        margin: 3% 0% 0% 10%;
+        font-family: Arial, Helvetica, sans-serif;
+    
+    }
+
+
+    .jugador {
+
+        width: 50%;
+        border: 2px solid  rgb(204, 189, 189);;
+    }
+
+
+
+    .icono {
+
+        width: 10%;
+
+    }
+    
+
+
+    .cuerpo {
+
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+
+    }
+
+
+    .cuerpo :hover {
+
+        background-color: rgb(199, 199, 199);
+    }
+
+    .ficha {
+
+        margin-left: 2%;
+        font-size: 85%;
+
+    }
+
+    .posicion {
+
+        padding: 2%;
+    }
+
+
+
+
+}

@@ -1,0 +1,103 @@
+/*	Hacer un programa que dado un arreglo de enteros de tamaño 10 que se encuentra
+	precargado, solicite al usuario un numero entero y elimine la primer ocurrencia de numero (un
+	número igual) en el arreglo si existe. Para ello tendrá que buscar la posición y si está, realizar un
+	corrimiento a izquierda (queda una copia de la última posición del arreglo en la anteúltima
+	posición). */
+
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+public class practicos {
+
+	public static int MAXVALOR = 10;
+	public static int MINVALOR = 0;
+	
+	public static void main(String[] args) {
+		int [] arrint = new int[MAXVALOR];
+		int valor;
+		BufferedReader entrada = new BufferedReader(new InputStreamReader(System.in));
+		
+		try{
+			
+				cargar_arreglo(arrint);
+				System.out.println("Ingrese un numero para eliminar dentro del arreglo");
+				valor = Integer.valueOf(entrada.readLine());
+			System.out.println();
+				corrimiento_borrar(arrint, valor);
+				mostrar_arreglo(arrint);
+			System.out.println();
+	
+		}
+	
+		catch(Exception exc){
+			System.out.println(exc);
+		}
+	}
+	
+	
+	
+// ----------------------------------------PROCEDIMIENTOS Y FUNCIONES------------------------------------------------------------//
+	
+	// procedimiento cargar arreglo
+	
+	public static void cargar_arreglo(int [] arr){
+		BufferedReader entrada = new BufferedReader(new InputStreamReader(System.in));
+	
+		try{
+			
+				for (int pos = 0; pos < MAXVALOR; pos++){
+					System.out.println("Ingrese un entero: ");
+					arr[pos] = Integer.valueOf(entrada.readLine());
+				}
+				
+		}
+	
+		catch(Exception exc){
+			System.out.println(exc);
+		}
+	}
+
+	//funcion buscar si el valor ingresado esta y devolver la posicion
+	
+	public static int posicion_valorigual (int [] arr, int valor) {
+	
+		int buscar_valor;
+		buscar_valor = MINVALOR;
+			while ((buscar_valor < MAXVALOR) && (arr[buscar_valor] != valor)) {
+				buscar_valor = buscar_valor +1;
+		}
+		
+		return (buscar_valor);
+	
+	}
+	
+	
+	//procedimiento, si esta valor hacer el corrimiento
+
+	public static void corrimiento_borrar (int [] arrint, int valor) {
+		
+		int esta_valor = posicion_valorigual(arrint, valor);
+		int front;
+		if (esta_valor == MAXVALOR) {
+			System.out.println("El valor que ingreso no se encuentra en el arreglo");
+		}
+		else {
+			
+			front = esta_valor;
+			while (front < MAXVALOR -1) {
+				arrint[front] = arrint[front +1];
+				front = front +1;
+			}
+		}
+	}
+	
+	
+	
+	//procedimiento mostrar arreglo
+
+	public static void mostrar_arreglo(int [] arr){
+		for (int pos = 0; pos < MAXVALOR; pos++){
+			System.out.println("Arreglo["+pos+"] =>: " + arr[pos]);
+		}
+	}
+
+}

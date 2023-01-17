@@ -1,0 +1,255 @@
+/*
+  Se tiene una matriz de enteros de tamanio 4*20 de secuencias de numeros entre 1 y 9 (por cada fila), separadas por 0. 
+  La matriz esta precargada, y ademas cada fila empieza y termina con uno o mas separadores 0. Se pide realizar un programa que:
+  por cada secuencia con tamanio par, agregue en un arreglo de enteros de tamanio 4*20 inicializado con ceros el promedio entero 
+  de la suma de los elementos de la secuencia. 
+  Cada agregado en el arreglo se debe realizar de forma consecutiva de izquierda a derecha y sin separadores.
+*/
+
+import java.util.Random;
+public class segundo_parcial {
+	
+	public static final int MAXFILA = 4;
+	public static final int MAXCOLUMNA = 20;
+	public static final int MAX = 80;
+	public static final int MAXVALOR = 9;
+	public static final int MINVALOR = 1;
+	public static final double probabilidad_numero = 0.4;
+
+//----------------------------------- PROGRAMA PRINCIPAL -------------------------------------------------//	
+	
+	public static void main(String[] args) {
+		
+		int [] arrcopia;
+		arrcopia = new int [MAX];
+		int [] [] matint;
+		matint = new int[MAXFILA][MAXCOLUMNA];
+
+		cargar_matriz_aleatorio_secuencias_int(matint);
+		cargar_arreglo(arrcopia);
+		imprimir_matriz_int(matint);
+		System.out.println();
+		resolver_segundo_ejercicio(matint, arrcopia);
+		System.out.println();
+		imprimir_arreglo(arrcopia);
+		
+	}
+
+	
+//--------------------------------------------- METODOS UTILIZADOS ---------------------------------------------//	
+	
+	
+// PROCEDIMIENTO QUE VA RECORRIENDO LAS FILAS Y HACIENDO LO QUE PIDE EL ENUNCIADO
+	
+	public static void resolver_segundo_ejercicio (int [][] matint, int [] arrcopia) {
+		
+		int fila = 0;
+	
+		while (fila < MAXFILA) {
+			
+			System.out.println();
+			System.out.println("FILA: " + fila);
+			buscar_secuencias_y_agregar_suma (matint[fila], arrcopia);
+			
+			fila++;
+		}
+		
+	}
+	
+	
+	
+//PROCEDIMIENTO QUE VA BUSCANDO LAS SECUENCIAS Y SI SON PAR COPIA EL PROMEDIO DE SU SUMA EN EL ARREGLO
+	
+	public static void buscar_secuencias_y_agregar_suma (int [] arrint, int [] arrcopia) {
+		
+		int inicio = 0;
+		int fin = -1;
+		boolean par;
+		int promedio;
+		
+		while (inicio < MAXCOLUMNA) {
+			
+			inicio = inicio_secuencia(arrint, fin +1);
+			if (inicio < MAXCOLUMNA) {
+				
+				fin = fin_secuencia(arrint, inicio);
+				par = es_par (arrint, inicio, fin);
+				
+				if (par == true) {
+					
+					promedio = promedio(arrint, inicio, fin);
+					System.out.println("El promedio de la secuencia par, con inicio: " + inicio + " y fin en " + fin );
+					System.out.println("Es de: " + promedio);
+					copiar_promedio(arrcopia, promedio);
+				}
+			}
+		
+		}
+	}
+
+	
+	
+//COPIAR PROMEDIO DE CADA FILA PAR, EN EL ARREGLO
+	
+	public static void copiar_promedio (int [] arrcopia, int promedio) {
+		
+		int pos = 0;
+		
+		while (pos < MAX && arrcopia[pos] != 0) {
+			pos++;
+		}
+		
+		if (pos < MAX && arrcopia[pos] == 0) {
+			arrcopia[pos] = promedio;
+		}
+	}
+	
+	
+	
+//OBTENER PROMEDIO DE LA SUMA DE LAS SECUENCIAS PAR
+	
+	public static int promedio (int [] arrint, int inicio, int fin) {
+
+		int el_promedio = 0;
+		int suma = 0;
+		int pos = inicio;
+		int cont_celdas = 0;
+		
+		while (pos <= fin) {
+			
+			suma += arrint[pos];
+			cont_celdas++;
+			pos++;
+		}
+		
+		el_promedio = suma / cont_celdas;
+		
+		return(el_promedio);
+	}
+	
+	
+	
+// VER SI LA SECUENCIA ES PAR
+	
+	public static boolean es_par (int arrint[], int inicio, int fin) {
+		
+		boolean par = false;
+		int pos = inicio;
+		int cont = 0;
+			
+			while (pos <= fin) {
+				cont++;
+				pos++;
+			}
+			
+			if (cont %2 == 0) {
+				par = true;
+			}
+		
+		return(par);
+	}
+	
+	
+
+//FIN DE SECUENCIA
+	
+	public static int fin_secuencia (int [] arrint, int inicio) {
+		
+		int pos = inicio;
+		
+		while (pos < MAXCOLUMNA && arrint[pos] != 0) {
+			
+			pos++;
+		}
+		
+		return(pos -1);
+	}
+	
+	
+	
+//INICIO DE SECUENCIA	
+	
+	public static int inicio_secuencia (int [] arrint, int fin) {
+		
+		int pos = fin;
+		
+		while (pos < MAXCOLUMNA && arrint[pos] == 0) {
+			
+			pos++;
+			
+		}
+		
+		return(pos);
+	
+	}
+	
+	
+//------------------------------- CARGA E IMPRESION DE MATRIZ Y ARREGLO -------------------------------------------------//
+	
+	
+//CARGA DE SECUENCIAS EN MATRIZ
+
+	public static void cargar_matriz_aleatorio_secuencias_int (int [][] matint){
+		for (int fila = 0; fila < MAXFILA; fila++){
+			cargar_arreglo_aleatorio_secuencias_int(matint[fila]);
+		}
+		System.out.println("");
+	}
+
+
+
+//CARGA DE SECUENCIAS EN ARREGLOS (SE UTILIZA EN "CARGAR MATRIZ")
+
+	public static void cargar_arreglo_aleatorio_secuencias_int (int [] arrint){
+					
+		Random r = new Random();
+		arrint[0] = 0;
+		arrint[MAXCOLUMNA-1] = 0;
+		for (int pos = 1; pos < MAXCOLUMNA-1; pos++){
+			if (r.nextDouble()>probabilidad_numero){
+				arrint[pos]=(r.nextInt(MAXVALOR-MINVALOR+1) + MINVALOR);
+			}
+			else {
+				arrint[pos]=0;
+			}
+		}
+	}
+	
+	
+
+//IMPRIMIR MATRIZ
+
+	public static void imprimir_matriz_int (int [][] mat){
+		for (int fila = 0; fila < MAXFILA; fila++){
+			System.out.print("|");
+			for (int columna = 0; columna < MAXCOLUMNA; columna++){
+				System.out.print(mat[fila][columna]+"|");
+			}
+		System.out.println("");
+		}
+	}
+	
+	
+//CARGAR ARREGLO CON 0
+	
+	public static void cargar_arreglo (int [] arrcopia){
+
+	for (int pos = 0; pos < MAX; pos++){
+		arrcopia[pos]=0;
+	}
+}
+	
+	
+//IMPRIMIR ARREGLO
+	
+	public static void imprimir_arreglo (int [] arr){
+		
+		System.out.print("Arreglo con promedios de secuencias pares\n|");
+		for (int pos = 0; pos < MAX; pos++){
+			System.out.print(arr[pos]+"|");
+		}
+		System.out.print("\n");
+	}
+	
+	
+}

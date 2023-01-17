@@ -1,0 +1,230 @@
+/* ESTE ES EL RESPONSIVE GENERAL DE TODAS LAS PAGINAS */
+
+ /* DISPOSITIVOS CON RESOLUCION MAXIMA DE 1342 px */
+
+@media only screen and (max-width: 1342px) {
+
+    .item {
+        font-size: 3vw;
+    }
+
+    .itemPrincipal {
+        font-size: 3vw;
+    }
+
+}
+
+ /* DISPOSITIVOS CON RESOLUCION MAXIMA DE 1053 px */
+
+@media only screen and (max-width: 1053px) {
+    
+    .item {
+        font-size: 2.5vw;
+    }
+
+    .itemPrincipal {
+        font-size: 2.5vw;
+    }
+
+    .botonConsultas {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: static;
+        width: 100%;
+    }
+
+    .section-consultas {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        margin: 5px;
+    }
+}
+
+
+ /* DISPOSITIVOS CON RESOLUCION MAXIMA DE 800px */
+
+@media only screen and (max-width: 800px) {
+    
+    .botonConsultas {
+        display: none;
+    }
+
+    #btn-menu {
+
+        display: none;
+    }
+
+    html {
+        width: 100%;
+    }
+
+    body {
+        background-image: none;
+        margin: 0;
+        background-color: rgb(255, 207, 153);
+    }
+
+    /* HEADER */
+
+    header {
+        position: relative;
+        z-index: 3;
+        width: 100%;
+        border-bottom: 5px solid rgb(240, 166, 69);
+    }
+
+    .encabezado {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: row;
+        width: 100%;
+        background-color: rgb(233, 154, 52);
+        height: 80px;
+        
+    }
+
+    .tituloYlogo {
+        width: auto;
+        display: flex;
+        align-items: center;
+    }
+
+    .logoEncabezado {
+        display: flex;
+        width: 90px;
+    }
+
+    .titulo {
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        color: #000000;
+        font-size: 40px;
+        padding: 0px;
+        margin: 0;
+        height: 50px;
+        width: auto;;
+        border-bottom: 5px solid yellowgreen;
+        font-family: 'Times New Roman', Times, serif;
+    }
+
+    .imagenMenu {
+        display: flex;
+        margin-right: 10px;
+        width: 40px;
+        cursor: pointer;
+    }
+
+     /* NAVEGADOR DESPLEGABLE ENTRE PAGINAS */
+
+    nav {
+        position: absolute;
+        z-index: 2;
+        transition: all ease 0.8s;
+        display: flex;
+        justify-content: center;
+        height: auto;
+        width: 100%;
+        margin-top: -700px;
+    }
+
+    .desplegarNav {
+        margin-top: 10px;
+    }
+
+    .menu {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        background-color: none;
+        height: auto;
+        font-size: 50px;
+        width: 70%;
+        transition: all ease 1s;
+        background-color: rgb(232, 255, 218);
+        padding: 25px;
+        border-radius: 30px;
+        border-bottom: 5px solid rgb(111, 148, 88);
+        border-right: 5px solid rgb(111, 148, 88);
+        text-align: center;
+    }
+
+    .item {
+        display: flex;
+        justify-content: center;
+        font-size:30px;
+        font-weight: bold;
+        width: auto;
+        padding: 8px;
+        margin: 5px;
+        border-radius: 20px;
+        border-bottom: 5px solid #E8A527;
+        background-color: #E87227;
+    }
+    
+    .itemPrincipal {
+        display: flex;
+        justify-content: center;
+        font-size:30px;
+        font-weight: bold;
+        width: auto;
+        padding: 8px;
+        margin: 5px;
+        border-radius: 20px;
+        border-bottom: 5px solid rgb(18, 156, 0);
+        background-color: yellowgreen;
+        color: #000000;
+    }
+
+    .section-consultas {
+        display: flex;
+        justify-content: center;
+        width: auto;
+    }
+
+    .botonConsultas {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: inherit;
+        width: 50%;
+        margin: 0px;
+    }
+
+    /* FOOTER */
+
+    .ilvero {
+        display: none;
+    }
+    
+    footer {
+        border-top: 5px solid rgb(240, 166, 69);
+        position: relative;
+        margin-top: 10px;
+        height: 100px;
+        color: white;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #cc8937;
+        font-size: 15px;
+    }
+
+    footer a {
+        margin: 8px;
+    }
+}
+
+ /* DISPOSITIVOS CON RESOLUCION MAXIMA DE 364px */ 
+
+@media only screen and (max-width: 364px) {
+    
+    .titulo {
+        font-size: 30px;
+        height: auto;
+    }
+
+}

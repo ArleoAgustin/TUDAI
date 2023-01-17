@@ -1,0 +1,178 @@
+/* 	Hacer un programa que dada la matriz de secuencias de caracteres definida y
+	precargada elimine todas las secuencias que tienen orden descendente entre
+	sus elementos.
+ */
+
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.util.Random;
+public class Practica {
+	public static final int MAXFILA = 5;
+	public static final int MAXCOLUMNA = 10;
+	public static final double probabilidad_letra = 0.4;
+
+	public static void main(String[] args) {                
+		char [][] matchar = {{' ','z','s','h','a',' ',' ','d','h',' ' },
+							 {' ','3','1',' ','m','i','f',' ','c',' ' },
+							 {' ','a',' ','n',' ','n','u','x','y',' ' },
+							 {' ','a','a','g','h','w','s','j','c',' '},
+							 {' ',' ',' ','r','h','b',' ',' ',' ',' ' }};
+							 
+		System.out.println();
+		imprimir_matriz_char(matchar);
+		System.out.println();
+		reccorer_filas(matchar);
+		System.out.println();
+		imprimir_matriz_char(matchar);
+		
+	}
+
+	
+	
+	
+//PROCEDIMIENTO RECORRER FILAS Y HACER LO QUE PIDE LA CONSINGNA
+	
+	public static void reccorer_filas (char [][] matchar) {
+		
+		int fila = 0;
+		
+		while (fila < MAXFILA) {
+			eliminar_secuencia (matchar[fila]);
+			fila++;
+		}
+		
+	}
+	
+	
+	
+//PROCEDIMIENTO QUE ELIMINA LA SECUENCIA DESCENDENTE (SI EXISTE)
+
+	public static void eliminar_secuencia (char [] arrchar) {
+		
+		int inicio = 0;
+		int fin = -1;
+		boolean descendente;
+		
+		while (inicio < MAXCOLUMNA-1) {
+			inicio = obtener_inicio_secuencia (arrchar, fin+1);
+			if (inicio < MAXCOLUMNA -1) {
+				fin = obtener_fin_secuencia(arrchar, inicio);
+				
+				descendente = es_descendente(arrchar, inicio, fin);
+				if (descendente == true) {
+					eliminar_secuencia(arrchar, inicio, fin);
+				}
+			}
+		}
+		
+	}
+	
+	
+	
+	
+	
+//ELIMINAR SECUENCIA (CORRIMIENTO)
+	
+	public static void eliminar_secuencia (char [] arrchar, int inicio, int fin) {
+		
+		int pos = inicio;
+		
+		while (pos <= fin && pos < MAXCOLUMNA -1)  {
+			
+			arrchar[pos] = arrchar[pos -1];
+			pos++;
+			
+		}
+	}
+	
+	
+	
+	
+// VER SI SON IGUALES
+	
+	public static boolean es_descendente (char [] arrchar, int inicio, int fin ) {
+		
+		boolean descendente = false;
+		int contador = 0;
+		int pos = inicio;
+		int longitud = 0;
+		
+		while (inicio <= fin) {
+			longitud++;
+			inicio++;
+		}
+		
+		
+		while ((pos <= fin) && (longitud != 1)) {
+			
+			if (arrchar[pos] >= arrchar[pos +1]) {
+			
+				pos++;
+				contador++;
+			}
+			else {
+				pos++;
+			}
+		}
+		
+		
+		if (contador  == longitud) {
+			descendente = true;
+		}
+		
+		return(descendente);
+	}
+	
+
+	
+	
+	
+//OBTENER INICIO DE LA SECUENCIA
+	
+	public static int obtener_inicio_secuencia (char [] arrchar, int fin) {
+		
+		int pos = fin;
+		
+		while (arrchar[pos] == ' ' && pos < MAXCOLUMNA-1) {
+			pos++;
+			
+		}
+		
+		return (pos);
+	}
+	
+	
+	
+	
+//OBTENER FIN DE LA SECUENCIA
+	
+	public static int obtener_fin_secuencia (char [] arrchar, int inicio) {
+		
+		int pos = inicio;
+		
+		while (pos < MAXCOLUMNA -1 && arrchar[pos] != ' ') {
+			pos++;
+		}
+		
+		return (pos-1);
+	}
+	
+	
+	
+
+
+//IMPRIMIR MATRIZ
+
+	public static void imprimir_matriz_char(char [][] mat){
+
+		for (int fila = 0; fila < MAXFILA; fila++){
+			System.out.print("|");
+			for (int columna = 0; columna < MAXCOLUMNA; columna++){
+				System.out.print(mat[fila][columna]+"|");
+			}
+			System.out.println("");
+		}
+	}
+	
+	
+}
