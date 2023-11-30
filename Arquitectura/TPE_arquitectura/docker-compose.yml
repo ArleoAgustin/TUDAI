@@ -1,0 +1,145 @@
+version: '3'
+
+networks:
+  scooter_network:
+    driver: bridge
+
+
+#----------------------------------------SERVICIOS---------------------------------------------------------
+#ports services
+  #gateway 8080
+  #user 8081
+  #admin 8082
+  #scooter 8083
+  #travel 8084
+  #stopping 8085
+
+#  stopping_service:
+#    build:
+#      context: ./
+#      dockerfile: Dockerfile-stoppingService
+#    ports:
+#      - "8082:8080"
+#    depends_on:
+#      - stopping_Db
+#    container_name: container_stoppingService
+#  gateway_service:
+  #    image: apigateway:v1.0
+  #    ports:
+  #      - "80:8080"
+  #    depends_on: [scooter_service,travel_service,user_service]
+  #    networks:
+  #      scooter_network:
+  #
+  #  user_service:
+  #    image: userservice:v1.0
+  #    ports:
+  #      - "8091:8081"
+  #    depends_on:
+  #      - user_db
+  #    container_name: container_userService
+  #    networks:
+  #      - scooter_network
+  #
+  #  travel_service:
+  #    image: travelservice:v1.0
+  #    ports:
+  #      - "8094:8084"
+  #    depends_on:
+  #      - travel_db
+  #    container_name: container_travelService
+  #    networks:
+  #      - scooter_network
+  #
+  #  scooter_service:
+  #    image: scooterservice:v1.0
+  #    ports:
+  #      - "8093:8083"
+  #    depends_on:
+  #      - scooter_db
+  #    container_name: container_scooterService
+  #    networks:
+  #      - scooter_network
+ 
+
+services:
+
+  #-----------------------------------------------BASES DE DATOS ---------------------------------------------
+  user_db:
+    image: mysql:latest
+    ports:
+      - "3306:3306"
+    container_name: container_userDb
+    environment:
+      MYSQL_ROOT_PASSWORD: admin
+      MYSQL_DATABASE: userDb
+    networks:
+      - scooter_network
+
+  auth_db:
+    image: mysql:latest
+    ports:
+      - "3305:3306"
+    container_name: container_authDb
+    environment:
+      MYSQL_ROOT_PASSWORD: admin
+      MYSQL_DATABASE: authDb
+    networks:
+      - scooter_network
+
+  travel_db:
+    image: mysql:latest
+    ports:
+      - "3307:3306"
+    container_name: container_travelDb
+    environment:
+      MYSQL_ROOT_PASSWORD: admin
+      MYSQL_DATABASE: travelDb
+    networks:
+      - scooter_network
+
+  stopping_db:
+    image: mysql:latest
+    ports:
+      - "3308:3306"
+    container_name: container_stoppingDb
+    environment:
+      MYSQL_ROOT_PASSWORD: admin
+      MYSQL_DATABASE: stoppingDb
+    networks:
+      - scooter_network
+
+  scooter_db:
+    image: mysql:latest
+    ports:
+      - "3309:3306"
+    container_name: container_scooterDb
+    environment:
+      MYSQL_ROOT_PASSWORD: admin
+      MYSQL_DATABASE: scooterDb
+    networks:
+      - scooter_network
+
+  scooter_mongo_db:
+    image: mongo:latest
+    ports:
+      - "27017:27017"
+    container_name: container_scooterMongoDb
+    environment:
+      MONGO_INITDB_DATABASE: scooterDb
+      MONGO_INITDB_ROOT_USERNAME: admin
+      MONGO_INITDB_ROOT_PASSWORD: scooterDb
+    networks:
+      - scooter_network
+
+
+  admin_db:
+    image: mysql:latest
+    ports:
+      - "3310:3306"
+    container_name: container_adminDb
+    environment:
+      MYSQL_ROOT_PASSWORD: admin
+      MYSQL_DATABASE: adminDb
+    networks:
+      - scooter_network
