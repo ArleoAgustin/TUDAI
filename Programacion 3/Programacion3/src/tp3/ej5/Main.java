@@ -1,0 +1,32 @@
+package tp3.ej5;
+
+import tp3.ej4.Ej4;
+import tp3.ej4.GrafoDirigido;
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        GrafoDirigido gd = new GrafoDirigido();
+
+        gd.agregarVertice(1);
+        gd.agregarVertice(2);
+        gd.agregarVertice(3);
+        gd.agregarVertice(4);
+        gd.agregarVertice(5);
+        gd.agregarVertice(6);
+
+        gd.agregarArco(1,3,3);
+        gd.agregarArco(1,2,7);
+        gd.agregarArco(2,3,1);
+        gd.agregarArco(2,4,6);
+        gd.agregarArco(3,5,8);
+        gd.agregarArco(5,4,2);
+        gd.agregarArco(4,3,3);
+        gd.agregarArco(4,6,2);
+        gd.agregarArco(5,6,8);
+
+        Ej5 ej = new Ej5(gd);
+        System.out.println(ej.resolver(3));
+    }
+}
