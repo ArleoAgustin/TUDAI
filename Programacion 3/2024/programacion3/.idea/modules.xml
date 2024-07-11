@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/programacion3/TPE-programacion3_2024/TPE-programacion3_2024.iml" filepath="$PROJECT_DIR$/programacion3/TPE-programacion3_2024/TPE-programacion3_2024.iml" />
+      <module fileurl="file://$PROJECT_DIR$/programacion3/practicos/src/practicos.iml" filepath="$PROJECT_DIR$/programacion3/practicos/src/practicos.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/programacion3_2024.iml" filepath="$PROJECT_DIR$/.idea/programacion3_2024.iml" />
+      <module fileurl="file://$PROJECT_DIR$/programacion3/practicos/tp1/tp1.iml" filepath="$PROJECT_DIR$/programacion3/practicos/tp1/tp1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/programacion3/practicos/tp2/tp2.iml" filepath="$PROJECT_DIR$/programacion3/practicos/tp2/tp2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/programacion3/practicos/tp2.1/tp2.1.iml" filepath="$PROJECT_DIR$/programacion3/practicos/tp2.1/tp2.1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/programacion3/practicos/tp4/tp4.iml" filepath="$PROJECT_DIR$/programacion3/practicos/tp4/tp4.iml" />
+      <module fileurl="file://$PROJECT_DIR$/programacion3/practicos/tpe_2024/tpe_2024.iml" filepath="$PROJECT_DIR$/programacion3/practicos/tpe_2024/tpe_2024.iml" />
+    </modules>
+  </component>
+</project>

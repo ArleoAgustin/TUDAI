@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="programacion3/practicos/tp1/src"/>
+	<classpathentry kind="src" path="programacion3/practicos/tp2/src"/>
+	<classpathentry kind="src" path="programacion3/practicos/tp2.1/src"/>
+	<classpathentry kind="src" path="programacion3/practicos/tp4/src"/>
+	<classpathentry kind="src" path="programacion3/practicos/tp5/src"/>
+	<classpathentry kind="src" path="programacion3/TPE-programacion3_2024/src"/>
+	<classpathentry kind="output" path="programacion3/TPE-programacion3_2024/out/production/TPE-programacion3_2024"/>
+</classpath>
